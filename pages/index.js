@@ -1,4 +1,4 @@
-import Layout from '../components/MyLayout.js'
+import Layout from '../layout/MainLayout.js'
 import Link from 'next/link'
 
 function getPosts() {
@@ -11,7 +11,7 @@ function getPosts() {
 
 const PostLink = ({ post }) => (
   <li>
-    <Link href="/p/[id]" as={`/p/${post.id}`}>
+    <Link href="/cars/[id]" as={`/cars/${post.id}`}>
       <a>{post.title}</a>
     </Link>
     <style jsx>{`
@@ -36,7 +36,7 @@ const PostLink = ({ post }) => (
 export default function Blog() {
   return (
     <Layout>
-      <h1>My Blog</h1>
+      <h1>title test</h1>
       <ul>
         {getPosts().map(post => (
           <PostLink key={post.id} post={post} />

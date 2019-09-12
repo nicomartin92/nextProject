@@ -1,0 +1,35 @@
+@import '../../styles/index.scss';
+
+.gridTable {
+    display: grid;
+
+    &__row {
+        display: grid;
+        grid-template-columns: repeat(3, 2fr) repeat(2, 1fr);
+        align-items: center;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid #ddd;
+        }
+    }
+
+    img {
+        width: 90px;
+
+        @include medium {
+            width: 120px;
+        }
+    }
+}
+
+.dashboard {
+    &__icon {
+        width: 30px;
+        height: 30px;
+
+        @include medium {
+            width: 40px;
+            height: 40px;
+        }
+    }
+}

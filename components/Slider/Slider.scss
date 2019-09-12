@@ -1,0 +1,136 @@
+@import '../../styles/index.scss';
+
+.swipe {
+    height: 100%;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-bottom: 50px;
+
+    @include aspect-ratio(800, 526);
+
+    &.slider-2 {
+        @include medium {
+            @include aspect-ratio(800, 260);
+        } 
+    }
+
+    &.slider-3 {
+        @include medium {
+            @include aspect-ratio(800, 180);
+        } 
+    }
+
+    &__wrapper {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+}
+  
+.slide {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+
+    .slider-2 & {
+        @include medium {
+            width: 50%; 
+        }
+    }
+
+    .slider-3 & {
+        @include medium {
+            width: 33%; 
+        }
+    }
+
+    @include medium {
+        padding: 20px 50px;
+
+        .slider-2 &,
+        .slider-3 & {
+            @include medium {
+                padding: 20px 0;
+            }
+        }
+        
+    }
+
+    img {
+        width: 100%;
+    }
+}
+  
+.arrow {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform ease-in .1s;
+}
+  
+.nextArrow,
+.backArrow  {
+    position: absolute;
+    top: 50%;
+    margin-top: -13px;
+    right: 25px;
+    color: $colorWhite;
+}
+
+.backArrow {
+    left: 25px;
+    right: auto;
+}
+
+.pagination {
+    position: absolute;
+    width: 100%;
+    bottom: -4px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 20px;
+
+    @include medium {
+        bottom: 20px;
+    }
+
+    &__item {
+        margin: 5px;
+        padding: 0;
+
+        &.-active {
+            button {
+            background: $colorBlue;
+            }
+        }
+
+        button {
+            background: none;
+            border: 2px solid $colorBlue;
+            transform: skewX(-18deg);
+            transition: all .3 ease-in;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            text-indent: -9000px;
+
+            &:hover {
+                background: $colorBlue;
+                transition: all .3 ease-in;
+            }
+        }
+    }
+}
