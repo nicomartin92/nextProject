@@ -31,6 +31,7 @@ node_modules
 
 # Dependency directory
 .next
+build
 
 # Typings
 typings/

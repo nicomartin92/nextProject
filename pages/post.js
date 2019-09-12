@@ -2,10 +2,7 @@ import { useRouter } from 'next/router'
 import Layout from '../components/MyLayout.js'
 
 const Page = () => {
-  const router = useRouter();
-
-  console.warn(router);
-  
+  const router = useRouter()
 
   return (
     <Layout>
@@ -15,4 +12,4 @@ const Page = () => {
   )
 }
 
-export default Page;
+export default Page
