@@ -1,7 +1,7 @@
 import Layout from '../layout/MainLayout.js'
 
 import Link from 'next/link'
-import { getProducts } from '../lib/moltin'
+// import { getProducts } from '../lib/moltin'
 import ProductList from '../components/ProductList'
 
 function getPosts() {
@@ -36,7 +36,7 @@ const PostLink = ({ post }) => (
   </li>
 )
 
-/* export default function Home() {
+export default function Home() {
   return (
     <Layout>
       <h1>title test</h1>
@@ -71,10 +71,10 @@ const PostLink = ({ post }) => (
       `}</style>
     </Layout>
   )
-} */
+}
 
 
-const Home = props => (
+/* const Home = props => (
   <Layout title='FrModelcars'>
     <ProductList {...props} />
   </Layout>
@@ -99,6 +99,6 @@ Home.getInitialProps = async () => {
   return {
     products
   }
-}
+} */
 
-export default Home
+// export default Home

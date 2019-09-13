@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { Route, NavLink } from 'react-router-dom';
+// import { Route, Link } from 'react-router-dom';
+import Link from 'next/link'
 import PubSub from 'pubsub-js';
 // import SignInLinks from './SignInLinks';
 // import SignOutLinks from './SignOutLinks';
 
 /* SVG */
-import { ReactComponent as SearchIcon } from '../../assets/search-icon.svg';
+// import { ReactComponent as SearchIcon } from '../../assets/search-icon.svg';
 
-import './Header.scss';
+// import './Header.scss';
 
 class Headers extends Component {
 
@@ -24,32 +25,38 @@ class Headers extends Component {
             <header>
                 <nav 
                     style={{ color: '#000000' }}>
-                    <Route>
                         <ul className="nav">
                             <li>
                                 <button onClick={this.handleClick}>Cars</button>
                             </li>
-                            {/* <li>
-                                <NavLink exact={true} to="/" activeClassName="-active">Accueil</NavLink>
-                            </li> */}
                             <li>
-                                <NavLink to="/list" activeClassName="-active">Catégorie</NavLink>
+                                <Link passHref href="/">
+                                    <a title="Accueil">Accueil</a>
+                                </Link>
                             </li>
                             <li>
-                                <NavLink to="/whishlist" activeClassName="-active">Whishlist</NavLink>
+                                <Link passHref href="/list">
+                                    <a title="Catégorie">Catégorie</a>
+                                </Link>
                             </li>
                             <li>
-                                <NavLink to="/status" activeClassName="-active">Status</NavLink>
+                                <Link passHref href="/whishlist">
+                                    <a title="Whishlist">Whishlist</a>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link passHref href="/status">
+                                    <a title="Status">Status</a>
+                                </Link>
                             </li>
                             <li onClick={this.triggerSearch}>
                                 <button>
-                                    <SearchIcon />
+                                    {/* <SearchIcon /> */}
                                 </button>
                             </li>
                             {/* <SignInLinks />
                             <SignOutLinks /> */}
                         </ul>
-                    </Route>
                 </nav>
             </header>
         )
