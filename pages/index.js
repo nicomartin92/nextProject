@@ -1,5 +1,6 @@
 import Layout from '../layout/MainLayout.js'
 import Link from 'next/link'
+import { getProducts } from '../lib/moltin'
 
 function getPosts() {
   return [
@@ -33,7 +34,7 @@ const PostLink = ({ post }) => (
   </li>
 )
 
-export default function Blog() {
+/* export default function Home() {
   return (
     <Layout>
       <h1>title test</h1>
@@ -68,4 +69,21 @@ export default function Blog() {
       `}</style>
     </Layout>
   )
+} */
+
+
+const Home = ({ products }) => (
+  <Layout title='FrModelcars'>
+    <pre>{JSON.stringify(products, 't')}</pre>
+  </Layout>
+)
+
+Home.getInitialProps = async () => {
+  const products = await getProducts()
+
+  return {
+    products
+  }
 }
+
+export default Home
