@@ -1,6 +1,8 @@
 import Layout from '../layout/MainLayout.js'
+
 import Link from 'next/link'
 import { getProducts } from '../lib/moltin'
+import ProductList from '../components/ProductList'
 
 function getPosts() {
   return [
@@ -72,14 +74,27 @@ const PostLink = ({ post }) => (
 } */
 
 
-const Home = ({ products }) => (
+const Home = props => (
   <Layout title='FrModelcars'>
-    <pre>{JSON.stringify(products, 't')}</pre>
+    <ProductList {...props} />
   </Layout>
 )
 
 Home.getInitialProps = async () => {
-  const products = await getProducts()
+  const {data, included: {main_images}} = await getProducts()
+
+  const products = data.map(product => {
+    const imageId = product.relationships.main_images 
+      ? product.relationships.main_images.data.id 
+      : false
+
+    return {
+      ...product,
+      image: imageId 
+        ? main_images.find(img => img.id === imageId).link.href 
+        : '/static/link.svg' 
+    }
+  })
 
   return {
     products
