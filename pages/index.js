@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import React from 'react';
 import Layout from '../layout/MainLayout.js'
 
@@ -48,17 +50,23 @@ const PostLink = ({ post }) => (
 )
 
 // const Home = props =>  {
-class Home extends React.Component {  
+class Home extends React.Component {
   render() {
     return (
-      <Layout itemPanel={this.props.carR.cars}>
-        <h1>title test</h1>
-        <ul>
-          {getPosts().map(post => (
-            <PostLink key={post.id} post={post} />
-          ))}
-        </ul>
-        <style jsx>{`
+      <div>
+        <Head>
+          <title>@FRmodelcars</title>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        </Head>
+
+        <Layout itemPanel={this.props.carR.cars}>
+          <h1>title test</h1>
+          <ul>
+            {getPosts().map(post => (
+              <PostLink key={post.id} post={post} />
+            ))}
+          </ul>
+          <style jsx>{`
           h1,
           a {
             font-family: 'Arial';
@@ -82,7 +90,8 @@ class Home extends React.Component {
             opacity: 0.6;
           }
         `}</style>
-      </Layout>
+        </Layout>
+      </div>
     )
   }
 }
@@ -103,15 +112,15 @@ Home.getInitialProps = async () => {
   const {data, included: {main_images}} = await getProducts()
 
   const products = data.map(product => {
-    const imageId = product.relationships.main_images 
-      ? product.relationships.main_images.data.id 
+    const imageId = product.relationships.main_images
+      ? product.relationships.main_images.data.id
       : false
 
     return {
       ...product,
-      image: imageId 
-        ? main_images.find(img => img.id === imageId).link.href 
-        : '/static/link.svg' 
+      image: imageId
+        ? main_images.find(img => img.id === imageId).link.href
+        : '/static/link.svg'
     }
   })
 
