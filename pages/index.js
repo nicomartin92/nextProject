@@ -1,8 +1,19 @@
+import React from 'react';
 import Layout from '../layout/MainLayout.js'
 
 import Link from 'next/link'
 // import { getProducts } from '../lib/moltin'
 import ProductList from '../components/ProductList'
+
+import { connect } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from '../store/reducers/rootReducer';
+// import actions from '../store/actions';
+
+export const initStore = (initialState = {}) => {
+  return createStore(rootReducer, initialState, applyMiddleware(thunk));
+};
 
 function getPosts() {
   return [
@@ -36,42 +47,52 @@ const PostLink = ({ post }) => (
   </li>
 )
 
-export default function Home() {
-  return (
-    <Layout>
-      <h1>title test</h1>
-      <ul>
-        {getPosts().map(post => (
-          <PostLink key={post.id} post={post} />
-        ))}
-      </ul>
-      <style jsx>{`
-        h1,
-        a {
-          font-family: 'Arial';
-        }
+// const Home = props =>  {
+class Home extends React.Component {  
+  render() {
+    console.warn('home props ', this.props.carR);
 
-        ul {
-          padding: 0;
-        }
-
-        li {
-          list-style: none;
-          margin: 5px 0;
-        }
-
-        a {
-          text-decoration: none;
-          color: blue;
-        }
-
-        a:hover {
-          opacity: 0.6;
-        }
-      `}</style>
-    </Layout>
-  )
+    return (
+      <Layout>
+        <h1>title test</h1>
+        <ul>
+          {getPosts().map(post => (
+            <PostLink key={post.id} post={post} />
+          ))}
+        </ul>
+        <style jsx>{`
+          h1,
+          a {
+            font-family: 'Arial';
+          }
+  
+          ul {
+            padding: 0;
+          }
+  
+          li {
+            list-style: none;
+            margin: 5px 0;
+          }
+  
+          a {
+            text-decoration: none;
+            color: blue;
+          }
+  
+          a:hover {
+            opacity: 0.6;
+          }
+        `}</style>
+      </Layout>
+    )
+  }
 }
+
+export default connect(
+  state => state,
+  // actions
+)(Home);
 
 
 /* const Home = props => (
