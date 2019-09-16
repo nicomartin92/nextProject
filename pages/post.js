@@ -1,6 +1,9 @@
 import { useRouter } from 'next/router'
 import Layout from '../layout/MainLayout'
 
+/* Styles */
+import '../styles/index.scss'
+
 const Page = () => {
   const router = useRouter()
 

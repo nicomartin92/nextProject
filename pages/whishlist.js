@@ -1,5 +1,8 @@
 import Layout from '../layout/MainLayout'
 
+/* Styles */
+import '../styles/index.scss'
+
 export default function Whishlits() {
   return (
     <Layout>
