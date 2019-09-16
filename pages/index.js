@@ -50,10 +50,8 @@ const PostLink = ({ post }) => (
 // const Home = props =>  {
 class Home extends React.Component {  
   render() {
-    console.warn('home props ', this.props.carR);
-
     return (
-      <Layout>
+      <Layout itemPanel={this.props.carR.cars}>
         <h1>title test</h1>
         <ul>
           {getPosts().map(post => (

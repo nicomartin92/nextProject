@@ -14,9 +14,11 @@
     padding: 60px 25px;
     box-shadow: 0 10px 36px 0 rgba(186, 194, 195, 0.47);
 
-    .App & {
+    left: -120vw;
+
+    /* .App & {
       left: -120vw;
-    }
+    } */
 
     @include large {
       height: 100vh;

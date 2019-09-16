@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import Link from 'next/link';
 import PubSub from 'pubsub-js';
-
-/* store */
-import { connect } from 'react-redux';
 
 import './PanelNav.scss';
 
@@ -47,6 +44,7 @@ class PanelNav extends Component {
                 isOpen: true
             })
         } else {
+            console.warn('close panel');
             this.setState({
                 isOpen: false
             })
@@ -54,6 +52,24 @@ class PanelNav extends Component {
     }
 
     render() {
+        const carsData = this.props.items.itemPanel;
+
+        const mapcars = carsData.map((car) => (
+            <li key={car.id}>
+                <Link passHref href={`/Car/${car.reference}`}>
+                    <a className="panelNav__item">
+                        <div className="panelNav__label">
+                            {car.brand} {car.model} {car.version}
+                        </div>
+                        <div className="panelNav__image">
+                            <img src={`/static${car.views[0].image1}`} loading="lazy" alt={car.model} />
+                        </div>
+                    </a>
+                </Link>
+
+            </li>
+        ))
+
         return (
             <div className={this.state.isOpen ? "panelNav expanded" : "panelNav"}>
                 <div className={this.state.isOpen ? "overlay expanded" : "overlay"}
@@ -66,32 +82,23 @@ class PanelNav extends Component {
                 </button>
                 <h3>cars</h3>
                 <ul>
-                    {/* this.state.carsDataJsonFromState */}
-                    {this.props.cars.map((car) => (
+                    {mapcars}
+                    {/* carsData.map((car) => (
                         <li key={car.id}>
-                            <NavLink className="panelNav__item" to={`/Car/${car.reference}`} onClick={() => this.panelSwitcher(false)}>
+                            <Link className="panelNav__item" passHref href={`/Car/${car.reference}`} onClick={() => this.panelSwitcher(false)}>
                                 <div className="panelNav__label">
                                     {car.brand} {car.model} {car.version}
                                 </div>
                                 <div className="panelNav__image">
                                     <img src={car.views[0].image1} loading="lazy" alt={car.model} />
                                 </div>
-                            </NavLink>
+                            </Link>
                         </li>
-                    ))}
+                    )) */}
                 </ul>
             </div>
         )
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        cars: state.carR.cars,
-        stock: state.carR.stock,
-        toast: state.carR.toast
-    }
-}
-
-// export default PanelNav;
-export default connect(mapStateToProps)(PanelNav);
+export default PanelNav;
