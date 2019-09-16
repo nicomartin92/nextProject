@@ -52,11 +52,9 @@ class PanelNav extends Component {
     }
 
     render() {
-        const carsData = this.props.items.itemPanel;
-
-        const mapcars = carsData.map((car) => (
+        const mapcars = this.props.items.itemPanel.map((car) => (
             <li key={car.id}>
-                <Link passHref href={`/Car/${car.reference}`}>
+                <Link passHref href={`/cars/${car.reference}`}>
                     <a className="panelNav__item">
                         <div className="panelNav__label">
                             {car.brand} {car.model} {car.version}
@@ -83,18 +81,6 @@ class PanelNav extends Component {
                 <h3>cars</h3>
                 <ul>
                     {mapcars}
-                    {/* carsData.map((car) => (
-                        <li key={car.id}>
-                            <Link className="panelNav__item" passHref href={`/Car/${car.reference}`} onClick={() => this.panelSwitcher(false)}>
-                                <div className="panelNav__label">
-                                    {car.brand} {car.model} {car.version}
-                                </div>
-                                <div className="panelNav__image">
-                                    <img src={car.views[0].image1} loading="lazy" alt={car.model} />
-                                </div>
-                            </Link>
-                        </li>
-                    )) */}
                 </ul>
             </div>
         )
