@@ -1,0 +1,131 @@
+.headLine {
+    margin: 0 auto;
+    flex: 0 0 80%;
+    max-width: 80%;
+    border-left: 4px solid $colorBlue;
+    padding: 10px 0 0 25px;
+    text-align: left;
+
+    @include medium {    
+        flex: 0 0 30%;
+        max-width: 30%;
+    }
+
+    &__title {
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+        font-size: 18px;
+    }
+}
+
+.subTitle {
+    font-size: 45px;
+    color: $colorBlue;
+    position: relative;
+    display: inline-block;
+    padding-right: 30px;
+    margin-bottom: 30px;
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: -25px;
+        width: 1px;
+        height: 100px;
+        background: $colorBlue;
+        transform: skewX(-18deg);
+    }
+}
+
+.skew {
+    @include skew(20px, $colorBlack);
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    fill: $colorBlack;
+    stroke: $colorBlack;
+}
+
+.button {
+    @include button($colorBlack, $colorWhite);
+}
+
+input {
+    margin: 20px 0;
+    min-height: 40px;
+    padding: 5px 15px;
+}
+
+a {
+    text-decoration: none;
+    color: $colorBlack;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.inputSearch {
+    border: none;
+    font-size: 25px;
+    border-bottom: 1px solid $colorBlack;
+    outline: none;
+
+    @include medium {
+        font-size: 40px;
+    }
+}
+
+.overlay {
+    position: fixed;
+    left: 50vw;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: $colorGray04;
+    opacity: .5;
+    left: 120vw;
+    transition: right 1s cubic-bezier(.19,1,.22,1),left 1s cubic-bezier(.19,1,.22,1);
+
+    &.expanded {
+        left: 120vw;
+
+        @include large {
+            left: 50vw;
+        }
+    }
+}
+
+svg {
+    width: 15px;
+    height: 15px;
+}
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.arrow {
+    width: 30px;
+    height: 30px;
+
+    &.left {
+        transform: rotate(180deg);
+    }
+}

@@ -8,7 +8,7 @@ import PubSub from 'pubsub-js';
 /* SVG */
 // import { ReactComponent as SearchIcon } from '../../assets/search-icon.svg';
 
-// import './Header.scss';
+import './Header.scss';
 
 class Headers extends Component {
 

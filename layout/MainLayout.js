@@ -4,7 +4,7 @@ import Header from '../components/Header/Header'
 // import Footer from '../components/Footer'
 
 const layoutStyle = {
-  paddingTop: '7em'
+  // paddingTop: '7em'
 }
 
 export default function Layout(props) {

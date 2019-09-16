@@ -4,6 +4,8 @@ import Link from 'next/link'
 // import { getProducts } from '../lib/moltin'
 import ProductList from '../components/ProductList'
 
+import '../styles/index.scss';
+
 function getPosts() {
   return [
     { id: 'hello-nextjs', title: 'Hello Next.js' },
