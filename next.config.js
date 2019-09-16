@@ -13,7 +13,8 @@ module.exports = withCSS(withSass({
        });
 
        return config;
-   }
+   },
+   compress: true
 }));
 
 
