@@ -44,7 +44,6 @@ class PanelNav extends Component {
                 isOpen: true
             })
         } else {
-            console.warn('close panel');
             this.setState({
                 isOpen: false
             })
@@ -64,7 +63,6 @@ class PanelNav extends Component {
                         </div>
                     </a>
                 </Link>
-
             </li>
         ))
 
