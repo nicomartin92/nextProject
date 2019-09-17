@@ -7,8 +7,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start -p %PORT%",
-    "jsonserver": "json-server db.json --port 3003",
-    "pretest": "eslint --ignore-path .gitignore ."
+    "jsonserver": "json-server db.json --port 3003"
   },
   "keywords": [],
   "author": "",

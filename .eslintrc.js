@@ -1,4 +1,4 @@
-module.exports = {
+module.export = {
     "env": {
         "browser": true,
         "es6": true
