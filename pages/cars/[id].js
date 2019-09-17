@@ -3,10 +3,9 @@ import Head from 'next/head'
 import React from 'react';
 import Layout from '../../layout/MainLayout'
 import { withRouter } from 'next/router'
-
-import { connect } from 'react-redux';
-
 import Markdown from 'react-markdown'
+
+import { connect } from 'react-redux'
 
 class CarId extends React.Component {
   render() {
