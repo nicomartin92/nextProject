@@ -11,11 +11,11 @@ import Markdown from 'react-markdown'
 class CarId extends React.Component {
   render() {
     const { router } = this.props
-    console.warn('router ', router);
-
     const selectedCar = this.props.carR.cars.filter(car => car.reference === router.query.id)
-    console.warn('selectedCar ', selectedCar);
+    const otherModels = this.props.carR.cars.filter(car => car.brand === selectedCar[0].brand)
 
+    console.warn('other models ', otherModels);
+    
     return (
       <div>
         <Head>
