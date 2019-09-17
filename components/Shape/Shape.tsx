@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 /* SVG */
-import { ReactComponent as ShapeIcon } from '../../assets/shape.svg';
+// import { ReactComponent as ShapeIcon } from '../../assets/shape.svg';
 
 /* Styles */
 import './Shape.scss';
@@ -106,8 +106,12 @@ class Shape extends Component<MyProps, MyState> {
             )
         });
 
-        const showShape = this.state.svgDisplay ?
+        /* const showShape = this.state.svgDisplay ?
             <ShapeIcon className="shape__icon" ref="colorFill" /> :
+            ''; */
+
+        const showShape = this.state.svgDisplay ?
+            '' :
             '';
 
         return (

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
+import Link from 'next/link';
 
 /* SVG */
-import { ReactComponent as CrossIcon } from '../../assets/cross-icon.svg';
+// import { ReactComponent as CrossIcon } from '../../assets/cross-icon.svg';
 
 /* styles */
 import './Toaster.scss';
@@ -54,7 +55,7 @@ class Toaster extends Component<MyProps, MyState> {
         return (
             <div className={this.state.showToaster ? "toast -show" : "toast"}>
                 <div className="toast__wrapper">
-                    <NavLink to={`/Car/${this.props.item.url}`} >
+                    <Link href={`/Car/${this.props.item.url}`} >
                         <div className="toast__header">
                             {this.props.item.succes}
                         </div>
@@ -64,10 +65,10 @@ class Toaster extends Component<MyProps, MyState> {
                                 <img src={this.props.item.image} alt={this.props.item.text} />
                             </div>
                         </div>
-                    </NavLink>
+                    </Link>
 
                     <button className="toast__close" onClick={() => { this.toastDisplay(false) }}>
-                        <CrossIcon />
+                        {/* <CrossIcon /> */}
                     </button>
                 </div>
             </div>
