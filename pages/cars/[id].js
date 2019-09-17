@@ -13,9 +13,11 @@ class CarId extends React.Component {
     const { router } = this.props
     const selectedCar = this.props.carR.cars.filter(car => car.reference === router.query.id)
     const otherModels = this.props.carR.cars.filter(car => car.brand === selectedCar[0].brand)
+    const otherModelsExcluded = otherModels.filter(car => car.reference !== selectedCar[0].reference)
 
     console.warn('other models ', otherModels);
-    
+    console.warn('other models ', otherModelsExcluded);
+
     return (
       <div>
         <Head>
