@@ -3,7 +3,7 @@ import App, { Container } from 'next/app';
 import withRedux from 'next-redux-wrapper';
 import { initStore } from './index';
 
-export default withRedux(initStore, { debug: true })(
+export default withRedux(initStore, { debug: false })(
   class MyApp extends App {
     static async getInitialProps({ Component, ctx }) {
       return {
@@ -18,9 +18,9 @@ export default withRedux(initStore, { debug: true })(
     render() {
       const { Component, pageProps, store } = this.props;
       return (
-          <Provider store={store}>
-            <Component {...pageProps} />
-          </Provider>
+        <Provider store={store}>
+          <Component {...pageProps} />
+        </Provider>
       );
     }
   }

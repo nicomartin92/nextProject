@@ -7,7 +7,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start -p %PORT%",
-    "jsonserver": "json-server db.json --port 3003"
+    "jsonserver": "json-server db.json --port 3003",
+    "pretest": "eslint --ignore-path .gitignore ."
   },
   "keywords": [],
   "author": "",
@@ -27,7 +28,15 @@
     "semantic-ui-react": "0.88.1"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.3.0",
+    "@typescript-eslint/parser": "^2.3.0",
     "cross-env": "^5.2.1",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
     "react-redux": "^5.0.0",
     "redux": "^4.0.4"
   }

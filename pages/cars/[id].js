@@ -14,8 +14,8 @@ class CarId extends React.Component {
     const otherModels = this.props.carR.cars.filter(car => car.brand === selectedCar[0].brand)
     const otherModelsExcluded = otherModels.filter(car => car.reference !== selectedCar[0].reference)
 
-    console.warn('other models ', otherModels);
-    console.warn('other models ', otherModelsExcluded);
+    // console.warn('other models ', otherModels);
+    // console.warn('other models ', otherModelsExcluded);
 
     return (
       <div>
