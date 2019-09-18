@@ -1,19 +1,48 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import someData from '../../db.json';
 
 import PanelNav from '../../components/PanelNav/PanelNav';
 
-export const task = {
-  id: '1',
-  title: 'Test Task',
-  state: 'TASK_INBOX',
-  updatedAt: new Date(2018, 0, 1, 9, 0),
-};
+export const carProps = {
+  available: 'true',
+  image: './cars/renault/renault-clio-4-rs.jpg',
+  model: 'Clio 4',
+  title: 'title',
+  brand: 'renault',
+  version: 'rs',
+  year: '2017',
+  stock: 1,
+  id: 1,
+  reference: 'G020'
+}
 
-export const actions = {
-  onPinTask: action('onPinTask'),
-  onArchiveTask: action('onArchiveTask'),
-};
+export const carProps2 = [
+  {
+    available: 'true',
+    image: './cars/renault/renault-clio-4-rs.jpg',
+    model: 'Clio 4',
+    title: 'title',
+    brand: 'renault',
+    version: 'rs',
+    year: '2017',
+    stock: 1,
+    id: 1,
+    reference: 'G020'
+  },
+  {
+    available: 'true',
+    image: './cars/renault/renault-clio-4-rs.jpg',
+    model: 'Clio 4',
+    title: 'title',
+    brand: 'renault',
+    version: 'rs',
+    year: '2017',
+    stock: 1,
+    id: 1,
+    reference: 'G020'
+  }
+]
 
 storiesOf('PanelNav', module)
-  .add('default', () => <PanelNav />)
+  .add('default', () => <PanelNav items={{ carProps2 }} />)
