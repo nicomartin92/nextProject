@@ -44,7 +44,6 @@ export class Autocomplete extends Component {
         const userInput = this.refs.search.value;
 
         // const filteredOptions = this.state.originCarsDataJsonFromState.filter(function (car) {
-        // const filteredOptions = this.props.cars.filter(function (car) {
         const filteredOptions = this.props.items.carItems.filter(function (car) {
             return car.model.toLowerCase().match(userInput.toLowerCase()) ||
                 car.brand.toLowerCase().match(userInput.toLowerCase()) ||
