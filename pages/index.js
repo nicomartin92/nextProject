@@ -60,7 +60,7 @@ class Home extends React.Component {
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
 
-        <Layout itemPanel={this.props.carR.cars}>
+        <Layout carItems={this.props.carR.cars} stock={this.props.carR.stock}>
           <h1>title test</h1>
           <ul>
             {getPosts().map(post => (

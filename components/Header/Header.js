@@ -51,7 +51,7 @@ class Headers extends Component {
                             </li>
                             <li onClick={this.triggerSearch}>
                                 <button>
-                                    {/* <SearchIcon /> */}
+                                    {/* <SearchIcon /> */} search
                                 </button>
                             </li>
                             {/* <SignInLinks />

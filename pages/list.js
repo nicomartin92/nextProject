@@ -18,7 +18,7 @@ class List extends React.Component {
 
         <Layout
           title="FrModelcar - page de catégorie"
-          itemPanel={this.props.carR.cars}>
+          carItems={this.props.carR.cars}>
           <p>This is the List page</p>
         </Layout>
       </div>

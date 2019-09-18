@@ -51,7 +51,7 @@ class PanelNav extends Component {
     }
 
     render() {
-        const mapcars = this.props.items.itemPanel.map((car) => (
+        const mapcars = this.props.items.carItems.map((car) => (
             <li key={car.id}>
                 <Link passHref href="/cars/[reference]" as={`/cars/${car.reference}`}>
                     <a className="panelNav__item">

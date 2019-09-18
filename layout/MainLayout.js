@@ -3,6 +3,7 @@
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer.tsx'
 import PanelNav from '../components/PanelNav/PanelNav'
+import Autocomplete from '../components/Autocomplete/Autocomplete'
 
 /* Styles */
 import '../styles/index.scss'
@@ -16,6 +17,7 @@ export default function Layout(props) {
     <div style={layoutStyle} className="next">
       <PanelNav items={props} />
       <Header />
+      <Autocomplete items={props} />
       <div className="main">
         {props.children}
       </div>

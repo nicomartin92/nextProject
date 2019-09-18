@@ -16,7 +16,7 @@ class Status extends React.Component {
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
 
-        <Layout itemPanel={this.props.carR.cars}>
+        <Layout carItems={this.props.carR.cars}>
           <p>This is the Status page</p>
         </Layout>
       </div>

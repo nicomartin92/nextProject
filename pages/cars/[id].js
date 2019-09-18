@@ -26,7 +26,7 @@ class CarId extends React.Component {
 
         <Layout
           title="FrModelcar - page de catégorie"
-          itemPanel={this.props.carR.cars}>
+          carItems={this.props.carR.cars}>
           <p>This is the model page {router.query.id}</p>
           <h1>{selectedCar[0].brand} {selectedCar[0].model} {selectedCar[0].version}</h1>
         </Layout>
