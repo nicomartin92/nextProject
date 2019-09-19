@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import someData from '../../db.json';
 
-import PanelNav from '../../components/PanelNav/PanelNav';
+import PanelNav from './PanelNav';
 
 export const carProps = {
   available: 'true',
@@ -10,6 +10,7 @@ export const carProps = {
   model: 'Clio 4',
   title: 'title',
   brand: 'renault',
+  model: 'model',
   version: 'rs',
   year: '2017',
   stock: 1,
@@ -45,4 +46,4 @@ export const carProps2 = [
 ]
 
 storiesOf('PanelNav', module)
-  .add('default', () => <PanelNav items={{ carProps2 }} />)
+  .add('default', () => <PanelNav items={{ }} />)
