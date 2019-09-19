@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start -p %PORT%",
     "jsonserver": "json-server db.json --port 3003",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 9009 -s ./public,./static",
     "build-storybook": "build-storybook"
   },
   "keywords": [],

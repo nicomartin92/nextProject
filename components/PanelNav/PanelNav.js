@@ -8,7 +8,7 @@ class PanelNav extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            isOpen: false,
+            isOpen: this.props.isVisible ? true: false,
             carsDataJsonFromState: [],
             data: {}
         }

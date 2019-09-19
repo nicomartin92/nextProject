@@ -11,7 +11,7 @@ export class Autocomplete extends Component {
             originCarsDataJsonFromState: [],
             filteredOptions: [],
             userInput: '',
-            isExpanded: false,
+            isExpanded: this.props.isVisible ? true : false,
             isTyping: false
         }
         this.onChange = this.onChange.bind(this);
