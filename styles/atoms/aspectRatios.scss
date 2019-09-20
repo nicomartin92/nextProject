@@ -1,0 +1,24 @@
+.aspectRatio {
+    @include aspect-ratio(30px, 30px);
+
+    &.aspectRatio-3by4 {
+        @include aspect-ratio(30px, 40px);
+    }
+
+    &.aspectRatio-4by3 {
+        @include aspect-ratio(40px, 30px);
+    }
+
+    &.aspectRatio-16by9 {
+        @include aspect-ratio(16px, 9px);
+    }
+
+    &.aspectRatio-16by9 {
+        @include aspect-ratio(16px, 9px);
+    }
+
+    &.aspectRatio-9by16 {
+        @include aspect-ratio(16px, 9px);
+    }
+}
+
