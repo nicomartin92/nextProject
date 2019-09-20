@@ -1,10 +1,10 @@
 import React from 'react';
 export default () =>
     <main className="">
-        <h2>large text</h2>
-        <div className="aspect-ratio aspect-ratio--16x9 mb4">
-            <div
-                className="aspect-ratio--object cover"
-                style={background: "url(http://mrmrs.github.io/photos/001.jpg) center"}/>
-            </div>
+        <h2>Aspect ratio 16by9</h2>
+        <div className="aspectRatio aspectRatio-16by9">
+            <div className="content">
+                <img src="https://dummyimage.com/1600x900/000/fff&text=16x9" alt="my awsome image" />
+            </div>  
+        </div>              
     </main>;

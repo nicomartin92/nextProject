@@ -173,6 +173,7 @@
 // Aspect ratio
 @mixin aspect-ratio($width, $height) {
   position: relative;
+  overflow: hidden;
   &:after {
     display: block;
     content: "";
@@ -185,6 +186,10 @@
     left: 0;
     right: 0;
     bottom: 0;
+
+    img {
+      width: 100%;
+    }
   }
 }
 

@@ -3,6 +3,6 @@ import { storiesOf } from '@storybook/react'
 import ButtonSimple from './ButtonSimple.js'
 import ButtonClose from './ButtonClose.js'
 
-storiesOf('Button')
+storiesOf('Atoms/Button')
   .add('Button Simple', ButtonSimple, { inline: true })
   .add('Close button', ButtonClose, { inline: true })

@@ -277,5 +277,5 @@ export const carItems = [
 
 const isVisible = true
 
-storiesOf('Autocomplete', module)
+storiesOf('Molecules/Autocomplete', module)
   .add('default', () => <Autocomplete items={{ carItems }} isVisible={{ isVisible }} />)

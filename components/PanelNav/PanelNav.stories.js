@@ -43,7 +43,7 @@ export const carItems = [
 
 const isVisible = true
 
-storiesOf('PanelNav', module)
+storiesOf('Molecules/PanelNav', module)
   .add('default', () => <PanelNav items={{ carItems }} isVisible={{ isVisible }} />)
   .add('long list', () => {
     const carItems = [
