@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 import Layout from '../layout/MainLayout'
+import Dashboard from '../components/Dashboard/Dashboard'
 
 import { connect } from 'react-redux';
 
@@ -18,6 +19,7 @@ class Status extends React.Component {
 
         <Layout carItems={this.props.carR.cars}>
           <p>This is the Status page</p>
+          <Dashboard items={this.props.carR.cars} />
         </Layout>
       </div>
     )
