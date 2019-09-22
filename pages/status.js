@@ -5,9 +5,6 @@ import Dashboard from '../components/Dashboard/Dashboard'
 
 import { connect } from 'react-redux';
 
-/* Styles */
-import '../styles/index.scss'
-
 class Status extends React.Component {
   render() {
     return (
