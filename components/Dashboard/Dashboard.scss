@@ -1,6 +1,6 @@
 @import '../../styles/index.scss';
 
-/* .gridTable {
+.gridTable {
     display: grid;
 
     &__row {
@@ -19,40 +19,5 @@
         @include medium {
             width: 120px;
         }
-    }
-}
-
-.dashboard {
-    &__icon {
-        width: 30px;
-        height: 30px;
-
-        @include medium {
-            width: 40px;
-            height: 40px;
-        }
-    }
-} */
-
-.dashboard {
-    display: flex;
-  justify-content: flex-start;
-  align-items: center;
-
-  height: 50px;
-  width: 100%;
-
-  padding: 0 20px;
-
-  font-family: Arial, sans-serif;
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-  text-transform: uppercase;
-
-  background: crimson;
-
-    @include medium {
-        width: 120px;
     }
 }

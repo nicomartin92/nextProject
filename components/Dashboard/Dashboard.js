@@ -3,14 +3,12 @@ import React, { Component } from 'react';
 /* SVG */
 // import { ReactComponent as DeleteIcon } from '../../assets/delete-icon.svg';
 
-// import './Dashboard.scss';
-import "./Dashboard.scss";
+import './Dashboard.scss';
 
-/* class Dashboard extends Component {
+class Dashboard extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            carsDataFromStore: this.props.items,
             labels: {
                 status: "Status",
                 sell: "A Vendre",
@@ -56,9 +54,9 @@ import "./Dashboard.scss";
     }
 
     render() {
-        const carRows = this.state.carsDataFromStore.map(car => {
+        const carRows = this.props.items.map(car => {
             return (
-                <div className="gridTable__row">
+                <div className="gridTable__row" key={car.id}>
                     <div className="gridTable__cell">
                         {car.brand} {car.model} {car.version}
                     </div>
@@ -76,7 +74,9 @@ import "./Dashboard.scss";
                     </div>
 
                     <div className="gridTable__cell">
-                        
+                        {/* <button onClick={() => this.deleteCar(car.id)}>
+                        <DeleteIcon className="dashboard__icon" />
+                    </button> */}
                     </div>
                 </div>
             )
@@ -97,8 +97,12 @@ import "./Dashboard.scss";
             </div>
         )
     }
-} */
+}
 
-const Dashboard = () => <div className="dashboard">Dashboard</div>;
+/* const mapDispatchToProps = (dispatch) => {
+    return {
+        deleteCar: (id) => { dispatch({type: 'DELETE__CAR', id: id}) }
+    }
+} */
 
 export default Dashboard;

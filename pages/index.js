@@ -22,7 +22,7 @@ function getPosts() {
     { id: 'hello-nextjs', title: 'Hello Next.js' },
     { id: 'learn-nextjs', title: 'Learn Next.js is awesome' },
     { id: 'deploy-nextjs', title: 'Deploy apps with ZEIT' },
-    { id: 3, title: 'car'}
+    { id: 3, title: 'car' }
   ]
 }
 
@@ -54,24 +54,22 @@ const PostLink = ({ post }) => (
   </li>
 )
 
-// const Home = props =>  {
-class Home extends React.Component {
-  render() {
-    return (
-      <div>
-        <Head>
-          <title>@FRmodelcars</title>
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        </Head>
+const Home = props => {
+  return (
+    <div>
+      <Head>
+        <title>@FRmodelcars</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
 
-        <Layout carItems={this.props.carR.cars} stock={this.props.carR.stock}>
-          <h1>title test</h1>
-          <ul>
-            {getPosts().map(post => (
-              <PostLink key={post.id} post={post} />
-            ))}
-          </ul>
-          <style jsx>{`
+      <Layout carItems={props.carR.cars} stock={props.carR.stock}>
+        <h1>title test</h1>
+        <ul>
+          {getPosts().map(post => (
+            <PostLink key={post.id} post={post} />
+          ))}
+        </ul>
+        <style jsx>{`
           h1,
           a {
             font-family: 'Arial';
@@ -95,10 +93,9 @@ class Home extends React.Component {
             opacity: 0.6;
           }
         `}</style>
-        </Layout>
-      </div>
-    )
-  }
+      </Layout>
+    </div>
+  )
 }
 
 export default connect(

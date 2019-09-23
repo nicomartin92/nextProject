@@ -6,10 +6,7 @@ import Dashboard from '../components/Dashboard/Dashboard'
 
 import { connect } from 'react-redux';
 
-import '../components/Dashboard/Dashboard.scss';
-
-class Status extends React.Component {
-  render() {
+const Status = (props) => {
     return (
       <div>
         <Head>
@@ -17,13 +14,12 @@ class Status extends React.Component {
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
 
-        <Layout carItems={this.props.carR.cars}>
+        <Layout carItems={props.carR.cars}>
           <p>This is the Status page</p>
-          <Dashboard items={this.props.carR.cars} />
+          <Dashboard items={props.carR.cars} />
         </Layout>
       </div>
     )
-  }
 }
 
 export default connect(

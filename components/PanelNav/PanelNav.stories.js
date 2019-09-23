@@ -16,8 +16,8 @@ export const carItems = [
     reference: 'G020',
     views: [
       {
-        image1: "/cars/peugeot/peugeot-305-gtx-profil.jpg",
-        image2: "/cars/peugeot/peugeot-305-gtx-rear.jpg"
+        image1: "./cars/peugeot/peugeot-305-gtx-profil.jpg",
+        image2: "./cars/peugeot/peugeot-305-gtx-rear.jpg"
       }
     ]
   },

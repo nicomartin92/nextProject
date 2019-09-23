@@ -20,40 +20,32 @@ class Headers extends Component {
     render() {
         return (
             <header>
-                <nav 
+                <nav
                     style={{ color: '#000000' }}>
-                        <ul className="nav">
-                            <li>
-                                <button onClick={this.handleClick}>Cars</button>
-                            </li>
-                            <li>
-                                <Link passHref href="/">
-                                    <a title="Accueil">Accueil</a>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link passHref href="/list">
-                                    <a title="Catégorie">Catégorie</a>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link passHref href="/whishlist">
-                                    <a title="Whishlist">Whishlist</a>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link passHref href="/status">
-                                    <a title="Status">Status</a>
-                                </Link>
-                            </li>
-                            <li onClick={this.triggerSearch}>
-                                <button>
-                                    {/* <SearchIcon /> */} search
+                    <ul className="nav">
+                        <li>
+                            <button onClick={this.handleClick}>Cars</button>
+                        </li>
+                        <li>
+                            <a href="/" title="Accueil">Accueil</a>
+                        </li>
+                        <li>
+                            <a href="/list" title="Catégorie">Catégorie</a>
+                        </li>
+                        <li>
+                            <a href="/whishlist" title="Whishlist">Whishlist</a>
+                        </li>
+                        <li>
+                            <a href="/status" title="Status">Status</a>
+                        </li>
+                        <li onClick={this.triggerSearch}>
+                            <button>
+                                {/* <SearchIcon /> */} search
                                 </button>
-                            </li>
-                            {/* <SignInLinks />
+                        </li>
+                        {/* <SignInLinks />
                             <SignOutLinks /> */}
-                        </ul>
+                    </ul>
                 </nav>
             </header>
         )
