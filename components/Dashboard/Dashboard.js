@@ -99,10 +99,4 @@ class Dashboard extends Component {
     }
 }
 
-/* const mapDispatchToProps = (dispatch) => {
-    return {
-        deleteCar: (id) => { dispatch({type: 'DELETE__CAR', id: id}) }
-    }
-} */
-
 export default Dashboard;

@@ -9,12 +9,16 @@
     "start": "next start -p %PORT%",
     "jsonserver": "json-server db.json --port 3003",
     "storybook": "start-storybook -p 9009 -s ./public,./static",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "analyze": "cross-env BUNDLE_ANALYZE=both next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@zeit/next-bundle-analyzer": "^0.1.2",
     "@moltin/sdk": "^3.23.0",
     "@next/bundle-analyzer": "^9.0.5",
     "@zeit/next-sass": "^1.0.1",
