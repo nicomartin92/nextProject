@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 /* SVG */
 // import { ReactComponent as DeleteIcon } from '../../assets/delete-icon.svg';
 
-import './Dashboard.scss';
+// import './Dashboard.scss';
+import "./Dashboard.scss";
 
-class Dashboard extends Component {
+/* class Dashboard extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -55,8 +56,6 @@ class Dashboard extends Component {
     }
 
     render() {
-        console.warn('data ', this.state.carsDataFromStore);
-
         const carRows = this.state.carsDataFromStore.map(car => {
             return (
                 <div className="gridTable__row">
@@ -77,9 +76,7 @@ class Dashboard extends Component {
                     </div>
 
                     <div className="gridTable__cell">
-                        {/* <button onClick={() => this.deleteCar(car.id)}>
-                        <DeleteIcon className="dashboard__icon" />
-                    </button> */}
+                        
                     </div>
                 </div>
             )
@@ -100,12 +97,8 @@ class Dashboard extends Component {
             </div>
         )
     }
-}
-
-/* const mapDispatchToProps = (dispatch) => {
-    return {
-        deleteCar: (id) => { dispatch({type: 'DELETE__CAR', id: id}) }
-    }
 } */
+
+const Dashboard = () => <div className="dashboard">Dashboard</div>;
 
 export default Dashboard;

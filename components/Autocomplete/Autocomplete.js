@@ -27,7 +27,7 @@ export class Autocomplete extends Component {
         });
 
         /* fetching API from Json */
-        fetch('http://localhost:3003/cars')
+        /* fetch('http://localhost:3003/cars')
             .then(res => res.json())
             .then((data) => {
                 this.setState({
@@ -35,7 +35,7 @@ export class Autocomplete extends Component {
                 })
                 // console.warn(this.state.filteredOptions)
             })
-            .catch(console.log);
+            .catch(console.log); */
 
         this.onkeyUp();
     }

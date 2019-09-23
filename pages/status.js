@@ -1,9 +1,12 @@
 import Head from 'next/head'
 
 import Layout from '../layout/MainLayout'
+import '../styles/index.scss';
 import Dashboard from '../components/Dashboard/Dashboard'
 
 import { connect } from 'react-redux';
+
+import '../components/Dashboard/Dashboard.scss';
 
 class Status extends React.Component {
   render() {

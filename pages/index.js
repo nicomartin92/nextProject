@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from 'next/head';
 
 import React from 'react';
 import Layout from '../layout/MainLayout.js'
@@ -31,6 +31,10 @@ const PostLink = ({ post }) => (
     <Link href="/cars/[id]" as={`/cars/${post.id}`}>
       <a>{post.title}</a>
     </Link>
+    <Link href="/status">
+      <a>status</a>
+    </Link>
+
     <style jsx>{`
       li {
         list-style: none;

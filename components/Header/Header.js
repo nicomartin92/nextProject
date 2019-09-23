@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-// import { Route, Link } from 'react-router-dom';
 import Link from 'next/link'
 import PubSub from 'pubsub-js';
-// import SignInLinks from './SignInLinks';
-// import SignOutLinks from './SignOutLinks';
 
 /* SVG */
 // import { ReactComponent as SearchIcon } from '../../assets/search-icon.svg';
