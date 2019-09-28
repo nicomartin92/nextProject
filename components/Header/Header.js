@@ -30,7 +30,7 @@ class Headers extends Component {
                             <a href="/" title="Accueil">Accueil</a>
                         </li>
                         <li>
-                            <a href="/list" title="Catégorie">Catégorie</a>
+                            <a href="/category" title="Catégorie">Catégorie</a>
                         </li>
                         <li>
                             <a href="/whishlist" title="Whishlist">Whishlist</a>

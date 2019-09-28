@@ -1,13 +1,14 @@
 import Head from 'next/head'
 
 import Layout from '../layout/MainLayout'
+import List from '../components/List/List'
 
 import { connect } from 'react-redux';
 
 /* Styles */
 import '../styles/index.scss'
 
-class List extends React.Component {
+class Category extends React.Component {
   render() {
     return (
       <div>
@@ -20,6 +21,9 @@ class List extends React.Component {
           title="FrModelcar - page de catégorie"
           carItems={this.props.carR.cars}>
           <p>This is the List page</p>
+          <List items={this.props.carR.cars}
+                isLoading={false}
+                countStock={13} />
         </Layout>
       </div>
     )
@@ -29,4 +33,4 @@ class List extends React.Component {
 export default connect(
   state => state,
   // actions
-)(List);
+)(Category);
