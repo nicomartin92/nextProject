@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Link from 'next/link'
 import PubSub from 'pubsub-js';
 
 /* SVG */
@@ -7,49 +6,46 @@ import PubSub from 'pubsub-js';
 
 import './Header.scss';
 
-class Headers extends Component {
-
-    handleClick() {
+const Headers = () => {
+    const handleClick = () => {
         PubSub.publish('open:panelNav', true);
     }
 
-    triggerSearch() {
+    const triggerSearch = () => {
         PubSub.publish('open:search', true);
     }
 
-    render() {
-        return (
-            <header>
-                <nav
-                    style={{ color: '#000000' }}>
-                    <ul className="nav">
-                        <li>
-                            <button onClick={this.handleClick}>Cars</button>
-                        </li>
-                        <li>
-                            <a href="/" title="Accueil">Accueil</a>
-                        </li>
-                        <li>
-                            <a href="/category" title="Catégorie">Catégorie</a>
-                        </li>
-                        <li>
-                            <a href="/whishlist" title="Whishlist">Whishlist</a>
-                        </li>
-                        <li>
-                            <a href="/status" title="Status">Status</a>
-                        </li>
-                        <li onClick={this.triggerSearch}>
-                            <button>
-                                {/* <SearchIcon /> */} search
+    return (
+        <header>
+            <nav
+                style={{ color: '#000000' }}>
+                <ul className="nav">
+                    <li>
+                        <button onClick={handleClick}>Cars</button>
+                    </li>
+                    <li>
+                        <a href="/" title="Accueil">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="/category" title="Catégorie">Catégorie</a>
+                    </li>
+                    <li>
+                        <a href="/whishlist" title="Whishlist">Whishlist</a>
+                    </li>
+                    <li>
+                        <a href="/status" title="Status">Status</a>
+                    </li>
+                    <li onClick={triggerSearch}>
+                        <button>
+                            {/* <SearchIcon /> */} search
                                 </button>
-                        </li>
-                        {/* <SignInLinks />
+                    </li>
+                    {/* <SignInLinks />
                             <SignOutLinks /> */}
-                    </ul>
-                </nav>
-            </header>
-        )
-    }
+                </ul>
+            </nav>
+        </header>
+    )
 }
 
 export default Headers;

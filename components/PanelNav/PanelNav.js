@@ -13,7 +13,9 @@ const PanelNav = (props) => {
             setIsOpen(true)
         });
 
-        PubSub.unsubscribe();
+        return () => {
+            PubSub.unsubscribe();
+        };
 
         /* fetching API from Json */
         /* fetch('http://localhost:3003/cars')

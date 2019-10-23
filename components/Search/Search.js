@@ -44,8 +44,6 @@ const Search = (props) => {
     }
 
     const year = (year) => {
-        // Please keep it
-        // let _cars1 = this.state.carsDataJsonFromState;
         let _cars1 = props.items;
         _cars1 = _cars1.slice().sort((a, b) => {
             if (year === 'asc') {
@@ -58,8 +56,6 @@ const Search = (props) => {
     }
 
     const countryBrand = (country) => {
-        // Please keep it 
-        // let _countryBrand = this.state.originCarsDataJsonFromState;
         let _countryBrand = props.items;
         _countryBrand = _countryBrand.filter(function (car) {
             switch (country) {
@@ -81,7 +77,6 @@ const Search = (props) => {
                     return car.country === 'fr'
             }
         });
-        console.warn(_countryBrand);
         setCarsDataJsonFromState(_countryBrand);
     }
 
@@ -130,8 +125,8 @@ const Search = (props) => {
             </ul>
 
             <List items={carsDataJsonFromState}
-                isLoading={false}
-                countStock={13} />
+                  isLoading={false}
+                  countStock={13} />
         </div>
     )
 }

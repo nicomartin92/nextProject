@@ -4,6 +4,7 @@ import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer.tsx'
 import PanelNav from '../components/PanelNav/PanelNav'
 import Autocomplete from '../components/Autocomplete/Autocomplete'
+import PageIndicator from '../components/PageIndicator/PageIndicator'
 
 /* Styles */
 import '../styles/index.scss'
@@ -15,6 +16,7 @@ const layoutStyle = {
 export default function Layout(props) {
   return (
     <div style={layoutStyle} className="next">
+      <PageIndicator />
       <PanelNav items={props} />
       <Header />
       <Autocomplete items={props} />
