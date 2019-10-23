@@ -4,27 +4,24 @@ import PubSub from 'pubsub-js';
 
 import './Autocomplete.scss'
 
-export class Autocomplete extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            originCarsDataJsonFromState: [],
-            filteredOptions: [],
-            userInput: '',
-            isExpanded: this.props.isVisible ? true : false,
-            isTyping: false
-        }
-        this.onChange = this.onChange.bind(this);
-    }
+const Autocomplete = (props) => {
+    const search = React.useRef(null);
+    const [filteredOptions, setfilteredOptions] = React.useState([]);
+    const [userInput, setUserInput] = React.useState('');
+    const [isExpanded, setIsExpanded] = React.useState(false);
+    const [isTyping, setIsTyping] = React.useState(false);
 
-    /* did mount */
-    componentDidMount() {
+
+    React.useEffect(() => {
+
         PubSub.subscribe('open:search', () => {
-            this.setState({
-                isExpanded: true
-            });
-            //this.refs.search.focus();
+            setIsExpanded(true);
+            search.current.focus();
         });
+
+        return () => {
+            PubSub.unsubscribe();
+        };
 
         /* fetching API from Json */
         /* fetch('http://localhost:3003/cars')
@@ -36,15 +33,13 @@ export class Autocomplete extends Component {
                 // console.warn(this.state.filteredOptions)
             })
             .catch(console.log); */
+    }, []);
 
-        this.onkeyUp();
-    }
-
-    onChange(e) {
-        const userInput = this.refs.search.value;
+    const handleChange = (e) => {
+        const userInput = e.target.value;
 
         // const filteredOptions = this.state.originCarsDataJsonFromState.filter(function (car) {
-        const filteredOptions = this.props.items.carItems.filter(function (car) {
+        const filteredOptions = props.items.carItems.filter(function (car) {
             return car.model.toLowerCase().match(userInput.toLowerCase()) ||
                 car.brand.toLowerCase().match(userInput.toLowerCase()) ||
                 car.version.toLowerCase().match(userInput.toLowerCase()) ||
@@ -54,82 +49,72 @@ export class Autocomplete extends Component {
                 car.country.toLowerCase().match(userInput.toLowerCase());
         });
 
-        this.setState({
-            filteredOptions,
-            userInput: userInput
-        });
+        setfilteredOptions(filteredOptions);
+        setUserInput(userInput);
+
+        handleTyping(userInput);
     };
 
-    onkeyUp() {
-        this.refs.search.addEventListener('keyup', (event) => {
-            if (this.refs.search.value.length > 1) {
-                this.setState({
-                    isTyping: true
-                });
-            } else {
-                this.setState({
-                    isTyping: false
-                });
-            }
-        });
+    const handleTyping = (elem) => {
+        if (elem.length > 1) {
+            setIsTyping(true);
+        } else {
+            setIsTyping(false);
+        }
     }
 
-    displaySearch(isExpanded) {
-        this.setState({
-            isExpanded: isExpanded
-        })
+    const displaySearch = (isExpanded) => {
+        setIsExpanded(isExpanded);
     }
 
-    render() {
-        const carLength = this.state.filteredOptions.length;
-        const stockStore = this.props.items.stock;
+    const carLength = filteredOptions.length;
+    const stockStore = props.items.stock;
 
-        return (
-            <div className={this.state.isExpanded ? "search -expanded" : "search"}>
-                <div className="search__wrapper">
-                    <button className="buttonClose outer"
-                        onClick={() => this.displaySearch(false)}>
-                        <div className="inner">
-                            <label>Fermer</label>
-                        </div>
-                    </button>
+    return (
+        <div className={isExpanded ? "search -expanded" : "search"}>
+            <div className="search__wrapper">
+                <button className="buttonClose outer"
+                    onClick={() => displaySearch(false)}>
+                    <div className="inner">
+                        <label>Fermer</label>
+                    </div>
+                </button>
 
-                    <input
-                        type="text"
-                        className="search__box inputSearch"
-                        onChange={() => this.onChange()}
-                        value={this.state.userInput}
-                        placeholder="Rechercher"
-                        ref="search"
-                    />
+                <input
+                    type="text"
+                    className="search__box inputSearch"
+                    onChange={handleChange}
+                    value={userInput}
+                    placeholder="Rechercher"
+                    ref={search}
+                />
 
-                    <div className="search__carResults">
-                        Résultats:<span className="bold"> ({carLength})</span> voiture(s)
+                <div className="search__carResults">
+                    Résultats:<span className="bold"> ({carLength})</span> voiture(s)
                         <span className="bold">({stockStore})</span> à Vendre
                     </div>
 
-                    <ul className={this.state.isTyping ? "search__list -expanded" : "search__list"}>
-                        {this.state.filteredOptions.map((car) => (
-                            <li className="search__listItem" key={car.id}>
-                                <Link
-                                    passHref href="/cars/[reference]"
-                                    as={`/cars/${car.reference}`}>
-                                    <a className="search__listLink" onClick={() => this.displaySearch(false)}>
-                                        <img className="search__listImage"
-                                            src={`/static${car.views[0].image1}`}
-                                            alt={`${this.state.brand} ${this.state.model} ${this.state.version}`} />
-                                        <div>
-                                            <span className="bold">{car.brand} {car.model} {car.version}</span> - <span className="skew">{car.brandshop}</span>
-                                        </div>
-                                    </a>
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                <ul className={isTyping ? "search__list -expanded" : "search__list"}>
+                    {filteredOptions.map((car) => (
+                        <li className="search__listItem" key={car.id}>
+                            <Link
+                                passHref href="/cars/[reference]"
+                                as={`/cars/${car.reference}`}>
+                                <a className="search__listLink" onClick={() => displaySearch(false)}>
+                                    <img className="search__listImage"
+                                        src={`/static${car.views[0].image1}`}
+                                        alt={`${car.brand} ${car.model} ${car.version}`} />
+                                    <div>
+                                        <span className="bold">{car.brand} {car.model} {car.version}</span> - <span className="skew">{car.brandshop}</span>
+                                    </div>
+                                </a>
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
             </div>
-        );
-    }
+        </div>
+    )
 }
 
 export default Autocomplete;
