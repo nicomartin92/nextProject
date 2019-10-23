@@ -64,4 +64,4 @@ class PageIndicator extends Component<MyProps, MyState> {
     }
 }
 
-export default PageIndicator
+// export default PageIndicator
