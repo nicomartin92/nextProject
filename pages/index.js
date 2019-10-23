@@ -38,10 +38,6 @@ const PostLink = ({ post }) => (
         color: blue;
         font-family: 'Arial';
       }
-
-      a:hover {
-        opacity: 0.6;
-      }
     `}</style>
   </li>
 )
@@ -54,10 +50,6 @@ const Home = (props) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
-      {props.carR.cars.map(post => (
-            console.warn(post)
-      ))}
-
       <Layout carItems={props.carR.cars} stock={props.carR.stock}>
         <h1>title test</h1>
         <ul>
@@ -66,11 +58,6 @@ const Home = (props) => {
           ))}
         </ul>
         <style jsx>{`
-          h1,
-          a {
-            font-family: 'Arial';
-          }
-  
           ul {
             padding: 0;
           }
@@ -83,10 +70,6 @@ const Home = (props) => {
           a {
             text-decoration: none;
             color: blue;
-          }
-  
-          a:hover {
-            opacity: 0.6;
           }
         `}</style>
       </Layout>
