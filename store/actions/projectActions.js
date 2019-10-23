@@ -1,4 +1,4 @@
-export const createProject = (project) => {
+/* export const createProject = (project) => {
     return (dispatch, getState, { getFirebase, getFirestore }) => {
         const firestore = getFirestore();
 
@@ -14,4 +14,15 @@ export const createProject = (project) => {
             dispatch({ type: 'CREATE__PROJECT__ERROR', err });
         });  
     }
+}; */
+
+
+function deleteItem(dispatch, item) {
+    dispatch({
+        type: "REMOVE_ITEM",
+        item: item
+    });
+}
+module.exports = {
+    deleteItem: deleteItem
 };

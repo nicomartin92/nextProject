@@ -4,8 +4,7 @@ import Layout from '../layout/MainLayout'
 
 import { connect } from 'react-redux';
 
-/* Styles */
-import '../styles/index.scss'
+import Search from '../components/Search/Search';
 
 class List extends React.Component {
   render() {
@@ -19,7 +18,8 @@ class List extends React.Component {
         <Layout
           title="FrModelcar - page de catégorie"
           carItems={this.props.carR.cars}>
-          <p>This is the List page</p>
+          <p>This is the List page bla bla</p>
+          <Search />
         </Layout>
       </div>
     )

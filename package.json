@@ -18,9 +18,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@zeit/next-bundle-analyzer": "^0.1.2",
     "@moltin/sdk": "^3.23.0",
     "@next/bundle-analyzer": "^9.0.5",
+    "@zeit/next-bundle-analyzer": "^0.1.2",
     "@zeit/next-sass": "^1.0.1",
     "next": "^9.0.0",
     "next-redux-wrapper": "^3.0.0",
@@ -29,8 +29,10 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-markdown": "^4.0.6",
+    "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
     "sass-resources-loader": "^2.0.1",
+    "save": "^2.4.0",
     "semantic-ui-react": "0.88.1"
   },
   "devDependencies": {

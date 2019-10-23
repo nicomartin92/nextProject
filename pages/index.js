@@ -8,14 +8,6 @@ import Link from 'next/link'
 import ProductList from '../components/ProductList'
 
 import { connect } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import rootReducer from '../store/reducers/rootReducer';
-// import actions from '../store/actions';
-
-export const initStore = (initialState = {}) => {
-  return createStore(rootReducer, initialState, applyMiddleware(thunk));
-};
 
 function getPosts() {
   return [
@@ -54,13 +46,17 @@ const PostLink = ({ post }) => (
   </li>
 )
 
-const Home = props => {
+const Home = (props) => {
   return (
     <div>
       <Head>
         <title>@FRmodelcars</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
+
+      {props.carR.cars.map(post => (
+            console.warn(post)
+      ))}
 
       <Layout carItems={props.carR.cars} stock={props.carR.stock}>
         <h1>title test</h1>

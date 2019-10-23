@@ -1,7 +1,7 @@
 import { Provider } from 'react-redux';
 import App, { Container } from 'next/app';
 import withRedux from 'next-redux-wrapper';
-import { initStore } from './index';
+import { initStore } from '../store/index';
 
 // import '../styles/index.scss';
 
