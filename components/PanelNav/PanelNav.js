@@ -4,85 +4,66 @@ import PubSub from 'pubsub-js';
 
 import './PanelNav.scss';
 
-class PanelNav extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            isOpen: this.props.isVisible ? true: false,
-            carsDataJsonFromState: [],
-            data: {}
-        }
-        this.panelSwitcher = this.panelSwitcher.bind(this);
-    }
+const PanelNav = (props) => {
+    const [isOpen, setIsOpen] = React.useState(false);
+    const [carsDataJsonFromState, setCarsDataJsonFromState] = React.useState([]);
 
-    componentDidMount() {
+    React.useEffect(() => {
         PubSub.subscribe('open:panelNav', () => {
-            this.setState({
-                isOpen: true
-            })
+            setIsOpen(true)
         });
 
+        PubSub.unsubscribe();
+
         /* fetching API from Json */
-        fetch('http://localhost:3003/cars')
+        /* fetch('http://localhost:3003/cars')
             .then(res => res.json())
             .then((data) => {
-                this.setState({
-                    carsDataJsonFromState: data
-                })
+                setCarsDataJsonFromState(data)
                 // console.warn(this.state.carsDataJsonFromState)
             })
-            .catch(console.log)
-    }
+            .catch(console.log) */
+    }, []);
 
-    componentWillUnmount() {
-        PubSub.unsubscribe();
-    }
-
-    panelSwitcher(value) {
+    const panelSwitcher = (value) => {
         if (value) {
-            this.setState({
-                isOpen: true
-            })
+            setIsOpen(true)
         } else {
-            this.setState({
-                isOpen: false
-            })
+            setIsOpen(false)
         }
     }
 
-    render() {
-        const mapcars = this.props.items.carItems.map((car) => (
-            <li key={car.id}>
-                <Link passHref href="/cars/[reference]" as={`/cars/${car.reference}`}>
-                    <a className="panelNav__item">
-                        <div className="panelNav__label">
-                            {car.brand} {car.model} {car.version}
-                        </div>
-                        <div className="panelNav__image">
-                            <img src={`/static${car.views[0].image1}`} loading="lazy" alt={car.model} />
-                        </div>
-                    </a>
-                </Link>
-            </li>
-        ))
-
-        return (
-            <div className={this.state.isOpen ? "panelNav expanded" : "panelNav"}>
-                <div className={this.state.isOpen ? "overlay expanded" : "overlay"}
-                    onClick={() => this.panelSwitcher(false)}>
-                </div>
-                <button className="buttonClose outer" onClick={() => this.panelSwitcher(false)}>
-                    <div className="inner">
-                        <label>Fermer</label>
+    const mapcars = props.items.carItems.map((car) => (
+        <li key={car.id}>
+            <Link passHref href="/cars/[reference]" as={`/cars/${car.reference}`}>
+                <a className="panelNav__item">
+                    <div className="panelNav__label">
+                        {car.brand} {car.model} {car.version}
                     </div>
-                </button>
-                <h3>cars</h3>
-                <ul>
-                    {mapcars}
-                </ul>
+                    <div className="panelNav__image">
+                        <img src={`/static${car.views[0].image1}`} loading="lazy" alt={car.model} />
+                    </div>
+                </a>
+            </Link>
+        </li>
+    ))
+
+    return (
+        <div className={isOpen ? "panelNav expanded" : "panelNav"}>
+            <div className={isOpen ? "overlay expanded" : "overlay"}
+                onClick={() => panelSwitcher(false)}>
             </div>
-        )
-    }
+            <button className="buttonClose outer" onClick={() => panelSwitcher(false)}>
+                <div className="inner">
+                    <label>Fermer</label>
+                </div>
+            </button>
+            <h3>cars</h3>
+            <ul>
+                {mapcars}
+            </ul>
+        </div>
+    )
 }
 
 export default PanelNav;
