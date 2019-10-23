@@ -19,58 +19,56 @@ import './List.scss'
     )
 } */
 
-class List extends Component {
-    render() {
-        const unavailableStyles = {
-            opacity: "0.5",
-            pointerEvents: "none"
-        }
+const List = (props) => {
+    const unavailableStyles = {
+        opacity: "0.5",
+        pointerEvents: "none"
+    }
 
-        const availableStyles = {
-            opacity: "1"
-        }
+    const availableStyles = {
+        opacity: "1"
+    }
 
-        if (this.props.isLoading) {
-            return (
-                <li className="list__item">
-                    <div className="spinner">
-                        <span className="spinner-inner-1"></span>
-                        <span className="spinner-inner-2"></span>
-                        <span className="spinner-inner-3"></span>
-                    </div>
-                    <h2>Loading card ...</h2>
-                </li>
-            )
-        }
-
-        const carRows = this.props.items.map(car => {
-            return (
-                <li className="list__item" key={car.id}>
-                    <div className="list__itemContainer" style={car.available ? availableStyles : unavailableStyles}>
-                        <img src={`/static${car.image}`} loading="lazy" alt={car.model} />
-                        <div>{car.title}</div>
-                        <div>{car.brandshop} - {car.brand} {car.model} {car.version}</div>
-                        <div style={{ display: !car.year && "none" }}>{car.year}</div>
-                        <div>Stock:  {car.stock}</div>
-                        {/* <button className="button" onClick={() => this.props.countStock(car.id)}>
-                        Acheter
-                        <BuyIcon className="list__icon" />
-                    </button> */}
-                        <Link className="button" href={`/cars/${car.reference}`}>
-                            <a className="button">Voir modèle {car.model}</a>
-                        </Link>
-                    </div>
-                </li>
-
-            )
-        });
-
+    if (props.isLoading) {
         return (
-            <ul className="list__wrapper">
-                {carRows}
-            </ul>
+            <li className="list__item">
+                <div className="spinner">
+                    <span className="spinner-inner-1"></span>
+                    <span className="spinner-inner-2"></span>
+                    <span className="spinner-inner-3"></span>
+                </div>
+                <h2>Loading card ...</h2>
+            </li>
         )
     }
+
+    const carRows = props.items.map(car => {
+        return (
+            <li className="list__item" key={car.id}>
+                <div className="list__itemContainer" style={car.available ? availableStyles : unavailableStyles}>
+                    <img src={`/static${car.image}`} loading="lazy" alt={car.model} />
+                    <div>{car.title}</div>
+                    <div>{car.brandshop} - {car.brand} {car.model} {car.version}</div>
+                    <div style={{ display: !car.year && "none" }}>{car.year}</div>
+                    <div>Stock:  {car.stock}</div>
+                    {/* <button className="button" onClick={() => this.props.countStock(car.id)}>
+                    Acheter
+                    <BuyIcon className="list__icon" />
+                </button> */}
+                    <Link href={`/cars/${car.reference}`}>
+                        <a className="button">Voir modèle {car.model}</a>
+                    </Link>
+                </div>
+            </li>
+
+        )
+    });
+
+    return (
+        <ul className="list__wrapper">
+            {carRows}
+        </ul>
+    )
 }
 
 export default List;

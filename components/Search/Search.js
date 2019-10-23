@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
 
+import List from '../List/List'
+
 /* SVG */
 // import { ReactComponent as DeleteIcon } from '../../assets/delete-icon.svg';
 
 import './Search.scss';
 
-class Search extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            carsDataJsonFromState: this.props.items
-        }
-    }
+const Search = (props) => {
+    const [carsDataJsonFromState, setCarsDataJsonFromState] = React.useState(props.items);
+    const [searchString, setSearchString] = React.useState('');
 
-    countStock = (id) => {
+    const countStock = (id) => {
         this.setState(prevState => {
             // const updatedStock = prevState.carsDataJsonFromState.map(item => {
             const updatedStock = this.props.cars.map(item => {
@@ -41,16 +39,14 @@ class Search extends Component {
         this.props.deleteStock(this.props.stock - 1);
     }
 
-    handleChange = () => {
-        this.setState({
-            searchString: this.refs.search.value
-        });
+    const handleChange = (e) => {
+        setSearchString(e.target.value);
     }
 
-    year = (year) => {
+    const year = (year) => {
         // Please keep it
         // let _cars1 = this.state.carsDataJsonFromState;
-        let _cars1 = this.props.cars;
+        let _cars1 = props.items;
         _cars1 = _cars1.slice().sort((a, b) => {
             if (year === 'asc') {
                 return a.year - b.year
@@ -58,15 +54,13 @@ class Search extends Component {
                 return b.year - a.year
             }
         });
-        this.setState({
-            carsDataJsonFromState: _cars1
-        });
+        setCarsDataJsonFromState(_cars1);
     }
 
-    countryBrand = (country) => {
+    const countryBrand = (country) => {
         // Please keep it 
         // let _countryBrand = this.state.originCarsDataJsonFromState;
-        let _countryBrand = this.props.cars;
+        let _countryBrand = props.items;
         _countryBrand = _countryBrand.filter(function (car) {
             switch (country) {
                 case 'fr':
@@ -87,62 +81,59 @@ class Search extends Component {
                     return car.country === 'fr'
             }
         });
-        this.setState({
-            carsDataJsonFromState: _countryBrand
-        });
+        console.warn(_countryBrand);
+        setCarsDataJsonFromState(_countryBrand);
     }
 
-    clearAll = () => {
+    const clearAll = () => {
         // Please keep it
         // let _clearAll = this.state.originCarsDataJsonFromState;
-        let _clearAll = this.props.cars;
-        this.setState({
-            carsDataJsonFromState: _clearAll
-        });
+        let _clearAll = props.cars;
+        setCarsDataJsonFromState(_clearAll);
     }
 
-    render() {
+    return (
+        <div className="list">
+            <div className="sticky">
+                <div className="list__searchBar">
+                    <div className="list__search">
+                        <h3 className="center">
+                        </h3>
+                        <div className="list__searchMain">
+                            
+                            <input
+                                type="text"
+                                value={searchString}
+                                onChange={handleChange}
+                                placeholder="type name here" />
 
-        return (
-            <div className="list">
-                <div className="sticky">
-                    <div className="list__searchBar">
-                        <div className="list__search">
-                            <h3 className="center">
-                               {/* Chercher un modèle particulier: ({searchCount} disponibles) ({carToSell}) à vendre */} 
-                            </h3>
-                            <div className="list__searchMain">
-                                <input
-                                    type="text"
-                                    value={this.state.searchString}
-                                    ref="search"
-                                    onChange={this.handleChange}
-                                    placeholder="type name here" />
-
-                                <button className="button" onClick={this.clearAll}>Clear all</button>
-                            </div>
+                            <button className="button" onClick={clearAll}>Clear all</button>
                         </div>
-                    </div>
-
-                    <div className="list__filter">
-                        <button className="button" onClick={() => this.year('asc')} >Année asc</button>
-                        <button className="button" onClick={() => this.year('des')}>Année des</button>
-                        <button className="button" onClick={() => this.countryBrand('fr')}>France</button>
-                        <button className="button" onClick={() => this.countryBrand('de')}>Allemagne</button>
-                        <button className="button" onClick={() => this.countryBrand('it')}>italie</button>
-                        <button className="button" onClick={() => this.countryBrand('1/18')}>1/18</button>
-                        <button className="button" onClick={() => this.countryBrand('1/12')}>1/12</button>
-                        <button className="button" onClick={() => this.countryBrand('available')}>A Vendre</button>
-                        <button className="button" onClick={() => this.countryBrand('not available')}>Vendus</button>
                     </div>
                 </div>
 
-                <ul className="list__wrapper">
-                    {/* {carsItemsFromJson} */}
-                </ul>
+                <div className="list__filter">
+                    <button className="button" onClick={() => year('asc')} >Année asc</button>
+                    <button className="button" onClick={() => year('des')}>Année des</button>
+                    <button className="button" onClick={() => countryBrand('fr')}>France</button>
+                    <button className="button" onClick={() => countryBrand('de')}>Allemagne</button>
+                    <button className="button" onClick={() => countryBrand('it')}>italie</button>
+                    <button className="button" onClick={() => countryBrand('1/18')}>1/18</button>
+                    <button className="button" onClick={() => countryBrand('1/12')}>1/12</button>
+                    <button className="button" onClick={() => countryBrand('available')}>A Vendre</button>
+                    <button className="button" onClick={() => countryBrand('not available')}>Vendus</button>
+                </div>
             </div>
-        )
-    }
+
+            <ul className="list__wrapper">
+                {/* {carsItemsFromJson} */}
+            </ul>
+
+            <List items={carsDataJsonFromState}
+                isLoading={false}
+                countStock={13} />
+        </div>
+    )
 }
 
 export default Search;
