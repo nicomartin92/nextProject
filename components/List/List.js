@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom';
+import Link from 'next/link'
+// import { NavLink } from 'react-router-dom';
 
 /* SVG */
-import { ReactComponent as BuyIcon } from '../../assets/buy-icon.svg';
+// import { ReactComponent as BuyIcon } from '../../assets/buy-icon.svg';
 
 import './List.scss'
 
@@ -42,24 +43,32 @@ class List extends Component {
             )
         }
 
-        return (
-            <li className="list__item">
-                <div className="list__itemContainer" style={this.props.item.available ? availableStyles : unavailableStyles}>
-                    <img src={this.props.item.image} loading="lazy" alt={this.props.item.model} />
-                    <div>{this.props.item.title}</div>
-                    <div>{this.props.item.brandshop} - {this.props.item.brand} {this.props.item.model} {this.props.item.version}</div>
-                    <div style={{ display: !this.props.item.year && "none" }}>{this.props.item.year}</div>
-                    <div>Stock:  {this.props.item.stock}</div>
-                    <button className="button" onClick={() => this.props.countStock(this.props.item.id)}>
+        const carRows = this.props.items.map(car => {
+            return (
+                <li className="list__item" key={car.id}>
+                    <div className="list__itemContainer" style={car.available ? availableStyles : unavailableStyles}>
+                        <img src={`/static${car.image}`} loading="lazy" alt={car.model} />
+                        <div>{car.title}</div>
+                        <div>{car.brandshop} - {car.brand} {car.model} {car.version}</div>
+                        <div style={{ display: !car.year && "none" }}>{car.year}</div>
+                        <div>Stock:  {car.stock}</div>
+                        {/* <button className="button" onClick={() => this.props.countStock(car.id)}>
                         Acheter
                         <BuyIcon className="list__icon" />
-                    </button>
-                    <NavLink className="button" to={{
-                        pathname: `/Car/${this.props.item.reference}`,
-                        search: this.props.item.brand
-                    }} >Voir modèle {this.props.item.model}</NavLink>
-                </div>
-            </li>
+                    </button> */}
+                        <Link className="button" href={`/cars/${car.reference}`}>
+                            <a className="button">Voir modèle {car.model}</a>
+                        </Link>
+                    </div>
+                </li>
+
+            )
+        });
+
+        return (
+            <ul className="list__wrapper">
+                {carRows}
+            </ul>
         )
     }
 }

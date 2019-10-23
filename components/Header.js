@@ -15,7 +15,7 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link prefetch passHref href="/list">
+            <Link prefetch passHref href="/category">
               <a style={linkStyle}>Catégorie</a>
             </Link>
           </li>
