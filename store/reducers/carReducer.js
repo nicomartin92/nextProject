@@ -722,9 +722,9 @@ const initialState = {
                 }
             ],
             "available": true,
-            "sold": false,
+            "sold": true,
             "keep": true,
-            "price": "100",
+            "price": "95",
             "size": "1/18",
             "description": "La Peugeot 405 Mi16 Le Mans est une série limitée à 150 exemplaires, en exclusivité pour le marché français. Disponible uniquement en rouge, elle arbore des logos “Le Mans” et une silhouette de 905 sur les portes avant.",
             "new": true,

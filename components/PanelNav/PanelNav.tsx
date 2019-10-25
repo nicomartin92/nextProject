@@ -4,7 +4,7 @@ import PubSub from 'pubsub-js';
 
 import './PanelNav.scss';
 
-const PanelNav = (props) => {
+const PanelNav = (props: any) => {
     const [isOpen, setIsOpen] = React.useState(false);
     const [carsDataJsonFromState, setCarsDataJsonFromState] = React.useState([]);
 
@@ -27,7 +27,7 @@ const PanelNav = (props) => {
             .catch(console.log) */
     }, []);
 
-    const panelSwitcher = (value) => {
+    const panelSwitcher = (value: boolean) => {
         if (value) {
             setIsOpen(true)
         } else {
@@ -35,7 +35,7 @@ const PanelNav = (props) => {
         }
     }
 
-    const mapcars = props.items.carItems.map((car) => (
+    const mapcars = props.items.carItems.map((car: any) => (
         <li key={car.id}>
             <Link passHref href="/cars/[reference]" as={`/cars/${car.reference}`}>
                 <a className="panelNav__item">

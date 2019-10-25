@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 
 import './Dashboard.scss';
 
-const Dashboard = (props) => {
+const Dashboard = (props: any) => {
 
     const [dashState, setDashState] = React.useState({
         labels: {
@@ -17,7 +17,7 @@ const Dashboard = (props) => {
         }
     });
 
-    const toSell = (car) => {
+    const toSell = (car: any) => {
         if (car.available && car.stock > 0) {
             return (
                 <div>
@@ -27,7 +27,7 @@ const Dashboard = (props) => {
         }
     }
 
-    const sold = (car) => {
+    const sold = (car: any) => {
         if (!car.available && car.stock < 1 && car.sold) {
             return (
                 <div>
@@ -37,7 +37,7 @@ const Dashboard = (props) => {
         }
     }
 
-    const keep = (car) => {
+    const keep = (car: any) => {
         if (car.keep) {
             return (
                 <div>
@@ -47,13 +47,13 @@ const Dashboard = (props) => {
         }
     }
 
-    const deleteCar = (id) => {
+    const deleteCar = (id: number) => {
         this.props.deleteCar(id);
     }
 
     const { labels } = dashState;
 
-    const carRows = props.items.map(car => {
+    const carRows = props.items.map((car: any) => {
         return (
             <div className="gridTable__row" key={car.id}>
                 <div className="gridTable__cell">

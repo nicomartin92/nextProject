@@ -4,7 +4,7 @@ import PubSub from 'pubsub-js';
 
 import './Autocomplete.scss'
 
-const Autocomplete = (props) => {
+const Autocomplete = (props: any) => {
     const search = React.useRef(null);
     const [filteredOptions, setfilteredOptions] = React.useState([]);
     const [userInput, setUserInput] = React.useState('');
@@ -35,11 +35,11 @@ const Autocomplete = (props) => {
             .catch(console.log); */
     }, []);
 
-    const handleChange = (e) => {
+    const handleChange = (e: any) => {
         const userInput = e.target.value;
 
         // const filteredOptions = this.state.originCarsDataJsonFromState.filter(function (car) {
-        const filteredOptions = props.items.carItems.filter(function (car) {
+        const filteredOptions = props.items.carItems.filter(function (car: any) {
             return car.model.toLowerCase().match(userInput.toLowerCase()) ||
                 car.brand.toLowerCase().match(userInput.toLowerCase()) ||
                 car.version.toLowerCase().match(userInput.toLowerCase()) ||
@@ -55,7 +55,7 @@ const Autocomplete = (props) => {
         handleTyping(userInput);
     };
 
-    const handleTyping = (elem) => {
+    const handleTyping = (elem: any) => {
         if (elem.length > 1) {
             setIsTyping(true);
         } else {
@@ -63,7 +63,7 @@ const Autocomplete = (props) => {
         }
     }
 
-    const displaySearch = (isExpanded) => {
+    const displaySearch = (isExpanded: boolean) => {
         setIsExpanded(isExpanded);
     }
 
