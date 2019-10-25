@@ -7,11 +7,11 @@ import List from '../List/List'
 
 import './Search.scss';
 
-const Search = (props) => {
+const Search = (props: any) => {
     const [carsDataJsonFromState, setCarsDataJsonFromState] = React.useState(props.items);
     const [searchString, setSearchString] = React.useState('');
 
-    const countStock = (id) => {
+    const countStock = (id: number) => {
         this.setState(prevState => {
             // const updatedStock = prevState.carsDataJsonFromState.map(item => {
             const updatedStock = this.props.cars.map(item => {
@@ -39,11 +39,11 @@ const Search = (props) => {
         this.props.deleteStock(this.props.stock - 1);
     }
 
-    const handleChange = (e) => {
+    const handleChange = (e: any) => {
         setSearchString(e.target.value);
     }
 
-    const year = (year) => {
+    const year = (year: string) => {
         let _cars1 = props.items;
         _cars1 = _cars1.slice().sort((a, b) => {
             if (year === 'asc') {
@@ -55,7 +55,7 @@ const Search = (props) => {
         setCarsDataJsonFromState(_cars1);
     }
 
-    const countryBrand = (country) => {
+    const countryBrand = (country: string) => {
         let _countryBrand = props.items;
         _countryBrand = _countryBrand.filter(function (car) {
             switch (country) {

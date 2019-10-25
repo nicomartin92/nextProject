@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import CSS from 'csstype';
 
-const PageIndicator = (props) => {
-    const [scrolled, setScrolled] = React.useState(0);
+const PageIndicator = (props: any) => {
+    const [scrolled, setScrolled] = React.useState('0');
     const [scrollColor, setScrollColor] = React.useState(props.color ? props.color : '#0b299f');
 
     React.useEffect(() => {
@@ -22,7 +23,7 @@ const PageIndicator = (props) => {
         setScrolled(scrolledWidth);
     }
 
-    const pageIndicatorStyle = {
+    const pageIndicatorStyle: CSS.Properties = {
         height: "2px",
         position: "fixed",
         top: "51px",
@@ -31,7 +32,7 @@ const PageIndicator = (props) => {
         zIndex: 99
     };
 
-    const pageBarStyle = {
+    const pageBarStyle: CSS.Properties = {
         height: "3px",
         background: scrollColor,
         width: scrolled

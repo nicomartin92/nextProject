@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
+import CSS from 'csstype'
 // import { NavLink } from 'react-router-dom';
 
 /* SVG */
@@ -19,14 +20,14 @@ import './List.scss'
     )
 } */
 
-const List = (props) => {
-    const unavailableStyles = {
-        opacity: "0.5",
+const List = (props: any) => {
+    const unavailableStyles: CSS.Properties = {
+        opacity: 0.5,
         pointerEvents: "none"
     }
 
-    const availableStyles = {
-        opacity: "1"
+    const availableStyles: CSS.Properties = {
+        opacity: 1
     }
 
     if (props.isLoading) {
