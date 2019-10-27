@@ -41,6 +41,11 @@
     &__listLink {
         display: flex;
         align-items: center;
+
+        &:hover,
+        &.selected {
+            border: 1px solid $colorBlack;
+        }
     }
 
     &__listImage {

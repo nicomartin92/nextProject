@@ -10,13 +10,12 @@ const Autocomplete = (props: any) => {
     const [userInput, setUserInput] = React.useState('');
     const [isExpanded, setIsExpanded] = React.useState(false);
     const [isTyping, setIsTyping] = React.useState(false);
-
+    const [position, setPosition] = React.useState(-1);
+    const [targetElem, setTargetElem] = React.useState(null);
 
     React.useEffect(() => {
-
         PubSub.subscribe('open:search', () => {
             setIsExpanded(true);
-            search.current.focus();
         });
 
         return () => {
@@ -46,16 +45,53 @@ const Autocomplete = (props: any) => {
                 car.year.toLowerCase().match(userInput.toLowerCase()) ||
                 car.brandshop.toLowerCase().match(userInput.toLowerCase()) ||
                 car.price.toLowerCase().match(userInput.toLowerCase()) ||
-                car.country.toLowerCase().match(userInput.toLowerCase());
+                car.country.toLowerCase().match(userInput.toLowerCase()) ||
+                car.category.toLowerCase().match(userInput.toLowerCase()) ||
+                car.segment.toLowerCase().match(userInput.toLowerCase());
         });
 
         setfilteredOptions(filteredOptions);
         setUserInput(userInput);
 
-        handleTyping(userInput);
-    };
+        handleTyping(userInput, e);
+    }
 
-    const handleTyping = (elem: any) => {
+    const handleKeydown = (e: any) => {
+        let target = null;
+        let allLinks = document.querySelectorAll('.search__listLink');
+        
+        if (e.keyCode === 40 && e.target.value.length > 1) {
+            target = document.querySelectorAll('.search__listLink')[position+1];
+            
+            allLinks.forEach(element => {
+                element.classList.remove('selected');
+            });
+            
+            if(target) {
+                target.classList.add('selected');
+                setPosition(position+1);
+                setTargetElem(target);
+            }
+        } else if (e.keyCode === 38 && e.target.value.length > 1) {
+            target = document.querySelectorAll('.search__listLink')[position-1];
+
+            allLinks.forEach(element => {
+                element.classList.remove('selected');
+            });
+
+            if(target) {
+                target.classList.add('selected');
+                setPosition(position-1);
+                setTargetElem(target);
+            }
+        }
+
+        if(e.keyCode === 13) {
+            location.href = targetElem.href;
+        }
+    }
+
+    const handleTyping = (elem: any, e: any) => {
         if (elem.length > 1) {
             setIsTyping(true);
         } else {
@@ -65,6 +101,12 @@ const Autocomplete = (props: any) => {
 
     const displaySearch = (isExpanded: boolean) => {
         setIsExpanded(isExpanded);
+
+        if(isExpanded) {
+            console.warn(search);
+            search.current.focus();
+        } 
+        search.current.focus();
     }
 
     const carLength = filteredOptions.length;
@@ -84,6 +126,7 @@ const Autocomplete = (props: any) => {
                     type="text"
                     className="search__box inputSearch"
                     onChange={handleChange}
+                    onKeyDown={handleKeydown}
                     value={userInput}
                     placeholder="Rechercher"
                     ref={search}
@@ -95,12 +138,14 @@ const Autocomplete = (props: any) => {
                     </div>
 
                 <ul className={isTyping ? "search__list -expanded" : "search__list"}>
-                    {filteredOptions.map((car) => (
+                    {filteredOptions.map((car, index) => (
                         <li className="search__listItem" key={car.id}>
                             <Link
                                 passHref href="/cars/[reference]"
                                 as={`/cars/${car.reference}`}>
-                                <a className="search__listLink" onClick={() => displaySearch(false)}>
+                                <a className="search__listLink" 
+                                   onClick={() => displaySearch(false)}
+                                   data-position={index}>
                                     <img className="search__listImage"
                                         src={`/static${car.views[0].image1}`}
                                         alt={`${car.brand} ${car.model} ${car.version}`} />

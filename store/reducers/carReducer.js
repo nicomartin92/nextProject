@@ -32,6 +32,8 @@ const initialState = {
             "price": "90€",
             "size": "1/18",
             "description": "",
+            "category": "berline",
+            "segment": "segment C",
             "new": false,
             "stock": 0,
             "preference": 3
@@ -60,6 +62,8 @@ const initialState = {
             "price": "130€",
             "size": "1/18",
             "description": "",
+            "category": "berline",
+            "segment": "segment D",
             "new": false,
             "stock": 0,
             "preference": 12
@@ -88,6 +92,8 @@ const initialState = {
             "price": "90€",
             "size": "1/18",
             "description": "La Megane RS Trophy de 2018 est la plus puissante des Megane jamais construite. Pour passer la barre des 300 chevaux elle se dote du moteur de sa cousine Alpine dans une version retravaillée. La puissance augmente de 20 chevaux tandis que le couple progresse lui de 20 Nm. La transmission est confiée à une boîte EDC à double embrayage et 6 rapports. Avec une vitesse de pointe de 260 km/h, cette Megane n’a plus grand chose de commun avec une paisible compacte.",
+            "category": "compact",
+            "segment": "segment C",
             "new": false,
             "stock": 0,
             "preference": 10
@@ -116,6 +122,8 @@ const initialState = {
             "price": "90€",
             "size": "1/18",
             "description": "Réinterprétation moderne de la Berlinette originale, la Première Edition est lancée au printemps 2017 et marque le retour tant espéré et attendu de la marque. Produite à 1955 exemplaires seulement, cette série limitée rend hommage à l’année de création d’Alpine par Jean Rédélé.",
+            "category": "coupe",
+            "segment": "segment sportive",
             "new": false,
             "stock": 0,
             "preference": 7
@@ -144,6 +152,8 @@ const initialState = {
             "price": "110€",
             "size": "1/18",
             "description": "",
+            "category": "berline",
+            "segment": "segment D",
             "new": false,
             "stock": 3,
             "preference": 14
@@ -172,6 +182,8 @@ const initialState = {
             "price": "90€",
             "size": "1/18",
             "description": "",
+            "category": "berline",
+            "segment": "segment E",
             "new": false,
             "stock": 0,
             "preference": 15
@@ -200,6 +212,8 @@ const initialState = {
             "price": "100€",
             "size": "1/18",
             "description": "La Megane RS Trophy de 2018 est la plus puissante des Megane jamais construite. Pour passer la barre des 300 chevaux elle se dote du moteur de sa cousine Alpine dans une version retravaillée.",
+            "category": "compacte",
+            "segment": "segment C",
             "new": true,
             "stock": 0,
             "preference": 9
@@ -228,6 +242,8 @@ const initialState = {
             "price": "120€",
             "size": "1/18",
             "description": "L’Alfa Romeo Giulia Quadrifoglio est bouillante comme un volcan italien en éruption. Avec ses 4 sorties d’échappement format XXL, son diffuseur arrière, ses disques en carbone céramique, son capot en carbone, elle renferme une pièce d'orfèvrerie.",
+            "category": "berline",
+            "segment": "segment D",
             "new": false,
             "stock": 0,
             "preference": 8
@@ -256,6 +272,8 @@ const initialState = {
             "price": "90€",
             "size": "1/18",
             "description": "Soucieux de proposer une sportive à tout type de clientèle, Audi propose son fameux label RS et transforme le tranquille break des familles. Animé par le V8 420ch, vous ne rechignerez plus pour aller faire (la) les courses !",
+            "category": "break",
+            "segment": "segment D",
             "new": false,
             "stock": 1
         },
@@ -283,6 +301,8 @@ const initialState = {
             "price": "200€",
             "size": "1/12",
             "description": "(R)évolution de la M3 E46, la CSL se veut plus puissante (360ch), plus précise (trains revus) et plus légère (1385kg) que sa grande sœur. Le kit carrosserie évolue pour la rendre plus bestiale (pare-chocs, malle arrière avec becquet intégré, jantes en 19 et toit tout carbone). ",
+            "category": "coupe",
+            "segment": "segment sportive",
             "new": true,
             "stock": 0,
             "preference": 2
@@ -311,6 +331,8 @@ const initialState = {
             "price": "110€",
             "size": "1/18",
             "description": "(R)évolution de la M3 E46, la CSL se veut plus puissante (360ch), plus précise (trains revus) et plus légère (1385kg) que sa grande sœur. Le kit carrosserie évolue pour la rendre plus bestiale (pare-chocs, malle arrière avec becquet intégré, jantes en 19 et toit tout carbone). ",
+            "category": "citadine",
+            "segment": "segment B",
             "new": true,
             "stock": 1,
             "preference": 22
@@ -339,6 +361,8 @@ const initialState = {
             "price": "110€",
             "size": "1/18",
             "description": "La version RS de la Renault Clio 4 se distingue de ses sœurs par un bouclier et un becquet spécifiques, de nouvelles jantes et un diffuseur d’air. ",
+            "category": "citadine",
+            "segment": "segment B",
             "new": true,
             "stock": 0,
             "preference": 16
@@ -367,6 +391,8 @@ const initialState = {
             "price": "140€",
             "size": "1/18",
             "description": "",
+            "category": "citadine",
+            "segment": "segment B",
             "new": false,
             "stock": 0,
             "preference": 5
@@ -395,6 +421,8 @@ const initialState = {
             "price": "90€",
             "size": "1/18",
             "description": "(R)évolution de la M3 E46, la CSL se veut plus puissante (360ch), plus précise (trains revus) et plus légère (1385kg) que sa grande sœur. Le kit carrosserie évolue pour la rendre plus bestiale (pare-chocs, malle arrière avec becquet intégré, jantes en 19 et toit tout carbone). ",
+            "category": "suv",
+            "segment": "segment suv",
             "new": false,
             "stock": 0
         },
@@ -422,6 +450,8 @@ const initialState = {
             "price": "115€",
             "size": "1/18",
             "description": "Derrière son aspect extérieur relativement sage, la M 235i cache un précieux atout qui saurait convaincre n’importe quel amateur de conduite sportive : un moteur 6 cylindres de 326 chevaux délivré aux seules roues arrières. Un coupé véritablement conçu pour le plaisir.",
+            "category": "coupe",
+            "segment": "segment sportive",
             "new": true,
             "stock": 1
         },
@@ -449,6 +479,8 @@ const initialState = {
             "price": "115€",
             "size": "1/18",
             "description": "La 306 Maxi fut la reine des Kit-cars, notamment sur l’asphalte. Aux mains de Gilles et Hervé Panizzi, elle gagna plusieurs championnats de France des rallyes. Elle fit également plusieurs apparitions remarquées en championnat du monde.",
+            "category": "compacte",
+            "segment": "segment C",
             "new": false,
             "stock": 1
         },
@@ -476,6 +508,8 @@ const initialState = {
             "price": "104€",
             "size": "1/18",
             "description": "Présentée à Francfort en 1993, l’Audi RS2 apparaît sous les traits d’un banal break Audi 80. Pourtant cette sportive va révolutionner le créneau des familiales.",
+            "category": "break",
+            "segment": "segment D",
             "new": false,
             "stock": 2
         },
@@ -503,6 +537,8 @@ const initialState = {
             "price": "95€",
             "size": "1/18",
             "description": "La Clio 16 soupapes avait une lourde tâche à assumer. Succéder aux mythiques Renault 5 Turbo et Supercinq GT Turbo dans la dynastie des petites sportives du constructeur.",
+            "category": "citadine",
+            "segment": "segment B",
             "new": true,
             "stock": 2
         },
@@ -530,6 +566,8 @@ const initialState = {
             "price": "199€",
             "size": "1/12",
             "description": "On dit de cette voiture qu’elle a sauvé la marque au lion dans les années 80. Si la Peugeot 205 est depuis longtemps devenue une icône, c’est en grande partie grâce à cette version GTI, sortie le 1er mars 1984.",
+            "category": "citadine",
+            "segment": "segment B",
             "new": true,
             "stock": 1,
             "preference": 1
@@ -558,6 +596,8 @@ const initialState = {
             "price": "95€",
             "size": "1/18",
             "description": "Le Stelvio porte à sa sortie en 2017, tous les espoirs de la marque Alfa Romeo. Ce SUV sportif reprend tous les codes de la catégorie mais pas seulement.",
+            "category": "suv",
+            "segment": "segment suv",
             "new": true,
             "stock": 1,
             "preference": 19
@@ -586,6 +626,8 @@ const initialState = {
             "price": "95€",
             "size": "1/18",
             "description": "Le Stelvio porte à sa sortie en 2017, tous les espoirs de la marque Alfa Romeo. Ce SUV sportif reprend tous les codes de la catégorie mais pas seulement.",
+            "category": "suv",
+            "segment": "segment suv",
             "new": false,
             "stock": 0,
             "preference": 17
@@ -614,6 +656,8 @@ const initialState = {
             "price": "110€",
             "size": "1/18",
             "description": "Pour la génération qui lisait Option Auto dans les années 80, le nom de Gutmann rappellera un certain Kurt Gutmann. Celui-ci, après avoir fait ses armes dans la préparation de Talbot se penche sur les voitures du Lion à la sortie de la 205 GTI.",
+            "category": "citadine",
+            "segment": "segment B",
             "new": true,
             "stock": 2,
             "preference": 11
@@ -643,6 +687,8 @@ const initialState = {
             "price": "55",
             "size": "1/18",
             "description": "Les BMW X4 M sont des voitures de caractère. Elles combinent l'athlétisme d'une voiture M avec le tempérament expressif d'une BMW X4. Le résultat : quatre voitures de sport très impressionnantes pour un maximum de passion et d'adrénaline.",
+            "category": "suv",
+            "segment": "segment suv",
             "new": true,
             "stock": 1,
             "preference": 20
@@ -671,6 +717,8 @@ const initialState = {
             "price": "90",
             "size": "1/18",
             "description": "La Xsara venait remplacer la ZX en gardant la même recette. Une allure discrète mais un châssis exceptionnel. Pourtant, grâce à ses multiples victoires en rallyes avec Sébastien Loeb, la marque aux chevrons n’oublie pas la sportivité.",
+            "category": "compacte",
+            "segment": "segment C",
             "new": true,
             "stock": 2,
             "preference": 21
@@ -699,6 +747,8 @@ const initialState = {
             "price": "90",
             "size": "1/18",
             "description": "En 1988, 4 ans après son lancement, Renault offre à sa Super 5 une version haut de gamme. Celle-ci reçoit le quatre cylindres de 1721 cm3 de 90 ch.",
+            "category": "citadine",
+            "segment": "segment B",
             "new": true,
             "stock": 2,
             "preference": 23
@@ -727,6 +777,8 @@ const initialState = {
             "price": "95",
             "size": "1/18",
             "description": "La Peugeot 405 Mi16 Le Mans est une série limitée à 150 exemplaires, en exclusivité pour le marché français. Disponible uniquement en rouge, elle arbore des logos “Le Mans” et une silhouette de 905 sur les portes avant.",
+            "category": "berline",
+            "segment": "segment D",
             "new": true,
             "stock": 3,
             "preference": 13
@@ -755,6 +807,8 @@ const initialState = {
             "price": "100",
             "size": "1/18",
             "description": "La BMW Z3 Coupé arrive après la déclinaison roadster. Cela ne l’empêche pas d’acquérir instantanément le statut de BMW inoubliable. La ligne de break de chasse est atypique et permet de partir en vacances avec sa sportive préférée.",
+            "category": "coupe",
+            "segment": "segment sportive",
             "new": true,
             "stock": 1,
             "preference": 18
@@ -783,6 +837,8 @@ const initialState = {
             "price": "90",
             "size": "1/18",
             "description": "Véritable emblème de son époque, la version la plus sportive de la gamme Renault 21 apparaît en 1987.",
+            "category": "berline",
+            "segment": "segment D",
             "new": true,
             "stock": 1,
             "preference": 24
