@@ -1,6 +1,9 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
+// Import Selectors
+import selectors from './selectors/selectors';
+
 // Import Reducers
 import rootReducer from './reducers/rootReducer';
 // import actions from '../store/actions';
@@ -12,7 +15,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 export const initStore = (initialState = {}) => {
   return createStore(
     rootReducer, 
-    initialState, 
+    initialState,
     composeWithDevTools(applyMiddleware(thunk)));
 };
 /* eslint-enable */
