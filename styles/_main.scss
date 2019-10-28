@@ -23,29 +23,29 @@ body {
 
 /* template */
 .main {
-  padding-top: 65px;
-  padding-bottom: 150px;
+  padding-top: rem(65px);
+  padding-bottom: rem(150px);
   transition: all .5s cubic-bezier(.55,0,.1,1);
-  max-width: 1600px;
+  max-width: rem(1600px);
   margin: 0 auto;
   width: 100%;
 }
 
 /* glabal styles */
 h1 {
-  margin: 20px 0;
-  font-size: 20px;
+  margin: rem(20px 0);
+  font-size: rem(20px);
 
   @include medium {
-    font-size: 30px;
+    font-size: rem(30px);
   }
 }
 
 h2 {
-  font-size: 18px;
+  font-size: rem(18px);
 
   @include medium {
-    font-size: 25px;
+    font-size: rem(25px);
   }
 }
 
@@ -74,13 +74,13 @@ a {
 
 li {
   list-style-type: none;
-  margin: 0 20px;
+  margin: rem(0 20px);
 }
 
 input {
-  padding: 10px 20px;
+  padding: rem(10px 20px);
   border: 2px solid black;
-  margin: 20px 0;
+  margin: rem(20px 0);
 }
 
 .button-like {
@@ -129,6 +129,6 @@ input {
 
 .squareColor {
   display: inline-block;
-  width: 30px;
-  height: 14px;
+  width: rem(30px);
+  height: rem(14px);
 }

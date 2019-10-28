@@ -24,9 +24,9 @@
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
-  border-radius: 4px;
-  margin: 20px 10px;
-  padding: 10px 15px;
+  border-radius: rem(4px);
+  margin: rem(20px 10px);
+  padding: rem(10px 15px);
   text-transform: uppercase;
   overflow: hidden;
   display: block;

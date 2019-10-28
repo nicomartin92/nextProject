@@ -14,10 +14,10 @@
     }
 
     img {
-        width: 90px;
+        width: rem(90px);
 
         @include medium {
-            width: 120px;
+            width: rem(120px);
         }
     }
 }
