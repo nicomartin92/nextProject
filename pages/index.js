@@ -8,6 +8,10 @@ import Link from 'next/link'
 import ProductList from '../components/ProductList'
 
 import { connect } from 'react-redux';
+import { 
+         getALLCars, 
+         getFrenchCars 
+       } from '../store/selectors/selectors'
 
 function getPosts() {
   return [
@@ -43,6 +47,8 @@ const PostLink = ({ post }) => (
 )
 
 const Home = (props) => {
+
+  console.warn('props', props)
   return (
     <div>
       <Head>
@@ -50,7 +56,7 @@ const Home = (props) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
-      <Layout carItems={props.carR.cars} stock={props.carR.stock}>
+      <Layout carItems={props.cars} stock={props.stock}>
         <h1>title test</h1>
         <ul>
           {getPosts().map(post => (
@@ -77,11 +83,23 @@ const Home = (props) => {
   )
 }
 
-export default connect(
+/* export default connect(
   state => state,
   // actions
-)(Home);
+)(Home); */
 
+const mapStateToProps = (state) => {
+  return {
+    allCars: getALLCars(state),
+    allFrench: getFrenchCars(state),
+    cars: state.carR.cars
+  }
+};
+
+export default connect(
+    mapStateToProps, 
+    null
+)(Home);
 
 /* const Home = props => (
   <Layout title='FrModelcars'>

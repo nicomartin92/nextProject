@@ -29,7 +29,16 @@ class Category extends React.Component {
   }
 }
 
-export default connect(
+const mapStateToProps = (state, ownProps) => ({
+  allCars: getALLCars(state)
+})
+
+/* export default connect(
   state => state,
   // actions
-)(Category);
+)(Category); */
+
+export default connect(
+    mapStateToProps, 
+    null
+)(ListPage);
