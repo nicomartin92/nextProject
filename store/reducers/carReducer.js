@@ -1,4 +1,5 @@
 const initialState = {
+    overlay: false,
     toast: {
         "succes": "Véhicule ajouté",
         "text": "",
@@ -6,6 +7,7 @@ const initialState = {
         "url": "",
         "error": "Error"
     },
+    visibleContent: true,
     stock: 14,
     cars: [
         {
@@ -325,16 +327,16 @@ const initialState = {
                     "image2": "/cars/renault/concept-car-clio-rs-16-rear.jpg"
                 }
             ],
-            "available": true,
-            "sold": false,
+            "available": false,
+            "sold": true,
             "keep": false,
-            "price": "110€",
+            "price": "90€",
             "size": "1/18",
             "description": "(R)évolution de la M3 E46, la CSL se veut plus puissante (360ch), plus précise (trains revus) et plus légère (1385kg) que sa grande sœur. Le kit carrosserie évolue pour la rendre plus bestiale (pare-chocs, malle arrière avec becquet intégré, jantes en 19 et toit tout carbone). ",
             "category": "citadine",
             "segment": "segment B",
-            "new": true,
-            "stock": 1,
+            "new": false,
+            "stock": 0,
             "preference": 22
         },
         {
@@ -856,18 +858,31 @@ const carReducers = (state = initialState, action) => {
         }
     }
 
-    if (action.type === 'UPDATE__GLOBAL__STOCK') {
-        let newStock = action.stock
-
-        return {
-            ...state,
-            stock: newStock
-        }
-    }
-
     if (action.type === 'DELETE__CAR') {
         let newList = state.cars.filter((car) => {
             return car.id !== action.id
+        });
+
+        return {
+            ...state,
+            cars: newList
+        }
+    }
+
+    if (action.type === 'DELETE__BRAND') {
+        let newList = state.cars.filter((car) => {
+            return car.brand !== action.brand
+        });
+
+        return {
+            ...state,
+            cars: newList
+        }
+    }
+
+    if (action.type === 'DELETE__COUNTRY') {
+        let newList = state.cars.filter((car) => {
+            return car.country !== action.country
         });
 
         return {

@@ -10,7 +10,11 @@ import ProductList from '../components/ProductList'
 import { connect } from 'react-redux';
 import {
   getALLCars,
-  getFrenchCars
+  getFrenchCars,
+  getSold,
+  getAvailable,
+  getKeep,
+  isVisible
 } from '../store/selectors/selectors';
 
 function getPosts() {
@@ -48,6 +52,7 @@ const PostLink = ({ post }) => (
 
 const Home = (props) => {
 
+  console.warn(props);
   return (
     <div>
       <Head>
@@ -91,7 +96,11 @@ const mapStateToProps = (state) => {
   return {
     allCars: getALLCars(state),
     allFrench: getFrenchCars(state),
-    cars: state.carR.cars
+    allSold: getSold(state),
+    allAvailable: getAvailable(state),
+    allKeep: getKeep(state),
+    cars: state.carR.cars,
+    isVisible: state.carR.visibleContent
   }
 };
 
