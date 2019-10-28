@@ -41,15 +41,15 @@
     }
 
     &__year {
-        padding: 0 20px;
+        padding: rem(0 20px);
     }
 
     &__description {
-        padding: 20px 50px 0 0;
+        padding: rem(20px 50px 0 0);
     }
 
     &__subLabel {
-        font-size: 18px;
+        font-size: rem(18px);
         text-transform: uppercase;
         color: $colorBlue;
     }
@@ -59,7 +59,7 @@
         background: $colorBlack;
         transform: skewX(-18deg);
         display: inline-block;
-        padding: 2px 40px;
+        padding: rem(2px 40px);
         color: $colorWhite;
     }
 

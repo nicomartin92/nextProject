@@ -34,7 +34,7 @@
 
     &__listItem,
     &__carResults {
-        padding: 5px;
+        padding: rem(5px);
         text-align: left;
     }
 
@@ -49,9 +49,9 @@
     }
 
     &__listImage {
-        width: 90px;
+        width: rem(90px);
         height: auto;
-        margin: 0 10px 0;
+        margin: rem(0 10px 0);
     }
 
     .skew {
