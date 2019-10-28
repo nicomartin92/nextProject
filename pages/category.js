@@ -3,6 +3,10 @@ import Head from 'next/head'
 import Layout from '../layout/MainLayout'
 
 import { connect } from 'react-redux';
+import { 
+  getALLCars, 
+  getFrenchCars 
+} from '../store/selectors/selectors';
 
 import Search from '../components/Search/Search';
 
@@ -17,9 +21,9 @@ class Category extends React.Component {
 
         <Layout
           title="FrModelcar - page de catégorie"
-          carItems={this.props.carR.cars}>
+          carItems={this.props.cars}>
 
-          <Search items={this.props.carR.cars} />
+          <Search items={this.props.cars} />
           
           <p>This is the List page</p>
           
@@ -29,16 +33,20 @@ class Category extends React.Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => ({
-  allCars: getALLCars(state)
-})
-
 /* export default connect(
   state => state,
   // actions
 )(Category); */
 
+const mapStateToProps = (state) => {
+  return {
+    allCars: getALLCars(state),
+    allFrench: getFrenchCars(state),
+    cars: state.carR.cars
+  }
+};
+
 export default connect(
     mapStateToProps, 
     null
-)(ListPage);
+)(Category);

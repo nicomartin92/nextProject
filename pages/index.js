@@ -8,10 +8,10 @@ import Link from 'next/link'
 import ProductList from '../components/ProductList'
 
 import { connect } from 'react-redux';
-import { 
-         getALLCars, 
-         getFrenchCars 
-       } from '../store/selectors/selectors'
+import {
+  getALLCars,
+  getFrenchCars
+} from '../store/selectors/selectors';
 
 function getPosts() {
   return [
@@ -48,7 +48,6 @@ const PostLink = ({ post }) => (
 
 const Home = (props) => {
 
-  console.warn('props', props)
   return (
     <div>
       <Head>
@@ -97,8 +96,8 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(
-    mapStateToProps, 
-    null
+  mapStateToProps,
+  null
 )(Home);
 
 /* const Home = props => (
