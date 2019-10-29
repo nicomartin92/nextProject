@@ -849,8 +849,16 @@ const initialState = {
     favorites: []
 }
 
+
+const UPDATE__STOCK = 'UPDATE__STOCK';
+const DELETE__CAR = 'DELETE__CAR';
+const DELETE__BRAND = 'DELETE__BRAND';
+const DELETE__COUNTRY = 'DELETE__COUNTRY';
+const ADD_FAVORITE = 'ADD__FAVORITE';
+const REMOVE__FAVORITE = 'REMOVE__FAVORITE';
+
 const carReducers = (state = initialState, action) => {
-    if (action.type === 'UPDATE__STOCK') {
+    if (action.type === UPDATE__STOCK) {
         let newStock = action.stock
 
         return {
@@ -859,7 +867,7 @@ const carReducers = (state = initialState, action) => {
         }
     }
 
-    if (action.type === 'DELETE__CAR') {
+    if (action.type === DELETE__CAR) {
         let newList = state.cars.filter((car) => {
             return car.id !== action.id
         });
@@ -870,7 +878,7 @@ const carReducers = (state = initialState, action) => {
         }
     }
 
-    if (action.type === 'DELETE__BRAND') {
+    if (action.type === DELETE__BRAND) {
         let newList = state.cars.filter((car) => {
             return car.brand !== action.brand
         });
@@ -881,7 +889,7 @@ const carReducers = (state = initialState, action) => {
         }
     }
 
-    if (action.type === 'DELETE__COUNTRY') {
+    if (action.type === DELETE__COUNTRY) {
         let newList = state.cars.filter((car) => {
             return car.country !== action.country
         });
@@ -892,7 +900,16 @@ const carReducers = (state = initialState, action) => {
         }
     }
 
-    if (action.type === 'ADD__FAVORITE') {
+    if (action.type === ADD_FAVORITE) {
+        console.warn('add favorite', action.payload);
+
+        return {
+            ...state,
+            favorites: action.payload
+        }
+    }
+
+    if (action.type === REMOVE__FAVORITE) {
         console.warn('add favorite', action.payload);
 
         return {
