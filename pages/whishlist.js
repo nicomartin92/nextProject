@@ -2,6 +2,8 @@ import Head from 'next/head'
 
 import Layout from '../layout/MainLayout'
 
+import Grid from '../components/Grid/Grid'
+
 import { connect } from 'react-redux';
 
 /* Styles */
@@ -12,19 +14,32 @@ class Whishlist extends React.Component {
     return (
       <div>
         <Head>
-          <title>@FRmodelcars - Mes préférés</title>
+          <title>@FRmodelcars - My whislist</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
 
         <Layout carItems={this.props.carR.cars}>
           <p>This is the Whishlist page</p>
+
+          <Grid />
         </Layout>
       </div>
     )
   }
 }
 
-export default connect(
+/* export default connect(
   state => state,
   // actions
+)(Whishlist); */
+
+const mapStateToProps = (state) => {
+  return {
+    favorites: state.carR.favorites
+  }
+};
+
+export default connect(
+  mapStateToProps, 
+  null
 )(Whishlist);

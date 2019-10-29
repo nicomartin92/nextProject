@@ -901,11 +901,14 @@ const carReducers = (state = initialState, action) => {
     }
 
     if (action.type === ADD_FAVORITE) {
-        console.warn('add favorite', action.payload);
+
+        let newList = state.cars.filter((car) => {
+            return car.id === action.payload
+        });
 
         return {
             ...state,
-            favorites: action.payload
+            favorites: newList
         }
     }
 

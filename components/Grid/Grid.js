@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 import './Grid.scss';
 
@@ -31,12 +31,12 @@ class Grid extends Component {
                 <div className="grid__preference">
                     {this.props.item.preference}
                 </div>
-                <NavLink to={`/Car/${this.props.item.reference}`} >
+                {/* <NavLink to={`/Car/${this.props.item.reference}`} >
                     <img className="grid__image"
                         loading="lazy"
                         src={this.props.item.views[0].image1}
                         alt={`${this.props.item.brand} ${this.props.item.model} ${this.props.item.version} - ${this.props.item.brandshop}`} />
-                </NavLink>
+                </NavLink> */}
                 <div className="grid__info">
                     <h3>{this.props.item.brandshop} - {this.props.item.brand} {this.props.item.model} {this.props.item.version}</h3>
                     <h4>{this.props.item.year}</h4>

@@ -6,6 +6,13 @@ import CSS from 'csstype'
 /* SVG */
 // import { ReactComponent as BuyIcon } from '../../assets/buy-icon.svg';
 
+import { connect } from 'react-redux';
+
+// ACTIONS
+import {
+    addFavorite
+} from '../../store/actions/actions';
+
 import './List.scss'
 
 /* const Card = (props) => {
@@ -56,6 +63,9 @@ const List = (props: any) => {
                     Acheter
                     <BuyIcon className="list__icon" />
                 </button> */}
+                    <button className="button" onClick={() => props.addFavorite(car.id)}>
+                        Favoris
+                    </button>
                     <Link href={`/cars/${car.reference}`}>
                         <a className="button">Voir modèle {car.model}</a>
                     </Link>
@@ -72,4 +82,13 @@ const List = (props: any) => {
     )
 }
 
-export default List;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addFavorite: (value) => dispatch(addFavorite(value))
+    }
+}
+
+export default connect(
+    null,
+    mapDispatchToProps
+)(List);
