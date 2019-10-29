@@ -8,6 +8,8 @@ import Link from 'next/link'
 import ProductList from '../components/ProductList'
 
 import { connect } from 'react-redux';
+
+// SELECTORS
 import {
   getALLCars,
   getFrenchCars,
@@ -16,6 +18,12 @@ import {
   getKeep,
   isVisible
 } from '../store/selectors/selectors';
+
+// ACTIONS
+import {
+  addFavorite,
+  deleteStock
+} from '../store/actions/actions';
 
 function getPosts() {
   return [
@@ -50,6 +58,10 @@ const PostLink = ({ post }) => (
   </li>
 )
 
+const handleFavorite = (props) => {
+  props.deleteStock(10)
+}
+
 const Home = (props) => {
 
   console.warn(props);
@@ -62,6 +74,12 @@ const Home = (props) => {
 
       <Layout carItems={props.cars} stock={props.stock}>
         <h1>title test</h1>
+
+        hello button
+        <button onClick={() => props.addFavorite('toto')}>
+          Add favorite
+        </button>
+
         <ul>
           {getPosts().map(post => (
             <PostLink key={post.id} post={post} />
@@ -104,9 +122,18 @@ const mapStateToProps = (state) => {
   }
 };
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addFavorite: (value) => dispatch(addFavorite(value)),
+    deleteStock: (value) => { dispatch(deleteStock(value)) },
+    updateGlobalStock: (value) => { dispatch({ type: 'UPDATE__GLOBAL__STOCK', stock: value }) },
+    updateCurrentCar: (id) => { dispatch({ type: 'UPDATE__CURRENT__CAR', stock: id }) }
+  }
+}
+
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps,
 )(Home);
 
 /* const Home = props => (

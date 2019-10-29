@@ -845,7 +845,8 @@ const initialState = {
             "stock": 1,
             "preference": 24
         }
-    ]
+    ],
+    favorites: []
 }
 
 const carReducers = (state = initialState, action) => {
@@ -888,6 +889,15 @@ const carReducers = (state = initialState, action) => {
         return {
             ...state,
             cars: newList
+        }
+    }
+
+    if (action.type === 'ADD__FAVORITE') {
+        console.warn('add favorite', action.payload);
+
+        return {
+            ...state,
+            favorites: action.payload
         }
     }
 
