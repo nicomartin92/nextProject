@@ -6,26 +6,29 @@ import Grid from '../components/Grid/Grid'
 
 import { connect } from 'react-redux';
 
+// ACTIONS
+import {
+  addFavorite
+} from '../store/actions/actions';
+
 /* Styles */
 import '../styles/index.scss'
 
-class Whishlist extends React.Component {
-  render() {
-    return (
-      <div>
-        <Head>
-          <title>@FRmodelcars - My whislist</title>
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        </Head>
+const Whishlist = (props) => {
+  return (
+    <div>
+      <Head>
+        <title>@FRmodelcars - My whislist</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
 
-        <Layout carItems={this.props.carR.cars}>
-          <p>This is the Whishlist page</p>
+      <Layout carItems={props.cars}>
+        <p>This is the Whishlist page</p>
 
-          <Grid />
-        </Layout>
-      </div>
-    )
-  }
+        <Grid item={props.favorites} isLoading={false}/>
+      </Layout>
+    </div>
+  )
 }
 
 /* export default connect(
@@ -35,11 +38,12 @@ class Whishlist extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
+    cars: state.carR.cars,
     favorites: state.carR.favorites
   }
 };
 
 export default connect(
-  mapStateToProps, 
+  mapStateToProps,
   null
 )(Whishlist);

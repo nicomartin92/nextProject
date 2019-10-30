@@ -8,11 +8,6 @@ import {
   getFrenchCars 
 } from '../store/selectors/selectors';
 
-// ACTIONS
-import {
-  addFavorite
-} from '../store/actions/actions';
-
 import Search from '../components/Search/Search';
 
 class Category extends React.Component {
