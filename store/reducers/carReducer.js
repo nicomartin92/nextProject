@@ -943,6 +943,7 @@ const carReducers = (state = initialState, action) => {
     }
 
     if (action.type === REMOVE__FAVORITE) {
+
         return {
             ...state,
             favorites: action.payload
