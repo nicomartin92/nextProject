@@ -847,36 +847,6 @@ const initialState = {
         }
     ],
     favorites: [
-        {
-            "id": 1,
-            "country": "fr",
-            "brandshop": "Ottomobile",
-            "brand": "Peugeot",
-            "model": "305",
-            "version": "GTX",
-            "year": "1985",
-            "reference": "OT104",
-            "color": "#868C8C",
-            "colorname": "Winchester Grey",
-            "image": "/cars/peugeot/peugeot-305-gtx.jpg",
-            "views": [
-                {
-                    "image1": "/cars/peugeot/peugeot-305-gtx-profil.jpg",
-                    "image2": "/cars/peugeot/peugeot-305-gtx-rear.jpg"
-                }
-            ],
-            "available": false,
-            "sold": false,
-            "keep": true,
-            "price": "90€",
-            "size": "1/18",
-            "description": "",
-            "category": "berline",
-            "segment": "segment C",
-            "new": false,
-            "stock": 0,
-            "preference": 3
-        }
     ]
 }
 
@@ -936,8 +906,6 @@ const carReducers = (state = initialState, action) => {
         let newList = state.cars.filter((car) => {
             return car.id === action.payload
         });
-
-        console.warn('compareList', compareList);
 
         return {
             ...state,
