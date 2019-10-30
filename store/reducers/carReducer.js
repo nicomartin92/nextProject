@@ -887,6 +887,7 @@ const DELETE__BRAND = 'DELETE__BRAND';
 const DELETE__COUNTRY = 'DELETE__COUNTRY';
 const ADD_FAVORITE = 'ADD__FAVORITE';
 const REMOVE__FAVORITE = 'REMOVE__FAVORITE';
+const REMOVE__ALL__FAVORITE = 'REMOVE__ALL__FAVORITE';
 
 const carReducers = (state = initialState, action) => {
     if (action.type === UPDATE__STOCK) {
@@ -936,6 +937,8 @@ const carReducers = (state = initialState, action) => {
             return car.id === action.payload
         });
 
+        console.warn('compareList', compareList);
+
         return {
             ...state,
             favorites: state.favorites.concat(newList)
@@ -943,10 +946,22 @@ const carReducers = (state = initialState, action) => {
     }
 
     if (action.type === REMOVE__FAVORITE) {
+        let newList = state.favorites.filter((car) => {
+            return car.id !== action.payload
+        });
 
         return {
             ...state,
-            favorites: action.payload
+            favorites: newList
+        }
+    }
+
+    if (action.type === REMOVE__ALL__FAVORITE) {
+        let newList = []
+
+        return {
+            ...state,
+            favorites: newList
         }
     }
 

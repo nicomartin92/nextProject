@@ -3,45 +3,15 @@ import Link from 'next/link';
 import CSS from 'csstype'
 // import { NavLink } from 'react-router-dom';
 
+import { connect } from 'react-redux';
+
+// ACTIONS
+import {
+    removeFavorite,
+    removeAllFavorite
+} from '../../store/actions/actions';
+
 import './Grid.scss';
-
-/* class Grid extends Component {
-    render() {
-        const unavailableStyles = {
-            opacity: "0.5"
-        }
-
-        const availableStyles = {
-            opacity: "1"
-        }
-
-        if (this.props.isLoading) {
-            return (
-                <li className="list__item">
-                    <div className="spinner">
-                        <span className="spinner-inner-1"></span>
-                        <span className="spinner-inner-2"></span>
-                        <span className="spinner-inner-3"></span>
-                    </div>
-                    <h2>Loading card ...</h2>
-                </li>
-            )
-        }
-
-        return (
-            <li key={this.props.item.id} className="grid__item" style={this.props.item.available ? availableStyles : unavailableStyles} >
-                <div className="grid__preference">
-                    {this.props.item.preference}
-                </div>
-                <div className="grid__info">
-                    <h3>{this.props.item.brandshop} - {this.props.item.brand} {this.props.item.model} {this.props.item.version}</h3>
-                    <h4>{this.props.item.year}</h4>
-                    <p>{this.props.item.description}</p>
-                </div>
-            </li>
-        )
-    }
-} */
 
 const Grid = (props: any) => {
     const unavailableStyles: CSS.Properties = {
@@ -67,11 +37,15 @@ const Grid = (props: any) => {
 
     return (
         <ul>
+            <button onClick={props.removeAllFavorite}>Supprimer tous les favoris</button>
             {props.item.map((car, index) => (
                 <li key={car.id} className="grid__item" style={car.available ? availableStyles : unavailableStyles} >
                     <div className="grid__preference">
                         {car.preference}
                     </div>
+                    <button onClick={() => props.removeFavorite(car.id)}>
+                        Supprimer des Favoris
+                    </button>
                     <Link
                         passHref href="/cars/[reference]"
                         as={`/cars/${car.reference}`}>
@@ -93,4 +67,14 @@ const Grid = (props: any) => {
     )
 }
 
-export default Grid;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        removeFavorite: (value) => dispatch(removeFavorite(value)),
+        removeAllFavorite: (value) => dispatch(removeAllFavorite(value))
+    }
+}
+
+export default connect(
+    null,
+    mapDispatchToProps
+)(Grid);
