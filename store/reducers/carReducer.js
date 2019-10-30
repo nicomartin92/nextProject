@@ -446,7 +446,7 @@ const initialState = {
                     "image2": "/cars/bmw/bmw-m235i-01-3-rear.jpg"
                 }
             ],
-            "available": false,
+            "available": true,
             "sold": false,
             "keep": true,
             "price": "115€",
