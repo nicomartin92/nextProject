@@ -61,22 +61,21 @@ const PostLink = ({ post }) => (
   </li>
 )
 
-const handleFavorite = (props) => {
-  props.deleteStock(10)
-}
-
 const Home = (props) => {
 
-  const [dataDB, setDataDB] = useState({ hits: [] });
+  const [dataDB, setDataDB] = React.useState([]);
 
-  useEffect(async () => {
-    const result = await axios(
+  React.useEffect(async () => {
+    /* const result = await axios(
       'https://hn.algolia.com/api/v1/search?query=redux',
-    );
+    ); */
 
     // Firebase connection to collection
     let firebase = await loadFirebase();
     let db = firebase.firestore();
+    const settings = {timestampsInSnapshots: true}
+    db.settings(settings);
+
     let results = await new Promise((resolve, reject) => {
       db.collection('whislist')
         .limit(10)
@@ -84,20 +83,18 @@ const Home = (props) => {
         .then(snapshot => {
           let data = [];
           snapshot.forEach(doc => {
-            data.push({
-              id: '',
-              brand: '',
-              name: ''
-            });
+            data.push(Object.assign({
+              id: doc.id
+            }, doc.data()));
           })
-          resolve(snapshot)
+          resolve(data);
         })
         .catch(error => {
           reject([])
         });
     });
-    return {}
-    // setData(db.data);
+    setDataDB(results);
+    console.warn(results)
   });
 
   return (
@@ -109,11 +106,6 @@ const Home = (props) => {
 
       <Layout carItems={props.cars} stock={props.stock}>
         <h1>title test</h1>
-
-        hello button
-        <button onClick={() => props.addFavorite('toto')}>
-          Add favorite
-        </button>
 
         <ul>
           {getPosts().map(post => (

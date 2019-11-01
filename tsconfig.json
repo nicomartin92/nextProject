@@ -19,7 +19,9 @@
     "jsx": "preserve",
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "**/*.env",
+    "**/*db.js"
   ],
   "include": [
     "next-env.d.ts",
