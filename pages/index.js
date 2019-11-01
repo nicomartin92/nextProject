@@ -1,7 +1,10 @@
 import Head from 'next/head';
 
 import React from 'react';
-import Layout from '../layout/MainLayout.js'
+import Layout from '../layout/MainLayout.js';
+
+// connect to firebase database
+import { loadFirebase } from '../lib/db.js';
 
 import Link from 'next/link'
 // import { getProducts } from '../lib/moltin'
@@ -64,7 +67,39 @@ const handleFavorite = (props) => {
 
 const Home = (props) => {
 
-  console.warn(props);
+  const [dataDB, setDataDB] = useState({ hits: [] });
+
+  useEffect(async () => {
+    const result = await axios(
+      'https://hn.algolia.com/api/v1/search?query=redux',
+    );
+
+    // Firebase connection to collection
+    let firebase = await loadFirebase();
+    let db = firebase.firestore();
+    let results = await new Promise((resolve, reject) => {
+      db.collection('whislist')
+        .limit(10)
+        .get()
+        .then(snapshot => {
+          let data = [];
+          snapshot.forEach(doc => {
+            data.push({
+              id: '',
+              brand: '',
+              name: ''
+            });
+          })
+          resolve(snapshot)
+        })
+        .catch(error => {
+          reject([])
+        });
+    });
+    return {}
+    // setData(db.data);
+  });
+
   return (
     <div>
       <Head>
