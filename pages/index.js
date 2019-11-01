@@ -65,11 +65,7 @@ const Home = (props) => {
 
   const [dataDB, setDataDB] = React.useState([]);
 
-  React.useEffect(async () => {
-    /* const result = await axios(
-      'https://hn.algolia.com/api/v1/search?query=redux',
-    ); */
-
+  /* React.useEffect(async () => {
     // Firebase connection to collection
     let firebase = await loadFirebase();
     let db = firebase.firestore();
@@ -95,7 +91,24 @@ const Home = (props) => {
     });
     setDataDB(results);
     console.warn(results)
-  });
+  }); */
+
+  React.useEffect(
+    () => {
+      const unsubscribe = firebase.firestore().collection('whislist').doc(id).onSnapshot(doc => { 
+        // setLoading(false) 
+        setDataDB(doc) 
+      }, 
+      err => { setError(err) })
+      // returning the unsubscribe function will ensure that
+      // we unsubscribe from document changes when our id
+      // changes to a different value.
+      console.warn(unsubscribe);
+
+      return () => unsubscribe()
+    },
+    [id]
+  )
 
   return (
     <div>
