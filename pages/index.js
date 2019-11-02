@@ -1,11 +1,15 @@
 import Head from 'next/head';
 
 import React from 'react';
-import Layout from '../layout/MainLayout.js'
+import Layout from '../layout/MainLayout.js';
+
+// connect to firebase database
+import firebase from '../lib/db.js';
 
 import Link from 'next/link'
 // import { getProducts } from '../lib/moltin'
-import ProductList from '../components/ProductList'
+import ProductList from '../components/ProductList';
+import GetWhislist from '../components/GetWhislist/GetWhislist';
 
 import { connect } from 'react-redux';
 
@@ -58,13 +62,10 @@ const PostLink = ({ post }) => (
   </li>
 )
 
-const handleFavorite = (props) => {
-  props.deleteStock(10)
-}
-
 const Home = (props) => {
 
-  console.warn(props);
+  const [dataDB, setDataDB] = React.useState([]);
+
   return (
     <div>
       <Head>
@@ -75,15 +76,12 @@ const Home = (props) => {
       <Layout carItems={props.cars} stock={props.stock}>
         <h1>title test</h1>
 
-        hello button
-        <button onClick={() => props.addFavorite('toto')}>
-          Add favorite
-        </button>
+        <GetWhislist />
 
         <ul>
-          {getPosts().map(post => (
+          {/* getPosts().map(post => (
             <PostLink key={post.id} post={post} />
-          ))}
+          )) */}
         </ul>
         <style jsx>{`
           ul {
