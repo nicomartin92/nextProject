@@ -2,11 +2,9 @@ const initialState = {
     overlay: false,
     toast: {
         "succes": "Véhicule ajouté",
-        "text": "",
-        "image": "",
-        "url": "",
-        "error": "Error"
+        "displayToast": false
     },
+    activeCar: [],
     visibleContent: true,
     stock: 14,
     cars: [
@@ -850,7 +848,6 @@ const initialState = {
     ]
 }
 
-
 const UPDATE__STOCK = 'UPDATE__STOCK';
 const DELETE__CAR = 'DELETE__CAR';
 const DELETE__BRAND = 'DELETE__BRAND';
@@ -909,7 +906,8 @@ const carReducers = (state = initialState, action) => {
 
         return {
             ...state,
-            favorites: state.favorites.concat(newList)
+            favorites: state.favorites.concat(newList),
+            activeCar: newList
         }
     }
 

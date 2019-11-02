@@ -8,72 +8,45 @@ import Link from 'next/link';
 /* styles */
 import './Toaster.scss';
 
-type MyProps = {
-    item: {
-        url: string,
-        succes: string,
-        text: string,
-        image: string
-    }
-};
+const Toaster = (props: any) => {
 
-type MyState = {
-    showToaster: boolean,
-    timer: number
-};
+    const [showToaster, setShowToaster] = React.useState(false);
+    const [timer, setTimer] = React.useState(3000);
+    const [url, setUrl] = React.useState(props.item.url);
+    const [success, setSuccess] = React.useState(props.item.succes);
+    const [text, setText] = React.useState(props.item.text);
+    const [image, setImage] = React.useState(props.item.image);
 
-class Toaster extends Component<MyProps, MyState> {
-    constructor(props: any) {
-        super(props);
-
-        this.state = {
-            showToaster: false,
-            timer: 3000
-        }
-
-        /* this.positionMap = {
-            1: 'top-left',
-            2: 'top-right',
-            3: 'bottom-right',
-            4: 'bottom-left',
-        } */
-    }
-
-    toastDisplay(value: boolean) {
-        this.setState({
-            showToaster: value
-        });
+    const toastDisplay = (value: boolean) => {
+        setShowToaster(value);
 
         setTimeout(() => {
-            this.setState({
-                showToaster: false
-            })
-        }, this.state.timer);
+            setShowToaster(false);
+        }, timer);
     }
 
-    render() {
-        return (
-            <div className={this.state.showToaster ? "toast -show" : "toast"}>
-                <div className="toast__wrapper">
-                    <Link href={`/Car/${this.props.item.url}`} >
-                        <div className="toast__header">
-                            {this.props.item.succes}
-                        </div>
-                        <div className="toast__content">
-                            <div className="toast__text">{this.props.item.text}</div>
-                            <div className="toast__image">
-                                <img src={this.props.item.image} alt={this.props.item.text} />
-                            </div>
-                        </div>
-                    </Link>
-
-                    <button className="toast__close" onClick={() => { this.toastDisplay(false) }}>
-                        {/* <CrossIcon /> */}
-                    </button>
+    return (
+        <div className={showToaster ? "toast -show" : "toast"}>
+            <div className="toast__wrapper">
+                {/* <Link passHref href="/cars/[pUrl]"
+                          as={`/cars/${srl}`}> */}
+                <div className="toast__header">
+                    {success}
                 </div>
+                <div className="toast__content">
+                    <div className="toast__text">{text}</div>
+                    <div className="toast__image">
+                        <img src={image} alt={text} />
+                    </div>
+                </div>
+                {/* </Link> */}
+
+                <button className="toast__close" onClick={() => { toastDisplay(false) }}>
+                    {/* <CrossIcon /> */}
+                </button>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 export default Toaster;
