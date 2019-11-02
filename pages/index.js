@@ -4,11 +4,12 @@ import React from 'react';
 import Layout from '../layout/MainLayout.js';
 
 // connect to firebase database
-import { loadFirebase } from '../lib/db.js';
+import firebase from '../lib/db.js';
 
 import Link from 'next/link'
 // import { getProducts } from '../lib/moltin'
-import ProductList from '../components/ProductList'
+import ProductList from '../components/ProductList';
+import GetWhislist from '../components/GetWhislist/GetWhislist';
 
 import { connect } from 'react-redux';
 
@@ -65,51 +66,6 @@ const Home = (props) => {
 
   const [dataDB, setDataDB] = React.useState([]);
 
-  /* React.useEffect(async () => {
-    // Firebase connection to collection
-    let firebase = await loadFirebase();
-    let db = firebase.firestore();
-    const settings = {timestampsInSnapshots: true}
-    db.settings(settings);
-
-    let results = await new Promise((resolve, reject) => {
-      db.collection('whislist')
-        .limit(10)
-        .get()
-        .then(snapshot => {
-          let data = [];
-          snapshot.forEach(doc => {
-            data.push(Object.assign({
-              id: doc.id
-            }, doc.data()));
-          })
-          resolve(data);
-        })
-        .catch(error => {
-          reject([])
-        });
-    });
-    setDataDB(results);
-    console.warn(results)
-  }); */
-
-  React.useEffect(
-    () => {
-      const unsubscribe = firebase.firestore().collection('whislist').doc(id).onSnapshot(doc => { 
-        // setLoading(false) 
-        setDataDB(doc) 
-      }, 
-      err => { setError(err) })
-      // returning the unsubscribe function will ensure that
-      // we unsubscribe from document changes when our id
-      // changes to a different value.
-      console.warn(unsubscribe);
-
-      return () => unsubscribe()
-    },
-    [id]
-  )
-
   return (
     <div>
       <Head>
@@ -120,10 +76,12 @@ const Home = (props) => {
       <Layout carItems={props.cars} stock={props.stock}>
         <h1>title test</h1>
 
+        <GetWhislist />
+
         <ul>
-          {getPosts().map(post => (
+          {/* getPosts().map(post => (
             <PostLink key={post.id} post={post} />
-          ))}
+          )) */}
         </ul>
         <style jsx>{`
           ul {
