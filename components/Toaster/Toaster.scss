@@ -10,6 +10,7 @@
     z-index: map-get($z-index, toaster);
     transition: all .3s ease-in;
     background: $colorBlack;
+    color: $colorWhite;
 
     .App &,
     .next & {

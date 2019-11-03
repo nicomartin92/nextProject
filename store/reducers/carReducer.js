@@ -1,9 +1,8 @@
+import PubSub from 'pubsub-js';
+
 const initialState = {
     overlay: false,
-    toast: {
-        "succes": "Véhicule ajouté",
-        "displayToast": false
-    },
+    toast: false,
     activeCar: [],
     visibleContent: true,
     stock: 14,
@@ -904,10 +903,13 @@ const carReducers = (state = initialState, action) => {
             return car.id === action.payload
         });
 
+        PubSub.publish('toaster', true);
+
         return {
             ...state,
             favorites: state.favorites.concat(newList),
-            activeCar: newList
+            activeCar: newList,
+            toast: true
         }
     }
 
