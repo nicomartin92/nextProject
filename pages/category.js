@@ -32,7 +32,7 @@ const Category = (props) => {
         title="FrModelcar - page de catégorie"
         carItems={props.cars}>
 
-        <Toaster item={props.toast} />
+        <Toaster item={props.activeCar} />
 
         <Search items={props.cars} />
         
@@ -48,7 +48,7 @@ const mapStateToProps = (state) => {
     allCars: getALLCars(state),
     allFrench: getFrenchCars(state),
     cars: state.carR.cars,
-    toast: state.carR.toast
+    activeCar: state.carR.activeCar
   }
 };
 
