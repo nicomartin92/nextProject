@@ -44,14 +44,15 @@ const Toaster = (props: any) => {
                 {/* <Link passHref href="/cars/[pUrl]"
                           as={`/cars/${srl}`}> */}
                 <div className="toast__header">
-                    {props.item[0].brandshop}
+                    {props.item[0].brandshop ? props.item[0].brandshop : ''}
                 </div>
                 <div className="toast__content">
                     <div className="toast__text">
-                        {props.item[0].brand} {props.item[0].model}
+                        {props.item[0].brand ? props.item[0].brand : ''} 
+                        {props.item[0].model ? props.item[0].model: ''}
                     </div>
                     <div className="toast__image">
-                        <img src={`/static${props.item[0].image}`} alt={`${props.item[0].brandShop} - ${props.item[0].brand} ${props.item[0].model}`} />
+                        <img src={`/static${props.item[0].image ? props.item[0].image : ''}`} />
                     </div>
                 </div>
                 {/* </Link> */}
