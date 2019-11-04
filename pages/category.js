@@ -32,7 +32,7 @@ const Category = (props) => {
         title="FrModelcar - page de catégorie"
         carItems={props.cars}>
 
-        <Toaster item={props.activeCar} />
+        <Toaster item={props.activeCar ? props.activeCar : []} />
 
         <Search items={props.cars} />
         
