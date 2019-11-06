@@ -14,7 +14,7 @@ import './Toaster.scss';
 const Toaster = (props: any) => {
 
     const [showToaster, setShowToaster] = React.useState(false);
-    const [timer, setTimer] = React.useState(3000);
+    const [timer, setTimer] = React.useState(1200);
 
     React.useEffect(() => {
         PubSub.subscribe('toaster', () => {

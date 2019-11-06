@@ -24,6 +24,7 @@
     "@zeit/next-sass": "^1.0.1",
     "dotenv": "^8.2.0",
     "firebase": "^7.2.3",
+    "lodash": "^4.17.15",
     "next": "^9.0.0",
     "next-redux-wrapper": "^3.0.0",
     "node-sass": "^4.12.0",

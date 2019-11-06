@@ -1,4 +1,7 @@
 // Media queries
+@mixin smallMedium {
+  @media (min-width: $width450) { @content; }
+}
 @mixin medium {
   @media (min-width: $width768) { @content; }
 }
