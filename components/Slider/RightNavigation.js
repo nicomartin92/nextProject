@@ -1,12 +1,12 @@
 import React from 'react';
 
 /* SVG */
-import { ReactComponent as ArrowIcon } from '../../assets/arrow.svg';
+import Arrow from '../../static/assets/arrow';
 
 const RightArrow = (props) => {
   return (
     <div className="nextArrow" onClick={props.goToNextSlide}>
-      <ArrowIcon className="arrow" />
+      <Arrow className="arrow" />
     </div>
   );
 }
