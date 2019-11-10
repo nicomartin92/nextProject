@@ -5,6 +5,7 @@ import CSS from 'csstype'
 
 /* SVG */
 // import { ReactComponent as BuyIcon } from '../../assets/buy-icon.svg';
+import Favorite from '../../static/assets/favorite';
 
 import { connect } from 'react-redux';
 
@@ -65,6 +66,7 @@ const List = (props: any) => {
                 </button> */}
                     <button className="button" onClick={() => props.addFavorite(car.id)}>
                         Favoris
+                        <Favorite />
                     </button>
                     <Link href={`/cars/${car.reference}`}>
                         <a className="button">Voir modèle {car.model}</a>
