@@ -19,12 +19,16 @@
         margin: 0;
         overflow: hidden;
 
+        @include smallMedium {
+            width: 50%;
+        }
+
         @include medium {
-        width: 50%;
+            width: 33.3%;
         }
 
         @include xlarge {
-        width: 33.3%;
+            width: 25%;
         }
     }
 
@@ -35,8 +39,14 @@
     &__info {
         background: $colorGray04;
         color: $colorWhite;
-        padding: rem(80px 40px);
+        padding: rem(40px 20px);
         text-align: center;
         height: 100%;
+        font-size: rem(12px);
+
+        @include medium {
+            padding: rem(80px 40px); 
+            font-size: rem(14px);
+        }
     }
 }

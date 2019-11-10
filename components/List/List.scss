@@ -58,7 +58,7 @@
     transition: 0.15s all ease-in-out;
     min-height: 337px;
 
-    @include medium {
+    @include smallMedium {
       width: 50%;
     }
 

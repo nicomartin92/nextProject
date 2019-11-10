@@ -35,16 +35,23 @@ const Grid = (props: any) => {
         )
     }
 
+    const deleteAllFavorite = (props: any) => {
+        if (props.item.length > 0) {
+            return (
+                <button
+                    className="button"
+                    onClick={props.removeAllFavorite}>Supprimer tous les favoris</button>
+            )
+        }
+    }
+
     return (
         <div>
-            <button onClick={props.removeAllFavorite}>Supprimer tous les favoris</button>
+            {deleteAllFavorite(props)}
             <ul className="grid">
-                {props.item.map((car, index) => (
+                {props.item.map((car: any) => (
                     <li key={car.id} className="grid__item" style={car.available ? availableStyles : unavailableStyles} >
-                        <div className="grid__preference">
-                            {car.preference}
-                        </div>
-                        <button onClick={() => props.removeFavorite(car.id)}>
+                        <button className="button" onClick={() => props.removeFavorite(car.id)}>
                             Supprimer des Favoris
                     </button>
                         <Link
@@ -63,17 +70,15 @@ const Grid = (props: any) => {
                         </div>
                     </li>
                 ))}
-
             </ul>
-
         </div>
     )
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: any) => {
     return {
-        removeFavorite: (value) => dispatch(removeFavorite(value)),
-        removeAllFavorite: (value) => dispatch(removeAllFavorite(value))
+        removeFavorite: (value: any) => dispatch(removeFavorite(value)),
+        removeAllFavorite: (value: any) => dispatch(removeAllFavorite(value))
     }
 }
 

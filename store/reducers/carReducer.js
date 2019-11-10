@@ -1,4 +1,5 @@
 import PubSub from 'pubsub-js';
+import _ from 'lodash';
 
 const initialState = {
     overlay: false,
@@ -903,11 +904,14 @@ const carReducers = (state = initialState, action) => {
             return car.id === action.payload
         });
 
+        let newArray = state.favorites;
+        newArray = _.uniqBy(newArray, 'reference');
+
         PubSub.publish('toaster', true);
 
         return {
             ...state,
-            favorites: state.favorites.concat(newList),
+            favorites: newArray.concat(newList),
             activeCar: newList,
             toast: true
         }
