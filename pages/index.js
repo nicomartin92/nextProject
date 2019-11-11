@@ -10,6 +10,7 @@ import Link from 'next/link'
 // import { getProducts } from '../lib/moltin'
 import ProductList from '../components/ProductList';
 import GetWhislist from '../components/GetWhislist/GetWhislist';
+import Slider from '../components/Slider/Slider';
 
 import { connect } from 'react-redux';
 
@@ -77,6 +78,8 @@ const Home = (props) => {
         <h1>title test</h1>
 
         <GetWhislist />
+
+        <Slider item={props.cars} view={1} />
 
         <ul>
           {/* getPosts().map(post => (

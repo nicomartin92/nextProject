@@ -10,7 +10,7 @@ const Slide = ({item}) => {
 
   return (
     <div className="slide" style={styles}>
-      <img src={item.image} alt=""/>
+      <img src={`/static${item.image}`} alt=""/>
     </div>
   )
 }

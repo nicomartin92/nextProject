@@ -120,10 +120,6 @@ const Search = (props: any) => {
                 </div>
             </div>
 
-            <ul className="list__wrapper">
-                {/* {carsItemsFromJson} */}
-            </ul>
-
             <List items={carsDataJsonFromState}
                   isLoading={false}
                   countStock={13} />

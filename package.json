@@ -59,6 +59,7 @@
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
     "react-redux": "^5.0.0",
+    "react-swipeable": "^5.4.0",
     "redux": "^4.0.4",
     "typescript": "^3.6.3"
   }
