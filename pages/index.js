@@ -11,6 +11,7 @@ import Link from 'next/link'
 import ProductList from '../components/ProductList';
 import GetWhislist from '../components/GetWhislist/GetWhislist';
 import Slider from '../components/Slider/Slider';
+import CompareImage from '../components/CompareImage/CompareImage';
 
 import { connect } from 'react-redux';
 
@@ -64,9 +65,6 @@ const PostLink = ({ post }) => (
 )
 
 const Home = (props) => {
-
-  const [dataDB, setDataDB] = React.useState([]);
-
   return (
     <div>
       <Head>
@@ -79,7 +77,12 @@ const Home = (props) => {
 
         <GetWhislist />
 
-        <Slider item={props.cars} view={1} />
+        <CompareImage
+          leftImage={props.cars[0].views[0].image1}
+          rightImage={props.cars[1].views[0].image1}
+          hover />
+
+        {/* <Slider item={props.cars} view={1} /> */}
 
         <ul>
           {/* getPosts().map(post => (
@@ -89,16 +92,6 @@ const Home = (props) => {
         <style jsx>{`
           ul {
             padding: 0;
-          }
-  
-          li {
-            list-style: none;
-            margin: 5px 0;
-          }
-  
-          a {
-            text-decoration: none;
-            color: blue;
           }
         `}</style>
       </Layout>
