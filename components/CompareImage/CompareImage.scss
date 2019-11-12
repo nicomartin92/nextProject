@@ -1,0 +1,109 @@
+.compareImage {
+    .container {
+        box-sizing: border-box;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .rightImage,
+    .leftImage {
+        display: block;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        width: 100%;
+    }
+
+    .slider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        cursor: ew-resize;
+        flex-direction: column;
+        height: 100%;
+        top: 0;
+        width: 40px;
+    }
+
+    .line {
+        box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+        flex: 0 1 auto;
+        background: #ffffff;
+        height: 100%;
+        width: 2px;
+    }
+
+    .handleCustom {
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        flex: 1 0 auto;
+        height: auto;
+        justify-content: center;
+        width: auto;
+    }
+
+    .handleDefault {
+        display: flex;
+        flex: 1 0 auto;
+        align-items: center;
+        border-radius: 100%;
+        box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+        box-sizing: border-box;
+        justify-content: center;
+        border: 2px solid #ffffff;
+        height: 40px;
+        width: 40px;
+        transform: none;
+    }
+
+    .leftArrow,
+    .rightArrow {
+        height: 0;
+        width: 0;
+    }
+
+    .rightArrow {
+        border: inset 40 * 0.15px rgba(0,0,0,0);
+        border-left: 40 * 0.15px solid #ffffff;
+        margin-right: -40 * 0.25px; // for IE11
+    }
+    
+    .leftArrow {
+        border: inset 40 * 0.15px rgba(0,0,0,0);
+        border-right: 40 * 0.15px solid #ffffff;
+        margin-left: -40 * 0.25px; // for IE11
+        margin-right: 40 * 0.25px;
+    }
+
+    .leftLabel {
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px 20px;
+        position: absolute;
+        left: 5%;
+        top: 50%;
+        transform: translate(0,-50%);
+        transition: opacity 0.1s ease-out;
+    }
+
+    .rightLabel {
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px 20px;
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        transform: translate(0,-50%);
+        transition: opacity 0.1s ease-out;
+    }
+
+    .leftLabelContainer,
+    .rightLabelContainer {
+        height: 100%;
+        position: absolute;
+        width: 100%;
+    }
+}
