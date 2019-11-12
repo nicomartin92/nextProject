@@ -78,8 +78,8 @@ const Home = (props) => {
         <GetWhislist />
 
         <CompareImage
-          leftImage={props.cars[0].views[0].image1}
-          rightImage={props.cars[1].views[0].image1}
+          leftImage={props.cars[2].views[0].image1}
+          rightImage={props.cars[6].views[0].image1}
           hover />
 
         <Slider item={props.cars} view={1} />
