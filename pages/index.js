@@ -82,7 +82,7 @@ const Home = (props) => {
           rightImage={props.cars[1].views[0].image1}
           hover />
 
-        {/* <Slider item={props.cars} view={1} /> */}
+        <Slider item={props.cars} view={1} />
 
         <ul>
           {/* getPosts().map(post => (
