@@ -4,31 +4,8 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import './CompareImage.scss'
 
-CompareImage.propTypes = {
-  aspectRatio: PropTypes.oneOf(['taller', 'wider']),
-  handle: PropTypes.node,
-  hover: PropTypes.bool,
-  leftImage: PropTypes.string.isRequired,
-  leftImageLabel: PropTypes.string,
-  onSliderPositionChange: PropTypes.func,
-  rightImage: PropTypes.string.isRequired,
-  rightImageLabel: PropTypes.string,
-  skeleton: PropTypes.element,
-  sliderPositionPercentage: PropTypes.number,
-};
+const CompareImage = (props) => {
 
-CompareImage.defaultProps = {
-  aspectRatio: 'taller',
-  handle: null,
-  hover: false,
-  leftImageLabel: null,
-  onSliderPositionChange: () => { },
-  rightImageLabel: null,
-  skeleton: null,
-  sliderPositionPercentage: 0.5,
-};
-
-function CompareImage(props) {
   const {
     aspectRatio,
     handle,
@@ -41,7 +18,6 @@ function CompareImage(props) {
     skeleton,
     sliderPositionPercentage,
   } = props;
-
 
   // 0 to 1
   const [sliderPosition, setSliderPosition] = useState(
@@ -150,6 +126,7 @@ function CompareImage(props) {
     };
 
     const containerElement = containerRef.current;
+    
 
     if (allImagesLoaded) {
       // it's necessary to reset event handlers each time the canvasWidth changes
@@ -157,6 +134,8 @@ function CompareImage(props) {
       // for mobile
       containerElement.addEventListener('touchstart', startSliding); // 01
       window.addEventListener('touchend', finishSliding); // 02
+
+      
 
       // for desktop
       if (hover) {
@@ -166,6 +145,12 @@ function CompareImage(props) {
         containerElement.addEventListener('mousedown', startSliding); // 05
         window.addEventListener('mouseup', finishSliding); // 06
       }
+
+      containerElement.addEventListener('click', ()=> {
+        console.warn('click')
+          finishSliding(); 
+          return false
+      });
 
       // calc and set the container's size
       const leftImageWidthHeightRatio =
@@ -302,5 +287,29 @@ function CompareImage(props) {
     </>
   );
 }
+
+CompareImage.propTypes = {
+  aspectRatio: PropTypes.oneOf(['taller', 'wider']),
+  handle: PropTypes.node,
+  hover: PropTypes.bool,
+  leftImage: PropTypes.string.isRequired,
+  leftImageLabel: PropTypes.string,
+  onSliderPositionChange: PropTypes.func,
+  rightImage: PropTypes.string.isRequired,
+  rightImageLabel: PropTypes.string,
+  skeleton: PropTypes.element,
+  sliderPositionPercentage: PropTypes.number,
+};
+
+CompareImage.defaultProps = {
+  aspectRatio: 'taller',
+  handle: null,
+  hover: false,
+  leftImageLabel: null,
+  onSliderPositionChange: () => { },
+  rightImageLabel: null,
+  skeleton: null,
+  sliderPositionPercentage: 0.5,
+};
 
 export default CompareImage;

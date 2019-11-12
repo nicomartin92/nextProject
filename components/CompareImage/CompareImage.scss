@@ -1,4 +1,9 @@
+@import '../../styles/index.scss';
+
 .compareImage {
+    max-width: $width1024;
+    margin: 0 auto;
+
     .container {
         box-sizing: border-box;
         position: relative;
@@ -32,7 +37,7 @@
         flex: 0 1 auto;
         background: #ffffff;
         height: 100%;
-        width: 2px;
+        width: rem(2px);
     }
 
     .handleCustom {
@@ -54,8 +59,8 @@
         box-sizing: border-box;
         justify-content: center;
         border: 2px solid #ffffff;
-        height: 40px;
-        width: 40px;
+        height: rem(40px);
+        width: rem(40px);
         transform: none;
     }
 
@@ -92,7 +97,7 @@
     .rightLabel {
         background: rgba(0, 0, 0, 0.5);
         color: white;
-        padding: 10px 20px;
+        padding: rem(10px 20px);
         position: absolute;
         right: 5%;
         top: 50%;
