@@ -7,7 +7,8 @@ const RangeSlider = (props: any) => {
     const Range = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220];
 
     const handleChange = (e) => {
-        this.setState({ value: e.target.value });
+        console.warn(e.target.value);
+        setValue(e.target.value)
     }
 
     const bulletPoints = Range.map((number, index) => {
@@ -17,10 +18,10 @@ const RangeSlider = (props: any) => {
     const genSlideStyle = (value: any) => {
         return {
             point: {
-                left: `calc(${value * 20}% - ${5 + 3 * value}px)`,
+                left: `calc(${value * 5.5}% - ${5 + 3 * value}px)`,
             },
             range: {
-                width: `${value * 20}%`,
+                width: `${value * 5.5}%`,
             },
         };
     };

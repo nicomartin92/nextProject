@@ -259,3 +259,16 @@
 }
 
 // .items { @include loopDelay(.1s, 4); }
+
+
+// Bullet points
+@mixin bullet($left) {
+  position: absolute;
+  top: 5px;
+  left: $left;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #d8d8d8;
+  border-radius: 50%;
+}
