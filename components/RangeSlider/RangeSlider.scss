@@ -11,6 +11,8 @@
   
 .rangeSlider {
     position: relative;
+    max-width: 900px;
+    margin: 0 auto 50px;
 
     &__slide {
         position: absolute;
