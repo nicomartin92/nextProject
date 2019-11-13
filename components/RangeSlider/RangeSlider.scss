@@ -86,11 +86,11 @@
             &.rangeSlider__bullet {
                 @for $i from 0 through 10 {
                     &-#{$i} {
-                        @include bullet(#{$i * 10%}, $colorBlue);
+                        @include bullet(#{$i * 9.9%}, $colorBlue);
                     }
                 }
             }
-            
+
             .device {
                 display: none;
             }
