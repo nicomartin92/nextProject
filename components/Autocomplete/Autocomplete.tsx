@@ -44,7 +44,7 @@ const Autocomplete = (props: any) => {
                 car.version.toLowerCase().match(userInput.toLowerCase()) ||
                 car.year.toLowerCase().match(userInput.toLowerCase()) ||
                 car.brandshop.toLowerCase().match(userInput.toLowerCase()) ||
-                // car.price.match(userInput) ||
+                car.price === parseInt(userInput) ||
                 car.country.toLowerCase().match(userInput.toLowerCase()) ||
                 car.category.toLowerCase().match(userInput.toLowerCase()) ||
                 car.segment.toLowerCase().match(userInput.toLowerCase());
