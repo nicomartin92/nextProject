@@ -28,7 +28,7 @@
   background-image: none;
   border: 1px solid transparent;
   border-radius: rem(4px);
-  margin: rem(20px 10px);
+  margin: rem(15px 10px);
   padding: rem(10px 15px);
   text-transform: uppercase;
   overflow: hidden;
@@ -262,13 +262,14 @@
 
 
 // Bullet points
-@mixin bullet($left) {
+@mixin bullet($left, $color) {
   position: absolute;
   top: 5px;
   left: $left;
   display: inline-block;
   width: 10px;
   height: 10px;
-  background: #d8d8d8;
+  background: $colorWhite;
+  border: 1px solid $color;
   border-radius: 50%;
 }

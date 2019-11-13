@@ -60,6 +60,7 @@ const List = (props: any) => {
                     <div>{car.brandshop} - {car.brand} {car.model} {car.version}</div>
                     <div style={{ display: !car.year && "none" }}>{car.year}</div>
                     <div>Stock:  {car.stock}</div>
+                    <div>Prix:  {car.price} €</div>
                     {/* <button className="button" onClick={() => this.props.countStock(car.id)}>
                     Acheter
                     <BuyIcon className="list__icon" />

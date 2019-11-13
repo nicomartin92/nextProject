@@ -3,7 +3,7 @@ import React from 'react';
 import './RangeSlider.scss'
 
 const RangeSlider = (props: any) => {
-    const [value, setValue] = React.useState(3); // from 50 - 220 €
+    const [value, setValue] = React.useState(17); // from 50 - 220 €
     const Range = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220];
 
     const handleChange = (e: any) => {
@@ -12,8 +12,6 @@ const RangeSlider = (props: any) => {
 
         setValue(indexValue);
         const searchValue = Range[indexValue];
-
-        console.warn(indexValue, searchValue);
 
         props.setCarsDataJsonFromState(searchValue)
     }
@@ -25,10 +23,10 @@ const RangeSlider = (props: any) => {
     const genSlideStyle = (value: any) => {
         return {
             point: {
-                left: `calc(${value * 5.58}% - ${15}px)`,
+                left: `calc(${value * 5.87}% - ${10}px)`,
             },
             range: {
-                width: `${value * 5.58}%`,
+                width: `${value * 5.87}%`,
             },
         };
     };
@@ -37,7 +35,7 @@ const RangeSlider = (props: any) => {
 
     return (
         <div>
-            <h2 className="center">Filtrer par prix:</h2>
+            <h3 className="center">Filtrer par prix:</h3>
             <div className="rangeSlider">
                 {bulletPoints}
                 <span className="rangeSlider__value" style={slideStyle.range} />

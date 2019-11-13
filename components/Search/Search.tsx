@@ -37,10 +37,8 @@ const Search = (props: any) => {
         this.props.deleteStock(this.props.stock - 1);
     }
 
-    const filterByPriceLimit = (price) => {
+    const filterByPriceLimit = (price:number) => {
         let _cars = props.items.filter(car => car.price <= price);
-
-        console.warn(_cars);
         setCarsDataJsonFromState(_cars);
     }
 
@@ -62,7 +60,7 @@ const Search = (props: any) => {
 
     const countryBrand = (country: string) => {
         let _countryBrand = props.items;
-        _countryBrand = _countryBrand.filter(function (car) {
+        _countryBrand = _countryBrand.filter(function (car:any) {
             switch (country) {
                 case 'fr':
                     return car.country === 'fr'
@@ -107,7 +105,7 @@ const Search = (props: any) => {
                                 onChange={handleChange}
                                 placeholder="type name here" />
 
-                            <button className="button" onClick={clearAll}>Clear all</button>
+                            <button className="button" onClick={clearAll}>Nettoyer les filtres</button>
                         </div>
                     </div>
                 </div>
