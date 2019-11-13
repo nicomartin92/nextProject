@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import List from '../List/List'
+import List from '../List/List';
+import RangeSlider from '../RangeSlider/RangeSlider';
 
 /* SVG */
 // import { ReactComponent as DeleteIcon } from '../../assets/delete-icon.svg';
@@ -106,6 +107,8 @@ const Search = (props: any) => {
                         </div>
                     </div>
                 </div>
+
+                <RangeSlider />
 
                 <div className="list__filter">
                     <button className="button" onClick={() => year('asc')} >Année asc</button>
