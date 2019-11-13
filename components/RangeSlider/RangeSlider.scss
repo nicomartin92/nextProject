@@ -68,52 +68,51 @@
         display: block;
     }
 
-    &::before {
-        @include bullet(6px);
-
-        content: '';
-    }
-
     .rangeSlider__bullet {
         &.bullet {
             position: relative;
             z-index: map-get($z-index, rangeSlider);
+            margin-left: 6px;
+        }
+
+        &-0 {
+            @include bullet(0);
         }
 
         &-1 {
-            @include bullet(5.5%);
+            @include bullet(4.8%);
         }
 
         &-2 {
-            @include bullet(11%);
+            @include bullet(9.7%);
         }
 
         &-3 {
-            @include bullet(16.5%);
+            @include bullet(15.2%);
         }
 
         &-4 {
-            @include bullet(22%);
+            @include bullet(20.8%);
         }
 
         &-5 {
-            @include bullet(27.5%);
+            @include bullet(26.4%);
         }
 
         &-6 {
-            @include bullet(33%);
+            @include bullet(32.7%);
         }
 
         &-7 {
-            @include bullet(38.5%);
+            @include bullet(38%);
         }
 
         &-8 {
-            @include bullet(44%);
+            @include bullet(43.6%);
         }
 
         &-9 {
-            @include bullet(49.5%);
+            @include bullet(49.2%);
         }
 
         &-10 {
@@ -121,23 +120,23 @@
         }
 
         &-11 {
-            @include bullet(60.5%);
+            @include bullet(60.2%);
         }
 
         &-12 {
-            @include bullet(66%);
+            @include bullet(65.6%);
         }
 
         &-13 {
-            @include bullet(71.5%);
+            @include bullet(71.2%);
         }
 
         &-14 {
-            @include bullet(77%);
+            @include bullet(76.8%);
         }
 
         &-15 {
-            @include bullet(82.5%);
+            @include bullet(82.2%);
         }
 
         &-16 {
@@ -145,11 +144,11 @@
         }
 
         &-17 {
-            @include bullet(93.5%);
+            @include bullet(93.8%);
         }
 
         &-18 {
-            @include bullet(100%);
+            @include bullet(99%);
         }
 
     }
