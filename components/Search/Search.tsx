@@ -3,9 +3,6 @@ import React, { Component } from 'react';
 import List from '../List/List';
 import RangeSlider from '../RangeSlider/RangeSlider';
 
-/* SVG */
-// import { ReactComponent as DeleteIcon } from '../../assets/delete-icon.svg';
-
 import './Search.scss';
 
 const Search = (props: any) => {
@@ -40,13 +37,20 @@ const Search = (props: any) => {
         this.props.deleteStock(this.props.stock - 1);
     }
 
+    const filterByPriceLimit = (price) => {
+        let _cars = props.items.filter(car => car.price <= price);
+
+        console.warn(_cars);
+        setCarsDataJsonFromState(_cars);
+    }
+
     const handleChange = (e: any) => {
         setSearchString(e.target.value);
     }
 
     const year = (year: string) => {
         let _cars1 = props.items;
-        _cars1 = _cars1.slice().sort((a, b) => {
+        _cars1 = _cars1.slice().sort((a: any, b: any) => {
             if (year === 'asc') {
                 return a.year - b.year
             } else {
@@ -84,7 +88,7 @@ const Search = (props: any) => {
     const clearAll = () => {
         // Please keep it
         // let _clearAll = this.state.originCarsDataJsonFromState;
-        let _clearAll = props.cars;
+        let _clearAll = props.items;
         setCarsDataJsonFromState(_clearAll);
     }
 
@@ -96,7 +100,7 @@ const Search = (props: any) => {
                         <h3 className="center">
                         </h3>
                         <div className="list__searchMain">
-                            
+
                             <input
                                 type="text"
                                 value={searchString}
@@ -108,7 +112,9 @@ const Search = (props: any) => {
                     </div>
                 </div>
 
-                <RangeSlider />
+                <RangeSlider
+                    items={props.items}
+                    setCarsDataJsonFromState={filterByPriceLimit} />
 
                 <div className="list__filter">
                     <button className="button" onClick={() => year('asc')} >Année asc</button>
@@ -124,8 +130,8 @@ const Search = (props: any) => {
             </div>
 
             <List items={carsDataJsonFromState}
-                  isLoading={false}
-                  countStock={13} />
+                isLoading={false}
+                countStock={13} />
         </div>
     )
 }

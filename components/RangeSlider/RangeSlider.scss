@@ -2,8 +2,8 @@
   
 .rangeSlider {
     position: relative;
-    max-width: 900px;
-    margin: 0 auto 50px;
+    max-width: rem(900px);
+    margin: 0 auto rem(50px);
 
     &__slide {
         position: absolute;
@@ -11,9 +11,9 @@
         background: transparent;
         appearance: none;
         left: 0;
-        top: -31px;
-        height: 46px;
-        z-index: 9;
+        top: rem(-31px);
+        height: rem(46px);
+        z-index: map-get($z-index, rangeSlider);
         outline: none;
         opacity: 0;
 
@@ -26,9 +26,9 @@
         }
 
         &::-webkit-slider-thumb {
-            width: 35px;
-            height: 35px;
-            margin: -3px 0 0 -3px;
+            width: rem(35px);
+            height: rem(35px);
+            margin: rem(-3px 0 0 -3px);
             cursor: pointer;
             appearance: none;
         }
@@ -36,9 +36,9 @@
 
     .circle {
         position: absolute;
-        top: -8px;
-        width: 30px;
-        height: 30px;
+        top: rem(-7px);
+        width: rem(30px);
+        height: rem(30px);
         border-radius: 50%;
         box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .07);
         border: solid 2px #dbdbdb;
@@ -49,21 +49,21 @@
 
     &__value {
         position: absolute;
-        top: 0;
+        top: rem(8px);
         left: 0;
         display: inline-block;
         width: 20%;
-        height: 20px;
+        height: rem(5px);
         background: $colorBlue;
-        border-radius: 10px 0 0 10px;
+        border-radius: rem(10px 0 0 10px);
         transition: .2s;
     }
 
     &::after {
         content: '';
         width: 100%;
-        height: 20px;
-        border-radius: 10px;
+        height: rem(20px);
+        border-radius: rem(10px);
         background: #f2f4f4;
         display: block;
     }
@@ -75,6 +75,11 @@
     }
 
     .rangeSlider__bullet {
+        &.bullet {
+            position: relative;
+            z-index: map-get($z-index, rangeSlider);
+        }
+
         &-1 {
             @include bullet(5.5%);
         }
@@ -151,7 +156,8 @@
 
     &__number {
         position: absolute;
-        top: 20px;
-        font-size: 10px;
+        top: rem(20px);
+        font-size: rem(10px);
+        width: rem(28px);
     }
 }
