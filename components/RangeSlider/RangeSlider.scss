@@ -73,12 +73,26 @@
     .bullet {
         position: relative;
         z-index: map-get($z-index, rangeBullet);
-    }
 
-    .rangeSlider__bullet {
-        @for $i from 0 through 17 {
-            &-#{$i} {
-                @include bullet(#{$i * 5.8%}, $colorBlue);
+        &.rangeSlider__bullet {
+            @for $i from 0 through 17 {
+                &-#{$i} {
+                    @include bullet(#{$i * 5.8%}, $colorBlue);
+                }
+            }
+        }  
+
+        &.year {
+            &.rangeSlider__bullet {
+                @for $i from 0 through 10 {
+                    &-#{$i} {
+                        @include bullet(#{$i * 10%}, $colorBlue);
+                    }
+                }
+            }
+            
+            .device {
+                display: none;
             }
         }
     }
