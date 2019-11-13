@@ -1,0 +1,163 @@
+@import '../../styles/index.scss';
+  
+.rangeSlider {
+    position: relative;
+    max-width: rem(900px);
+    margin: 0 auto rem(50px);
+
+    &__slide {
+        position: absolute;
+        width: 100%;
+        background: transparent;
+        appearance: none;
+        left: 0;
+        top: rem(-31px);
+        height: rem(46px);
+        z-index: map-get($z-index, rangeSlider);
+        outline: none;
+        opacity: 0;
+
+        &::-ms-expand {
+            display: none;
+        }
+
+        &::-ms-clear {
+            display: none;
+        }
+
+        &::-webkit-slider-thumb {
+            width: rem(35px);
+            height: rem(35px);
+            margin: rem(-3px 0 0 -3px);
+            cursor: pointer;
+            appearance: none;
+        }
+    }
+
+    .circle {
+        position: absolute;
+        top: rem(-7px);
+        width: rem(30px);
+        height: rem(30px);
+        border-radius: 50%;
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .07);
+        border: solid 2px #dbdbdb;
+        background: white;
+        display: inline-block;
+        transition: .2s;
+    }
+
+    &__value {
+        position: absolute;
+        top: rem(8px);
+        left: 0;
+        display: inline-block;
+        width: 20%;
+        height: rem(5px);
+        background: $colorBlue;
+        border-radius: rem(10px 0 0 10px);
+        transition: .2s;
+    }
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: rem(20px);
+        border-radius: rem(10px);
+        background: #f2f4f4;
+        display: block;
+    }
+
+    &::before {
+        @include bullet(6px);
+
+        content: '';
+    }
+
+    .rangeSlider__bullet {
+        &.bullet {
+            position: relative;
+            z-index: map-get($z-index, rangeSlider);
+        }
+
+        &-1 {
+            @include bullet(5.5%);
+        }
+
+        &-2 {
+            @include bullet(11%);
+        }
+
+        &-3 {
+            @include bullet(16.5%);
+        }
+
+        &-4 {
+            @include bullet(22%);
+        }
+
+        &-5 {
+            @include bullet(27.5%);
+        }
+
+        &-6 {
+            @include bullet(33%);
+        }
+
+        &-7 {
+            @include bullet(38.5%);
+        }
+
+        &-8 {
+            @include bullet(44%);
+        }
+
+        &-9 {
+            @include bullet(49.5%);
+        }
+
+        &-10 {
+            @include bullet(55%);
+        }
+
+        &-11 {
+            @include bullet(60.5%);
+        }
+
+        &-12 {
+            @include bullet(66%);
+        }
+
+        &-13 {
+            @include bullet(71.5%);
+        }
+
+        &-14 {
+            @include bullet(77%);
+        }
+
+        &-15 {
+            @include bullet(82.5%);
+        }
+
+        &-16 {
+            @include bullet(88%);
+        }
+
+        &-17 {
+            @include bullet(93.5%);
+        }
+
+        &-18 {
+            @include bullet(100%);
+        }
+
+    }
+
+    &__number {
+        position: absolute;
+        top: rem(20px);
+        font-size: rem(10px);
+        width: rem(28px);
+    }
+}
