@@ -19,6 +19,16 @@
         margin: 0;
         overflow: hidden;
 
+        animation: card-in .5s linear;
+        animation-fill-mode:forwards;
+        animation-delay: 1000ms;
+
+        @for $i from 1 through 21 {
+            &:nth-child(#{$i}){
+              animation-delay: $i * 50ms;
+            }
+        }
+
         @include smallMedium {
             width: 50%;
         }
@@ -39,14 +49,36 @@
     &__info {
         background: $colorGray04;
         color: $colorWhite;
-        padding: rem(40px 20px);
-        text-align: center;
+        padding: rem(20px);
         height: 100%;
         font-size: rem(12px);
 
         @include medium {
-            padding: rem(80px 40px); 
-            font-size: rem(14px);
+            padding: rem(30px); 
+            font-size: rem(12px);
+        }
+
+        h3 {
+            font-weight: normal;
+        }
+    }
+
+    &__delete {
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        svg {
+            fill: $colorBlack;
+            width: rem(30px);
+            height: rem(30px);
+        }
+    }
+
+    &__deleteAll {
+        svg {
+            fill: $colorBlack;
+            margin: 0 5px;
         }
     }
 }

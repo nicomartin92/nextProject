@@ -3,8 +3,10 @@ import Link from 'next/link'
 import CSS from 'csstype'
 // import { NavLink } from 'react-router-dom';
 
+/* components */
+import InViewPort from '../InViewPort/InViewPort';
+
 /* SVG */
-// import { ReactComponent as BuyIcon } from '../../assets/buy-icon.svg';
 import Favorite from '../../static/assets/favorite';
 
 import { connect } from 'react-redux';
@@ -56,11 +58,15 @@ const List = (props: any) => {
             <li className="list__item" key={car.id}>
                 <div className="list__itemContainer" style={car.available ? availableStyles : unavailableStyles}>
                     <img src={`/static${car.image}`} loading="lazy" alt={car.model} />
-                    <div>{car.title}</div>
-                    <div>{car.brandshop} - {car.brand} {car.model} {car.version}</div>
-                    <div style={{ display: !car.year && "none" }}>{car.year}</div>
-                    <div>Stock:  {car.stock}</div>
-                    <div>Prix:  {car.price} €</div>
+                    
+                    <InViewPort as="span" distanceAnimation={150}>
+                        <div>{car.title}</div>
+                        <div>{car.brandshop} - {car.brand} {car.model} {car.version}</div>
+                        <div style={{ display: !car.year && "none" }}>{car.year}</div>
+                        <div>Stock:  {car.stock}</div>
+                        <div>Prix:  {car.price} €</div>
+                    </InViewPort>
+
                     {/* <button className="button" onClick={() => this.props.countStock(car.id)}>
                     Acheter
                     <BuyIcon className="list__icon" />

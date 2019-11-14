@@ -3,6 +3,9 @@ import Link from 'next/link';
 import CSS from 'csstype'
 // import { NavLink } from 'react-router-dom';
 
+// SVG
+import Delete from '../../static/assets/delete';
+
 import { connect } from 'react-redux';
 
 // ACTIONS
@@ -39,8 +42,11 @@ const Grid = (props: any) => {
         if (props.item.length > 0) {
             return (
                 <button
-                    className="button"
-                    onClick={props.removeAllFavorite}>Supprimer tous les favoris</button>
+                    className="button grid__deleteAll"
+                    onClick={props.removeAllFavorite}>
+                    Supprimer tous les favoris
+                    <Delete />
+                </button>
             )
         }
     }
@@ -51,9 +57,9 @@ const Grid = (props: any) => {
             <ul className="grid">
                 {props.item.map((car: any) => (
                     <li key={car.id} className="grid__item" style={car.available ? availableStyles : unavailableStyles} >
-                        <button className="button" onClick={() => props.removeFavorite(car.id)}>
-                            Supprimer des Favoris
-                    </button>
+                        <button className="grid__delete" onClick={() => props.removeFavorite(car.id)}>
+                            <Delete />
+                        </button>
                         <Link
                             passHref href="/cars/[reference]"
                             as={`/cars/${car.reference}`}>
@@ -64,9 +70,7 @@ const Grid = (props: any) => {
                             </a>
                         </Link>
                         <div className="grid__info">
-                            <h3>{car.brandshop} - {car.brand} {car.model} {car.version}</h3>
-                            <h4>{car.year}</h4>
-                            <p>{car.description}</p>
+                            <h3>{car.brandshop} - {car.brand} {car.model} {car.version} {car.year}</h3>
                         </div>
                     </li>
                 ))}

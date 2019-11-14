@@ -117,3 +117,20 @@ $size: 50px;
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+.animate {
+    transition: all .6s ease-in;
+    color: $colorBlack;
+    display: block;
+}
+
+@keyframes card-in{
+    0%{
+      opacity: 0;
+      top: 100px;
+    }
+    100%{
+      opacity: 1;
+      top: 0px;
+    }
+}
