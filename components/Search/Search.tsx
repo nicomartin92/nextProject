@@ -121,11 +121,11 @@ const Search = (props: any) => {
                     range={[50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220]}
                     setCarsDataJsonFromState={filterByPriceLimit} />
 
-                <RangeSlider
+                {/* <RangeSlider
                     label={'year'}
                     items={carsDataJsonFromState}
                     range={[1970, 1980, 1990, 2000, 2005, 2008, 2010, 2013, 2015, 2017, 2019]}
-                    setCarsDataJsonFromState={filterByYearLimit} />
+                setCarsDataJsonFromState={filterByYearLimit} /> */}
 
                 <div className="list__filter">
                     <button className="button" onClick={() => year('asc')} >Année asc</button>

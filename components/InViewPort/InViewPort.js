@@ -20,7 +20,7 @@ const InViewPort = (props) => {
 
   const inViewPort = (elem) => {
     const scroll = window.scrollY || window.pageYOffset;
-    const boundsTop = elem.current.getBoundingClientRect().top + scroll;
+    const boundsTop = elem.current ? elem.current.getBoundingClientRect().top + scroll : 0;
 
     const viewport = {
       top: scroll,

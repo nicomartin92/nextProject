@@ -57,6 +57,8 @@
     margin: 0;
     transition: 0.15s all ease-in-out;
     min-height: 337px;
+    color: $colorWhite;
+    transition: all .6s ease-in;
 
     @include smallMedium {
       width: 50%;
