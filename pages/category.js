@@ -37,11 +37,6 @@ const Category = (props) => {
 
         <Search items={props.cars} />
 
-        <InViewPort as="span">
-          <p>I am a boy</p>
-          <p>I am a girl</p>
-        </InViewPort>
-
         <p>This is the List page</p>
 
       </Layout>

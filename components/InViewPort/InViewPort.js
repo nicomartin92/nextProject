@@ -6,6 +6,7 @@ const InViewPort = (props) => {
   const tagRef = React.useRef(null);
   const Tag = props.as;
   const classAnimation = props.classAnimation;
+  const distanceAnimation = props.distanceAnimation;
 
   React.useEffect(() => {
     switchAnimation();
@@ -32,8 +33,8 @@ const InViewPort = (props) => {
     }
 
     return (
-      ((bounds.bottom -200) >= viewport.top && (bounds.bottom -200) <= viewport.bottom) ||
-      ((bounds.top +200) <= viewport.bottom && (bounds.top +200) >= viewport.top)
+      ((bounds.bottom -distanceAnimation) >= viewport.top && (bounds.bottom -distanceAnimation) <= viewport.bottom) ||
+      ((bounds.top +distanceAnimation) <= viewport.bottom && (bounds.top +distanceAnimation) >= viewport.top)
     )
   }
 
@@ -54,6 +55,7 @@ const InViewPort = (props) => {
 
 InViewPort.defaultProps = {
   classAnimation: 'animate',
+  distanceAnimation: 200
 };
 
 
