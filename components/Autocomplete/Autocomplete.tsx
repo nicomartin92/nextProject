@@ -103,7 +103,6 @@ const Autocomplete = (props: any) => {
         setIsExpanded(isExpanded);
 
         if(isExpanded) {
-            console.warn(search);
             search.current.focus();
         } 
         search.current.focus();

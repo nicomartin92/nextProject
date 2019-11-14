@@ -5,11 +5,12 @@ import Layout from '../layout/MainLayout'
 // Components
 import Toaster from '../components/Toaster/Toaster';
 import Search from '../components/Search/Search';
+import InViewPort from '../components/InViewPort/InViewPort';
 
 import { connect } from 'react-redux';
-import { 
-  getALLCars, 
-  getFrenchCars 
+import {
+  getALLCars,
+  getFrenchCars
 } from '../store/selectors/selectors';
 
 /* export default connect(
@@ -35,9 +36,14 @@ const Category = (props) => {
         <Toaster item={props.activeCar ? props.activeCar : []} />
 
         <Search items={props.cars} />
-        
+
+        <InViewPort as="span">
+          <p>I am a boy</p>
+          <p>I am a girl</p>
+        </InViewPort>
+
         <p>This is the List page</p>
-        
+
       </Layout>
     </div>
   )
@@ -53,6 +59,6 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(
-    mapStateToProps, 
-    null
+  mapStateToProps,
+  null
 )(Category);

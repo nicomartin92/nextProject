@@ -56,8 +56,8 @@ const List = (props: any) => {
     const carRows = props.items.map(car => {
         return (
             <li className="list__item" key={car.id}>
-                
-                <InViewPort>
+
+                <InViewPort as="span">
                     <p>I am a boy</p>
                     <p>I am a girl</p>
                 </InViewPort>
