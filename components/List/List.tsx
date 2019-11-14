@@ -3,8 +3,10 @@ import Link from 'next/link'
 import CSS from 'csstype'
 // import { NavLink } from 'react-router-dom';
 
+/* components */
+import InViewPort from '../InViewPort/InViewPort';
+
 /* SVG */
-// import { ReactComponent as BuyIcon } from '../../assets/buy-icon.svg';
 import Favorite from '../../static/assets/favorite';
 
 import { connect } from 'react-redux';
@@ -54,6 +56,12 @@ const List = (props: any) => {
     const carRows = props.items.map(car => {
         return (
             <li className="list__item" key={car.id}>
+                
+                <InViewPort>
+                    <p>I am a boy</p>
+                    <p>I am a girl</p>
+                </InViewPort>
+
                 <div className="list__itemContainer" style={car.available ? availableStyles : unavailableStyles}>
                     <img src={`/static${car.image}`} loading="lazy" alt={car.model} />
                     <div>{car.title}</div>
