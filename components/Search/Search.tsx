@@ -38,6 +38,7 @@ const Search = (props: any) => {
     }
 
     const filterByPriceLimit = (arg:any) => {
+        console.warn(props.items, arg)
         let _cars = props.items.filter(car => car.price <= arg);
         setCarsDataJsonFromState(_cars);
     }
@@ -117,7 +118,7 @@ const Search = (props: any) => {
 
                 <RangeSlider
                     label={'price'}
-                    items={props.cars}
+                    items={props.items}
                     range={[50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220]}
                     setCarsDataJsonFromState={filterByPriceLimit} />
 
