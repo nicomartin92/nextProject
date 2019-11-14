@@ -123,14 +123,3 @@ $size: 50px;
     color: $colorBlack;
     display: block;
 }
-
-@keyframes card-in{
-    0%{
-      opacity: 0;
-      top: 100px;
-    }
-    100%{
-      opacity: 1;
-      top: 0px;
-    }
-}

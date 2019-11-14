@@ -103,6 +103,10 @@
     border-bottom: 1px solid #999;
     flex-wrap: wrap;
 
+    button {
+      @include loopAnimationBottomTop(50px, .8s);
+    }
+    
     label {
       // @include button($colorBlack, $colorWhite);
     }

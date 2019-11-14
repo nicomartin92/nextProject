@@ -281,3 +281,33 @@
   border: 1px solid $color;
   border-radius: 50%;
 }
+
+// Mixin animation
+
+
+@mixin loopAnimationBottomTop($value, $time) {
+  @keyframes card-in{
+    0%{
+      opacity: 0;
+      top: $value;
+    }
+    70%{
+      opacity: 0;
+      top: $value;
+    }
+    100%{
+      opacity: 1;
+      top: 0px;
+    }
+  }
+
+  animation: card-in .5s linear;
+  animation-fill-mode:forwards;
+  animation-delay: $time;
+
+  @for $i from 1 through 21 {
+      &:nth-child(#{$i}){
+        animation-delay: $i * 50ms;
+      }
+  }
+}
