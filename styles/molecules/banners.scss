@@ -3,10 +3,30 @@
         background: $colorGray06;
         padding: rem(30px 20px);
         margin-bottom: rem(30px);
+        display: flex;
 
         @include medium {
             padding: rem(120px 90px);
             margin-bottom: rem(50px);
+        }
+
+        .content {
+            flex: 0 0 60%;
+            width: 60%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image {
+            flex: 0 0 40%;
+            width: 40%;
+            position: relative;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
         }
     }
 }

@@ -88,6 +88,10 @@ const Home = (props) => {
               <p>Nous sommes avant tout un site de passionnés. Nous y présentons des modèles rares y mithyques.</p>
               <p>Nous donnons une estimation du marché pour chaque modèle. Si vous recherchez un modèle en particulier où si vous voulez en connaître sa côte, veuillez nous en faire part.</p>
           </div>
+          <div className="image">
+            <img lodaing="lazy" src={`/static${props.cars[28].image}`} />
+            <p>Venez découvrir le {props.cars[28].version}.</p>
+          </div>
         </section>
 
         <Slider item={props.cars} view={1} />
