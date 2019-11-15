@@ -31,15 +31,7 @@ body {
   width: 100%;
 }
 
-/* glabal styles */
-
-h2 {
-  font-size: rem(18px);
-
-  @include medium {
-    font-size: rem(25px);
-  }
-}
+/* global styles */
 
 ul {
   margin: 0;
@@ -56,6 +48,10 @@ ul {
 
 .center {
   text-align: center;
+}
+
+.hidden {
+  display: none;
 }
 
 a {

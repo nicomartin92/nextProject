@@ -56,15 +56,15 @@ const List = (props: any) => {
     const carRows = props.items.map(car => {
         return (
             <li className="list__item" key={car.id}>
-                <div className="list__itemContainer" style={car.available ? availableStyles : unavailableStyles}>
+                <div className="list__itemContainer" style={car.available ? availableStyles : availableStyles}>
                     <img src={`/static${car.image}`} loading="lazy" alt={car.model} />
                     
                     <InViewPort as="span" distanceAnimation={150}>
                         <div>{car.title}</div>
                         <div>{car.brandshop} - {car.brand} {car.model} {car.version}</div>
                         <div style={{ display: !car.year && "none" }}>{car.year}</div>
-                        <div>Stock:  {car.stock}</div>
-                        <div>Prix:  {car.price} €</div>
+                        <div className="hidden">Stock:  {car.stock}</div>
+                        <div>Estimation du prix:  {car.price} €</div>
                     </InViewPort>
 
                     {/* <button className="button" onClick={() => this.props.countStock(car.id)}>

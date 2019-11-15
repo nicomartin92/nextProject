@@ -1,0 +1,12 @@
+.banner {
+    &__text {
+        background: $colorGray06;
+        padding: rem(30px 20px);
+        margin-bottom: rem(30px);
+
+        @include medium {
+            padding: rem(120px 90px);
+            margin-bottom: rem(50px);
+        }
+    }
+}

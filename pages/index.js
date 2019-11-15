@@ -82,6 +82,14 @@ const Home = (props) => {
           rightImage={props.cars[6].views[0].image1}
           hover />
 
+        <section className="banner__text">
+          <div className="content">
+              <h2>Pourquoi FRModelcars ?</h2>  
+              <p>Nous sommes avant tout un site de passionnés. Nous y présentons des modèles rares y mithyques.</p>
+              <p>Nous donnons une estimation du marché pour chaque modèle. Si vous recherchez un modèle en particulier où si vous voulez en connaître sa côte, veuillez nous en faire part.</p>
+          </div>
+        </section>
+
         <Slider item={props.cars} view={1} />
 
         <ul>
