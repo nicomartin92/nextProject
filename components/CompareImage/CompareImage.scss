@@ -1,8 +1,9 @@
 @import '../../styles/index.scss';
 
 .compareImage {
-    max-width: $width1024;
+    max-width: $width800;
     margin: 0 auto;
+    overflow: hidden;
 
     .container {
         box-sizing: border-box;
@@ -15,9 +16,21 @@
     .leftImage {
         display: block;
         height: 100%;
-        object-fit: cover;
         position: absolute;
         width: 100%;
+        transform: skew(-20deg);
+
+        img {
+            display: block;
+            width: 100%;
+            position: absolute;
+            top: -30px;
+            transform: skew(20deg);
+
+            @include medium {
+                top: -120px;
+            }
+        }
     }
 
     .slider {
@@ -30,6 +43,7 @@
         height: 100%;
         top: 0;
         width: 40px;
+        transform: skew(-20deg);
     }
 
     .line {
@@ -61,7 +75,7 @@
         border: 2px solid #ffffff;
         height: rem(40px);
         width: rem(40px);
-        transform: none;
+        transform: skew(20deg);
     }
 
     .leftArrow,

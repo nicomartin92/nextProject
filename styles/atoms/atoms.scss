@@ -1,4 +1,5 @@
 @import 'aspectRatios.scss';
+@import 'heading.scss';
 
 .headLine {
     margin: 0 auto;
@@ -112,6 +113,11 @@ a {
 svg {
     width: rem(15px);
     height: rem(15px);
+
+    .automotiveIcon & {
+        width: rem(40px);
+        height: auto;
+    }
 }
 
 .svg-container {

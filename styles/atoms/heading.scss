@@ -1,0 +1,11 @@
+h1 {
+    font-size: rem(26px);
+    color: $colorGray05;
+    text-align: center;
+    margin: rem(20px 0);
+
+    @include medium {
+        font-size: rem(50px);
+        margin: rem(50px 0);
+    }
+}

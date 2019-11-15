@@ -23,7 +23,7 @@ const Whishlist = (props) => {
       </Head>
 
       <Layout carItems={props.cars}>
-        <p>This is the Whishlist page</p>
+        <h1>Votre sélection</h1>
 
         <Grid item={props.favorites} isLoading={false}/>
       </Layout>

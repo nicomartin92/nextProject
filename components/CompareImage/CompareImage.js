@@ -126,7 +126,7 @@ const CompareImage = (props) => {
     };
 
     const containerElement = containerRef.current;
-    
+
 
     if (allImagesLoaded) {
       // it's necessary to reset event handlers each time the canvasWidth changes
@@ -134,8 +134,6 @@ const CompareImage = (props) => {
       // for mobile
       containerElement.addEventListener('touchstart', startSliding); // 01
       window.addEventListener('touchend', finishSliding); // 02
-
-      
 
       // for desktop
       if (hover) {
@@ -146,10 +144,10 @@ const CompareImage = (props) => {
         window.addEventListener('mouseup', finishSliding); // 06
       }
 
-      containerElement.addEventListener('click', ()=> {
+      containerElement.addEventListener('click', () => {
         console.warn('click')
-          finishSliding(); 
-          return false
+        finishSliding();
+        return false
       });
 
       // calc and set the container's size
@@ -194,6 +192,7 @@ const CompareImage = (props) => {
   const styles = {
     container: {
       height: `${containerHeight}px`,
+      maxHeight: '360px',
     },
     rightImage: {
       clip: `rect(auto, auto, auto, ${containerWidth * sliderPosition}px)`
@@ -235,23 +234,25 @@ const CompareImage = (props) => {
         data-testid="container"
         className="compareImage"
       >
-        <img
-          onLoad={() => setRightImgLoaded(true)}
-          data-testid="right-image"
-          ref={rightImageRef}
-          src={`static${rightImage}`}
-          style={styles.rightImage}
-          className="rightImage"
-        />
 
-        <img
-          onLoad={() => setLeftImgLoaded(true)}
-          data-testid="left-image"
-          ref={leftImageRef}
-          src={`static${leftImage}`}
-          style={styles.leftImage}
-          className="leftImage"
-        />
+        <div style={styles.rightImage} className="rightImage">
+          <img
+            onLoad={() => setRightImgLoaded(true)}
+            data-testid="right-image"
+            ref={rightImageRef}
+            src={`static${rightImage}`}
+          />
+        </div>
+
+        <div style={styles.leftImage} className="leftImage">
+          <img
+            onLoad={() => setLeftImgLoaded(true)}
+            data-testid="left-image"
+            ref={leftImageRef}
+            src={`static${leftImage}`}
+          />
+        </div>
+
 
         <div style={styles.slider} className="slider">
           <div className="line" />

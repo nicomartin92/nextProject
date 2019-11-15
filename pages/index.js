@@ -73,7 +73,7 @@ const Home = (props) => {
       </Head>
 
       <Layout carItems={props.cars} stock={props.stock}>
-        <h1>title test</h1>
+        <h1>Bienvenue sur FRModelcars</h1>
 
         <GetWhislist />
 

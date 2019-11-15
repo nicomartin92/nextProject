@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PubSub from 'pubsub-js';
 
-/* SVG */
-// import { ReactComponent as SearchIcon } from '../../assets/search-icon.svg';
+// SVG
+import Automotive from '../../static/assets/automotive'
 
 import './Header.scss';
 
@@ -21,7 +21,9 @@ const Headers = () => {
                 style={{ color: '#000000' }}>
                 <ul className="nav">
                     <li>
-                        <button onClick={handleClick}>Cars</button>
+                        <button onClick={handleClick} className="automotiveIcon">
+                            <Automotive />
+                        </button>
                     </li>
                     <li>
                         <a href="/" title="Accueil">Accueil</a>
