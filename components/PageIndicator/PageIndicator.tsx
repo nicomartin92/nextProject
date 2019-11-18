@@ -33,7 +33,8 @@ const PageIndicator = (props: any) => {
     };
 
     const pageBarStyle: CSS.Properties = {
-        height: "3px",
+        height: "5px",
+        transform: "skew(-40deg)",
         background: scrollColor,
         width: scrolled
     };

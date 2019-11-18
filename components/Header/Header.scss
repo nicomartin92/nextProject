@@ -4,6 +4,14 @@ header {
     z-index: map-get($z-index, header);
 }
 
+nav {
+    width: 100%;
+    height: rem(55px);
+    background: $colorWhite;
+    position: fixed;
+    z-index: map-get($z-index, headerNav);
+}
+
 .nav {
     display: flex;
     flex-direction: column;
