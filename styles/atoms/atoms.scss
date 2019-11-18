@@ -64,6 +64,13 @@ button {
     @include button($colorBlack, $colorWhite);
 }
 
+.burgerMenu {
+    position: absolute;
+    z-index: map-get($z-index, burgerMenu);
+    right: rem(15px);
+    top: rem(15px);
+}
+
 input {
     margin: rem(15px 0);
     min-height: rem(40px);

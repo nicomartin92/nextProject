@@ -5,39 +5,49 @@ header {
 }
 
 .nav {
-    padding: rem(10px 20px);
     display: flex;
-    justify-content: center;
-    min-height: 50px;
-    box-shadow: -2px 15px 40px -23px rgba(0, 0, 0, 1);
-    font-weight: bold;
+    flex-direction: column;
     position: fixed;
     z-index: map-get($z-index, nav);
     background: $colorWhite;
     width: 100%;
+    min-height: rem(50px);
+    height: 100vh;
+    transform: translateX(-110%);
+    box-shadow: rem(-2px 15px 40px -23px) rgba(0, 0, 0, 1);
+    font-weight: bold;
+    padding: rem(10px 20px);
+    opacity: 0;
+    transition: all .3s ease-in;
+
+    &.-open {
+        opacity: 1;
+        transform: translateX(0);
+        transition: all .3s ease-in;
+    }
+
+    @include medium {
+        justify-content: center;
+        opacity: 1;
+    }
 
     li {
-        margin: rem(0 3px);
+        margin: rem(10px 3px);
 
         
         @include medium {
-            padding: rem(0 10px);
+            margin: rem(0 15px);
         }
     }
 
     a {
         color: $colorBlack;
-        margin: rem(0 5px);
         padding: 0;
 
         &.-active {
             color: $colorBlue;
 
             @include skew(14px, $colorBlue);
-        }
-
-        @include medium {
-            padding: rem(0 10px);
         }
     }
 }

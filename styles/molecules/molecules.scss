@@ -1,7 +1,7 @@
 @import 'banners.scss';
 
 .buttonClose {
-    @include buttonClose(70px, 40px, $colorBlack, $colorBlack);
+    @include buttonClose(70px, 29px, $colorBlack, $colorBlack);
 
     position: absolute;
     right: rem(20px);

@@ -7,6 +7,8 @@ import Automotive from '../../static/assets/automotive'
 import './Header.scss';
 
 const Headers = () => {
+    const [mobileMenu, setMobileMenu] = React.useState(false);
+
     const handleClick = () => {
         PubSub.publish('open:panelNav', true);
     }
@@ -15,11 +17,20 @@ const Headers = () => {
         PubSub.publish('open:search', true);
     }
 
+    const toggleMenu = () => {
+        if(mobileMenu) {
+            setMobileMenu(false);
+        } else {
+            setMobileMenu(true);
+        }
+    }
+
     return (
         <header>
             <nav
                 style={{ color: '#000000' }}>
-                <ul className="nav">
+                <button className="burgerMenu" onClick={toggleMenu}>menu</button>
+                <ul className={ mobileMenu ? "nav -open" : "nav"}>
                     <li>
                         <button onClick={handleClick} className="automotiveIcon">
                             <Automotive />
