@@ -21,11 +21,24 @@ export const initStore = (initialState = {}) => {
 
   // only if client browser
   if (isClient) {
-    const { persistReducer } = require('redux-persist');
+    const { persistReducer, createMigrate } = require('redux-persist');
     const storage = require('redux-persist/lib/storage').default;
+
+    const migrations = {
+      0: (state) => {
+        return {
+          state
+        }
+      }
+    }
+
     const persistConfig = {
       key: 'root',
-      storage
+      version: 0,
+      storage,
+      debug: true,
+      // stateReconciler: autoMergeLevel2,
+      migrate: createMigrate(migrations, { debug: true })
     };
 
     store = createStore(
