@@ -46,7 +46,7 @@ const RangeSlider = (props: any) => {
     const slideStyle = genSlideStyle(value);
 
     return (
-        <div>
+        <div className="rangeSlider__container">
             <h3 className="center">Filtrer par {label}:</h3>
             <div className="rangeSlider">
                 {bulletPoints}

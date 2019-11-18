@@ -28,7 +28,7 @@
   background-image: none;
   border: 1px solid transparent;
   border-radius: rem(4px);
-  margin: rem(15px 10px);
+  margin: rem(7px 10px);
   padding: rem(10px 15px);
   text-transform: uppercase;
   overflow: hidden;
@@ -40,6 +40,10 @@
   transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
   display: flex;
   justify-content: center;
+
+  @include medium {
+    margin: rem(10px 10px);
+  }
 
   input {
     display: none;
