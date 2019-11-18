@@ -57,7 +57,7 @@ const PanelNav = (props: any) => {
             </div>
             <button className="buttonClose outer" onClick={() => panelSwitcher(false)}>
                 <div className="inner">
-                    <label>Fermer</label>
+                    <label aria-label="fermer">Fermer</label>
                 </div>
             </button>
             <h3>cars</h3>

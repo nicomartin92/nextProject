@@ -24,11 +24,11 @@
             display: block;
             width: 100%;
             position: absolute;
-            top: -30px;
+            top: rem(-30px);
             transform: skew(20deg);
 
             @include medium {
-                top: -120px;
+                top: rem(-120px);
             }
         }
     }
@@ -42,7 +42,7 @@
         flex-direction: column;
         height: 100%;
         top: 0;
-        width: 40px;
+        width: rem(40px);
         transform: skew(-20deg);
     }
 
@@ -100,7 +100,7 @@
     .leftLabel {
         background: rgba(0, 0, 0, 0.5);
         color: white;
-        padding: 10px 20px;
+        padding: rem(10px 20px);
         position: absolute;
         left: 5%;
         top: 50%;

@@ -117,7 +117,7 @@ const Autocomplete = (props: any) => {
                 <button className="buttonClose outer"
                     onClick={() => displaySearch(false)}>
                     <div className="inner">
-                        <label>Fermer</label>
+                        <label aria-label="fermer">Fermer</label>
                     </div>
                 </button>
 

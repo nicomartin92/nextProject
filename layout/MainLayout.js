@@ -16,9 +16,9 @@ const layoutStyle = {
 export default function Layout(props) {
   return (
     <div style={layoutStyle} className="next">
+      <Header />
       <PageIndicator />
       <PanelNav items={props} />
-      <Header />
       <Autocomplete items={props} />
       <div className="main">
         {props.children}

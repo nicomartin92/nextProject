@@ -1,8 +1,8 @@
 @import '../../styles/index.scss';
 
 .toast {
-    width: 350px;
-    padding: 15px;
+    width: rem(350px);
+    padding: rem(15px);
     position: fixed;
     overflow-y: scroll;
     top: 0;
@@ -28,23 +28,23 @@
     }
 
     &.top-left {
-      top: 10px;
-      left: 10px;
+      top: rem(10px);
+      left: rem(10px);
     }
     
     &.top-right {
-      top: 10px;
-      right: 10px;  
+      top: rem(10px);
+      right: rem(10px);  
     }
     
     &.bottom-left {
-      bottom: 10px;
-      left: 10px;
+      bottom: rem(10px);
+      left: rem(10px);
     }
     
     &.bottom-right {
-      bottom: 10px;
-      right: 10px;
+      bottom: rem(10px);
+      right: rem(10px);
     }
 
     &__wrapper {
@@ -54,8 +54,8 @@
 
     &__close {
       position: absolute;
-      top: 3px;
-      right: 3px;
+      top: rem(3px);
+      right: rem(3px);
 
       svg {
         fill: $colorWhite;
@@ -63,7 +63,7 @@
     }
 
     &__header {
-      margin-bottom: 10px;
+      margin-bottom: rem(10px);
     }
 
     &__content {
@@ -79,7 +79,7 @@
 
     &__image {
       img {
-        width: 60px;
+        width: rem(60px);
       }
     }
 }

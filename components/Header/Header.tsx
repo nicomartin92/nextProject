@@ -29,10 +29,10 @@ const Headers = () => {
         <header>
             <nav
                 style={{ color: '#000000' }}>
-                <button className="burgerMenu" onClick={toggleMenu}>menu</button>
+                <button aria-label="menu mobile" className="burgerMenu" onClick={toggleMenu}>menu</button>
                 <ul className={ mobileMenu ? "nav -open" : "nav"}>
                     <li>
-                        <button onClick={handleClick} className="automotiveIcon">
+                        <button aria-label="panel nav" onClick={handleClick} className="automotiveIcon">
                             <Automotive />
                         </button>
                     </li>

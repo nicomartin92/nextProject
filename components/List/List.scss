@@ -19,11 +19,11 @@
   }
 
   &__categoryTitle {
-    padding: 20px;
+    padding: rem(20px);
   }
 
   &__searchBar {
-    padding: 10px 0;
+    padding: rem(10px 0);
   }
 
   &__searchMain {
@@ -32,7 +32,7 @@
   }
 
   &__filterButton {
-    padding: 20px;
+    padding: rem(20px);
     border-left: 1px solid $colorGray03;
     border-right: 1px solid $colorGray03;
     transition: all 0.3s ease-in;
@@ -44,7 +44,7 @@
     }
 
     svg {
-      margin-right: 15px;
+      margin-right: rem(15px);
     }
   }
 
@@ -56,7 +56,7 @@
     border: #eae8e4 1px solid;
     margin: 0;
     transition: 0.15s all ease-in-out;
-    min-height: 337px;
+    min-height: rem(337px);
     color: $colorWhite;
     transition: all .6s ease-in;
 
@@ -92,7 +92,7 @@
   }
 
   .sticky {
-    top: 50px;
+    top: rem(50px);
     background: rgba(255, 255, 255, 0.9);
   }
 
@@ -119,12 +119,12 @@
     width: 50%;
     background: $colorBlue;
     color: $colorWhite;
-    padding: 5px 10px;
+    padding: rem(5px 10px);
     transform: skewX(-18deg);
   }
 
   &__icon {
-    margin: 0 10px;
+    margin: rem(0 10px);
   }
 }
 

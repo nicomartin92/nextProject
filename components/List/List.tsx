@@ -58,7 +58,7 @@ const List = (props: any) => {
             <li className="list__item" key={car.id}>
                 <div className="list__itemContainer" style={car.available ? availableStyles : availableStyles}>
                     <img src={`/static${car.image}`} loading="lazy" alt={car.model} />
-                    
+
                     <InViewPort as="span" distanceAnimation={150}>
                         <div>{car.title}</div>
                         <div>{car.brandshop} - {car.brand} {car.model} {car.version}</div>
@@ -71,12 +71,15 @@ const List = (props: any) => {
                     Acheter
                     <BuyIcon className="list__icon" />
                 </button> */}
-                    <button className="button" onClick={() => props.addFavorite(car.id)}>
+                    <button
+                        aria-label={`${car.brand} ${car.model} ${car.version}`}
+                        className="button"
+                        onClick={() => props.addFavorite(car.id)}>
                         Favoris
                         <Favorite />
                     </button>
                     <Link href={`/cars/${car.reference}`}>
-                        <a className="button">Voir modèle {car.model}</a>
+                        <a className="button" title={`${car.brand} ${car.model} ${car.version}`}>Voir modèle {car.model}</a>
                     </Link>
                 </div>
             </li>

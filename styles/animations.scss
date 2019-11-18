@@ -77,7 +77,7 @@
 /* spinner */
 $spinner: $colorBlue;
 $background: $colorWhite;
-$size: 50px;
+$size: rem(50px);
 
 .spinner {
     position: absolute;
