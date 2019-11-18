@@ -24,11 +24,18 @@ header {
         opacity: 1;
         transform: translateX(0);
         transition: all .3s ease-in;
+
+        @include medium {
+            transform: none;
+        }
     }
 
     @include medium {
         justify-content: center;
+        flex-direction: row;
+        height: auto;
         opacity: 1;
+        transform: none;
     }
 
     li {

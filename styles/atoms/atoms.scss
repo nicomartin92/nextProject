@@ -69,6 +69,10 @@ button {
     z-index: map-get($z-index, burgerMenu);
     right: rem(15px);
     top: rem(15px);
+
+    @include medium {
+        display: none;
+    }
 }
 
 input {
