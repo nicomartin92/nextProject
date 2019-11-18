@@ -2,7 +2,8 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
 // REDUX PERSIST
-import { persistStore } from 'redux-persist';
+import { createMigrate, persistReducer, persistStore } from 'redux-persist';
+import autoMergeLevel2 from "redux-persist/lib/stateReconciler/autoMergeLevel2";
 
 // Import Selectors
 import selectors from './selectors/selectors';
@@ -21,24 +22,34 @@ export const initStore = (initialState = {}) => {
 
   // only if client browser
   if (isClient) {
-    const { persistReducer, createMigrate } = require('redux-persist');
     const storage = require('redux-persist/lib/storage').default;
 
     const migrations = {
       0: (state) => {
         return {
-          state
+          state,
+          cars: undefined 
+        }
+      },
+      1: (state) => {
+        // migration to keep only device state
+        return {
+          cars: state.cars
         }
       }
     }
 
     const persistConfig = {
-      key: 'root',
+      key: 'primary', // before was 'root'
       version: 0,
       storage,
       debug: true,
       // stateReconciler: autoMergeLevel2,
-      migrate: createMigrate(migrations, { debug: true })
+      // migrate: createMigrate(migrations, { debug: true })
+      migrate: (state) => {
+        console.log('Migration Running!', state)
+        return Promise.resolve(state)
+      }
     };
 
     store = createStore(

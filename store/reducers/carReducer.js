@@ -848,7 +848,7 @@ const initialState = {
             "country": "fr",
             "brandshop": "Ottomobile",
             "brand": "Peugeot",
-            "model": "Forugon J5 & 205",
+            "model": "Camion J5 & 205",
             "version": "Pack rallye Monte-Carlo 1985 - Peugeot 205",
             "year": "1985",
             "reference": "OT328",
