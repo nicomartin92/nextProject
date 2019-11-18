@@ -4,24 +4,36 @@
         padding: rem(30px 20px);
         margin-bottom: rem(30px);
         display: flex;
+        flex-direction: column-reverse;
 
         @include medium {
+            flex-direction: row;
             padding: rem(120px 90px);
             margin-bottom: rem(50px);
         }
 
         .content {
-            flex: 0 0 60%;
-            width: 60%;
+            flex: 0 0 100%;
+            width: 100%;
             position: relative;
             overflow: hidden;
+
+            @include medium {
+                flex: 0 0 60%;
+                width: 60%;
+            }
         }
 
         .image {
-            flex: 0 0 40%;
-            width: 40%;
+            flex: 0 0 100%;
+            width: 100%;
             position: relative;
             overflow: hidden;
+
+            @include medium {
+                flex: 0 0 40%;
+                width: 40%;
+            }
 
             img {
                 width: 100%;
