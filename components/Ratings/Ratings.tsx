@@ -4,12 +4,14 @@ import React from 'react';
 import './Ratings.scss';
 
 const Ratings = (props: any) => {
+    const [errorMessage, setErrorMessage] = React.useState(false);
+    const [successMessage, setSuccessMessage] = React.useState(false);
 
     const checkForm = (e) => {
         if(document.querySelector('.inputRadio:checked')) {
             alert('ok submit');
         } else {
-            alert('please select an input before');
+            setErrorMessage(true);
         }
 
         e.preventDefault();
@@ -35,6 +37,8 @@ const Ratings = (props: any) => {
     return (
         <div className="ratings">
             <h3 className="ratings__label">{props.item.label}</h3>
+            <p className={ errorMessage ? "errorMessage": "hidden"}>Veuillez sélectionner un champs avant !</p>
+            <p className={ errorMessage ? "errorMessage": "hidden"}>Veuillez sélectionner un champs avant !</p>
             <form action="#" method="post" onSubmit={checkForm}>
                 {displayRadio}
                 <button className="ratings__submit button" aria-label={props.item.submit}>{props.item.submit}</button>
