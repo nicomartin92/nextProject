@@ -1,0 +1,12 @@
+@import '../../styles/index.scss';
+
+.survey {
+    background: $colorGray06;
+    padding: rem(30px 20px);
+    margin-bottom: rem(30px);
+    text-align: center;
+
+    &__submit {
+        margin: rem(15px) auto;
+    }
+}

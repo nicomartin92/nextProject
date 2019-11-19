@@ -1,5 +1,6 @@
 @import 'aspectRatios.scss';
 @import 'heading.scss';
+@import 'inputs.scss';
 
 .headLine {
     margin: 0 auto;
@@ -68,6 +69,14 @@ button {
     @include button($colorBlack, $colorWhite);
 }
 
+.errorMessage {
+    color: $colorRed;
+}
+
+.successMessage {
+    color: $colorBlue;
+}
+
 .burgerMenu {
     position: absolute;
     z-index: map-get($z-index, burgerMenu);
@@ -77,12 +86,6 @@ button {
     @include medium {
         display: none;
     }
-}
-
-input {
-    margin: rem(15px 0);
-    min-height: rem(40px);
-    padding: rem(5px 15px);
 }
 
 a {

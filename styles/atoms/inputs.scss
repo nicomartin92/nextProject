@@ -1,0 +1,10 @@
+input {
+    margin: rem(15px 0);
+    min-height: rem(40px);
+    padding: rem(5px 15px);
+
+    &[type=checkbox],
+    &[type=radio] {
+        @include inputCheckbox();
+    }
+}

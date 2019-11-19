@@ -7,6 +7,22 @@ const initialState = {
     activeCar: [],
     visibleContent: true,
     stock: 14,
+    survey: [
+        {
+            "label": "Quel modèle souhaitez-vous voir reproduit en 1/18 ?",
+            "submit": "Envoyer votre réponse",
+            "questions": [
+                {
+                    "id": 1,
+                    "model": "Peugeot Boxer"
+                },
+                {
+                    "id": 2,
+                    "model": "Renault trafic"
+                }
+            ]
+        }
+    ],
     cars: [
         {
             "id": 1,

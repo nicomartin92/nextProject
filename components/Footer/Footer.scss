@@ -2,6 +2,7 @@
 
 .footer {
     position: fixed;
+    z-index: map-get($z-index, footer);
     background: $colorBlue;
     transform: skew(0, -3deg);
     left: 0;

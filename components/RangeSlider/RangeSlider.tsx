@@ -1,6 +1,7 @@
 import React from 'react';
 
-import './RangeSlider.scss'
+// SCSS
+import './RangeSlider.scss';
 
 const RangeSlider = (props: any) => {
     const Range = props.range;
