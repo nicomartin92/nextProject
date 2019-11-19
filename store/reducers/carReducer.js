@@ -7,6 +7,19 @@ const initialState = {
     activeCar: [],
     visibleContent: true,
     stock: 14,
+    ratings: [
+        {
+            "label": "Quel modèle souhaitez-vous voir reproduit en 1/18 ?",
+            "questions": [
+                {
+                    "model": "Peugeot Boxer"
+                },
+                {
+                    "model": "Renault trafic"
+                }
+            ]
+        }
+    ],
     cars: [
         {
             "id": 1,
