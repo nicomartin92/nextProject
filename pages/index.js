@@ -12,7 +12,7 @@ import ProductList from '../components/ProductList';
 import GetWhislist from '../components/GetWhislist/GetWhislist';
 import Slider from '../components/Slider/Slider';
 import CompareImage from '../components/CompareImage/CompareImage';
-import Ratings from '../components/Ratings/Ratings';
+import Survey from '../components/Survey/Survey';
 
 import { connect } from 'react-redux';
 
@@ -97,7 +97,7 @@ const Home = (props) => {
 
         <Slider item={props.cars} view={1} />
 
-        <Ratings item={props.ratings[0]} />
+        <Survey item={props.survey[0]} />
 
         <ul>
           {/* getPosts().map(post => (
@@ -128,7 +128,7 @@ const mapStateToProps = (state) => {
     allKeep: getKeep(state),
     cars: state.carR.cars,
     isVisible: state.carR.visibleContent,
-    ratings: state.carR.ratings
+    survey: state.carR.survey
   }
 };
 

@@ -7,7 +7,7 @@ const initialState = {
     activeCar: [],
     visibleContent: true,
     stock: 14,
-    ratings: [
+    survey: [
         {
             "label": "Quel modèle souhaitez-vous voir reproduit en 1/18 ?",
             "submit": "Envoyer votre réponse",

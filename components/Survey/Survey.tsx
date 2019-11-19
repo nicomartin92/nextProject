@@ -1,12 +1,12 @@
 import React from 'react';
 
 // SCSS
-import './Ratings.scss';
+import './Survey.scss';
 
 // Get Firestore
 import firebase from '../../lib/db';
 
-const Ratings = (props: any) => {
+const Survey = (props: any) => {
     const [errorMessage, setErrorMessage] = React.useState(false);
     const [successMessage, setSuccessMessage] = React.useState(false);
     const [choice, setChoice] = React.useState("");
@@ -14,7 +14,7 @@ const Ratings = (props: any) => {
     const checkForm = (e:any) => {
         if (document.querySelector('.inputRadio:checked')) {
             const db = firebase.firestore();
-            db.collection("ratings").add({
+            db.collection("survey").add({
                 choice: choice
             });
 
@@ -50,16 +50,16 @@ const Ratings = (props: any) => {
     })
 
     return (
-        <div className="ratings">
-            <h3 className="ratings__label">{props.item.label}</h3>
+        <div className="survey">
+            <h3 className="survey__label">{props.item.label}</h3>
             <p className={errorMessage ? "errorMessage" : "hidden"}>Veuillez sélectionner un champs avant !</p>
             <p className={successMessage ? "successMessage" : "hidden"}>Votre réponse a bien été envoyée !</p>
             <form action="#" method="post" onSubmit={checkForm}>
                 {displayRadio}
-                <button className="ratings__submit button" aria-label={props.item.submit}>{props.item.submit}</button>
+                <button className="survey__submit button" aria-label={props.item.submit}>{props.item.submit}</button>
             </form>
         </div>
     )
 }
 
-export default Ratings;
+export default Survey;
