@@ -65,12 +65,6 @@ li {
   margin: rem(0 20px);
 }
 
-input {
-  padding: rem(10px 20px);
-  border: 2px solid black;
-  margin: rem(15px 0);
-}
-
 .button-like {
   @include button($colorBlack, $colorWhite);
 }
@@ -89,6 +83,7 @@ input {
 .bounce-leave-active {
   animation: bounce-out .3s;
 }
+
 @keyframes bounce-in {
   0% { transform: scale(0) }
   100% { transform: scale(1) }

@@ -13,9 +13,11 @@ const initialState = {
             "submit": "Envoyer votre réponse",
             "questions": [
                 {
+                    "id": 1,
                     "model": "Peugeot Boxer"
                 },
                 {
+                    "id": 2,
                     "model": "Renault trafic"
                 }
             ]

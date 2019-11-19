@@ -4,12 +4,19 @@ import React from 'react';
 import './Ratings.scss';
 
 const Ratings = (props: any) => {
+    const [radioButton, setRadioButton] = React.useState(false);
+
+    const checkRadio = (e) => {
+        this.querySelectorAll('.ratings input[type=checkbox]').setAttribute('checked', false);
+        console.warn(e);
+        // setRadioButton(true)
+    }
 
     const checkbox = props.item.questions.map((question) => {
         return (
             <div key={`model-${Math.random()}`}>
-                <label htmlFor="">{question.model}</label>
-                <input type="checkbox" />
+                <input type="radio" id={question.id} checked={radioButton} onChange={checkRadio} />
+                <label htmlFor={question.id}>{question.model}</label>
             </div>
         )
     })

@@ -160,6 +160,59 @@
   }
 }
 
+// Input
+@mixin inputCheckbox() {
+  display: none;
+
+  &:checked {
+    & + label:before {
+      background-color: $colorBlue;
+      border-color: $colorBlue;
+      color: $colorWhite;
+    }
+  }
+
+  &:disabled {
+    & + label:before {
+      transform: scale(1);
+    }
+  }
+
+  &:checked {
+    &:disabled {
+      & + label:before {
+        transform: scale(1);
+        background-color: #bfb;
+        border-color: #bfb;
+      }
+    }
+  }
+
+  & + label {
+    display: block;
+    cursor: pointer;
+    margin: rem(15px 0 15px);
+
+    &:before {
+      content: "\2714";
+      border: 1px solid $colorGray04;
+      display: inline-block;
+      width: rem(15px);
+      height: rem(15px);
+      padding-left: rem(3px);
+      padding-bottom: rem(3px);
+      margin-right: rem(5px);
+      vertical-align: bottom;
+      color: transparent;
+      transition: all .2s ease-in;
+
+      &:active {
+        transform: scale(0);
+      }
+    }
+  }
+}
+
 
 // round
 @mixin round($size, $colorBg, $color, $fontSize) {
