@@ -9,7 +9,7 @@ const Ratings = (props: any) => {
 
     const checkForm = (e) => {
         if(document.querySelector('.inputRadio:checked')) {
-            alert('ok submit');
+            setSuccessMessage(true);
         } else {
             setErrorMessage(true);
         }
@@ -38,7 +38,7 @@ const Ratings = (props: any) => {
         <div className="ratings">
             <h3 className="ratings__label">{props.item.label}</h3>
             <p className={ errorMessage ? "errorMessage": "hidden"}>Veuillez sélectionner un champs avant !</p>
-            <p className={ errorMessage ? "errorMessage": "hidden"}>Veuillez sélectionner un champs avant !</p>
+            <p className={ successMessage ? "successMessage": "hidden"}>Veuillez sélectionner un champs avant !</p>
             <form action="#" method="post" onSubmit={checkForm}>
                 {displayRadio}
                 <button className="ratings__submit button" aria-label={props.item.submit}>{props.item.submit}</button>
