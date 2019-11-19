@@ -69,6 +69,14 @@ button {
     @include button($colorBlack, $colorWhite);
 }
 
+.errorMessage {
+    color: $colorRed;
+}
+
+.successMessage {
+    color: $colorBlue;
+}
+
 .burgerMenu {
     position: absolute;
     z-index: map-get($z-index, burgerMenu);
