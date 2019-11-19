@@ -52,6 +52,11 @@ const Survey = (props: any) => {
     return (
         <div className="survey">
             <h3 className="survey__label">{props.item.label}</h3>
+
+            <div className="progress">
+
+            </div>
+            
             <p className={errorMessage ? "errorMessage" : "hidden"}>Veuillez sélectionner un champs avant !</p>
             <p className={successMessage ? "successMessage" : "hidden"}>Votre réponse a bien été envoyée !</p>
             <form action="#" method="post" onSubmit={checkForm}>
