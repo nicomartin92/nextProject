@@ -164,7 +164,7 @@
 @mixin inputCheckbox() {
   display: none;
 
-  &:checked {
+  &.checked {
     & + label:before {
       background-color: $colorBlue;
       border-color: $colorBlue;
@@ -178,7 +178,7 @@
     }
   }
 
-  &:checked {
+  &.checked {
     &:disabled {
       & + label:before {
         transform: scale(1);
@@ -199,8 +199,9 @@
       display: inline-block;
       width: rem(15px);
       height: rem(15px);
-      padding-left: rem(3px);
-      padding-bottom: rem(3px);
+      font-size: rem(12px);
+      padding-left: rem(1px);
+      padding-bottom: rem(1px);
       margin-right: rem(5px);
       vertical-align: bottom;
       color: transparent;

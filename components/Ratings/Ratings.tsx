@@ -4,18 +4,29 @@ import React from 'react';
 import './Ratings.scss';
 
 const Ratings = (props: any) => {
-    const [radioButton, setRadioButton] = React.useState(false);
 
-    const checkRadio = (e) => {
-        this.querySelectorAll('.ratings input[type=checkbox]').setAttribute('checked', false);
-        console.warn(e);
-        // setRadioButton(true)
+    const checkForm = (e) => {
+        if(document.querySelector('.inputRadio:checked')) {
+            alert('ok submit');
+        } else {
+            alert('please select an input before');
+        }
+
+        e.preventDefault();
     }
 
-    const checkbox = props.item.questions.map((question) => {
+    const checkRadio = (e) => {
+        document.querySelectorAll('.inputRadio').forEach((elem) => {
+            elem.classList.remove('checked');
+        })
+
+        e.target.classList.add('checked', 'checked');
+    }
+
+    const displayRadio = props.item.questions.map((question) => {
         return (
             <div key={`model-${Math.random()}`}>
-                <input type="radio" id={question.id} checked={radioButton} onChange={checkRadio} />
+                <input type="radio" id={question.id} onChange={checkRadio} className="inputRadio" name="radio-group" />
                 <label htmlFor={question.id}>{question.model}</label>
             </div>
         )
@@ -24,8 +35,8 @@ const Ratings = (props: any) => {
     return (
         <div className="ratings">
             <h3 className="ratings__label">{props.item.label}</h3>
-            <form action="">
-                {checkbox}
+            <form action="#" method="post" onSubmit={checkForm}>
+                {displayRadio}
                 <button className="ratings__submit button" aria-label={props.item.submit}>{props.item.submit}</button>
             </form>
         </div>
