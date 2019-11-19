@@ -10,6 +10,7 @@ const initialState = {
     ratings: [
         {
             "label": "Quel modèle souhaitez-vous voir reproduit en 1/18 ?",
+            "submit": "Envoyer votre réponse",
             "questions": [
                 {
                     "model": "Peugeot Boxer"

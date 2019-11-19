@@ -12,6 +12,7 @@ import ProductList from '../components/ProductList';
 import GetWhislist from '../components/GetWhislist/GetWhislist';
 import Slider from '../components/Slider/Slider';
 import CompareImage from '../components/CompareImage/CompareImage';
+import Ratings from '../components/Ratings/Ratings';
 
 import { connect } from 'react-redux';
 
@@ -96,6 +97,8 @@ const Home = (props) => {
 
         <Slider item={props.cars} view={1} />
 
+        <Ratings item={props.ratings[0]} />
+
         <ul>
           {/* getPosts().map(post => (
             <PostLink key={post.id} post={post} />
@@ -124,7 +127,8 @@ const mapStateToProps = (state) => {
     allAvailable: getAvailable(state),
     allKeep: getKeep(state),
     cars: state.carR.cars,
-    isVisible: state.carR.visibleContent
+    isVisible: state.carR.visibleContent,
+    ratings: state.carR.ratings
   }
 };
 
