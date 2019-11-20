@@ -3,7 +3,11 @@
 	justify-content: center;
 
 	.circle {
-		margin-right: rem(40px);
+		margin-right: 0;
+
+		@include medium {
+			margin-right: rem(40px);
+		}
 
 		&__round {
 			display: block;
@@ -13,6 +17,7 @@
 			box-shadow: 0 0 1em black;
 			border-radius: 100%;
 			position: relative;
+			transform: scale(0.5);
 
 			&:after {
 				position: absolute;
