@@ -13,9 +13,10 @@ const Survey = (props: any) => {
 
     const checkForm = (e: any) => {
         if (document.querySelector('.inputRadio:checked')) {
+            const choiceValue = document.querySelector('.inputRadio:checked').getAttribute('value');
             const db = firebase.firestore();
             db.collection("survey").add({
-                choice: choice
+                choice: choiceValue
             });
 
             setErrorMessage(false);
@@ -34,7 +35,6 @@ const Survey = (props: any) => {
         })
 
         e.target.classList.add('checked', 'checked');
-        setChoice(e.target.value);
         setErrorMessage(false);
     }
 
@@ -72,15 +72,16 @@ const Survey = (props: any) => {
         return brand;
     }
     const surveyDatas = getData();
-    
+
     const percentages = () => {
-        const ratioPercentage = 100/surveyDatas.length;
+        const ratioPercentage = 100 / surveyDatas.length;
         const model1Length = surveyDatas.filter(val => val.choice === 'model-1').length
         const model1 = model1Length * ratioPercentage;
         const model2 = 100 - model1;
+
         const newArr = [];
-        newArr.push({model: props.item.questions[0].model, percentage: model1})
-        newArr.push({model: props.item.questions[1].model, percentage: model2});
+        newArr.push({ model: props.item.questions[0].model, percentage: model1, line: ((100 - model1) / 100 * Math.PI * (90 * 2)) })
+        newArr.push({ model: props.item.questions[1].model, percentage: model2, line: ((100 - model2) / 100 * Math.PI * (90 * 2)) });
         return newArr;
     }
 
@@ -89,17 +90,24 @@ const Survey = (props: any) => {
     return (
         <div className="survey">
             <h3 className="survey__label">{props.item.label}</h3>
-        
+
             <p className={errorMessage ? "errorMessage" : "hidden"}>Veuillez sélectionner un champs avant !</p>
             <p className={successMessage ? "successMessage" : "hidden"}>Votre réponse a bien été envoyée !</p>
-            
-            {percentageValues.map((survey) =>
-                <div className="list" key={survey.id}>
-                   {survey.model} {Math.round(survey.percentage)} %
-                </div>
-            )}
-            <div className="progress">
 
+            <div className="circles">
+                {percentageValues.map((survey, index) =>
+                    <div className="circle" key={`circle-${Math.random()}`}>
+                        <div>{survey.model}</div>
+                        <span>{Math.round(survey.percentage)} %</span>
+
+                        <div className="circle__round" data-pct={Math.round(parseInt(survey.percentage))}>
+                            <svg className="circle__svg" width="200" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                <circle r="90" cx="100" cy="100" fill="transparent" strokeDasharray="565.48" strokeDashoffset="0"></circle>
+                                <circle className="circle__bar" r="90" cx="100" cy="100" fill="transparent" strokeDasharray="565.48" strokeDashoffset="0" style={{ strokeDashoffset: parseInt(survey.line) }}></circle>
+                            </svg>
+                        </div>
+                    </div>
+                )}
             </div>
 
             <form action="#" method="post" onSubmit={checkForm}>

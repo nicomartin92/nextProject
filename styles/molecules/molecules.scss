@@ -1,4 +1,5 @@
 @import 'banners.scss';
+@import 'circles.scss';
 
 .buttonClose {
     @include buttonClose(70px, 29px, $colorBlack, $colorBlack);
