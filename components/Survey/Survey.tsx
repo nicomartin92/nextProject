@@ -9,12 +9,13 @@ import firebase from '../../lib/db';
 const Survey = (props: any) => {
     const [errorMessage, setErrorMessage] = React.useState(false);
     const [successMessage, setSuccessMessage] = React.useState(false);
+    const [surveyCollection] = React.useState(props.survey);
 
     const checkForm = (e: any) => {
         if (document.querySelector('.inputRadio:checked')) {
             const choiceValue = document.querySelector('.inputRadio:checked').getAttribute('value');
             const db = firebase.firestore();
-            db.collection("survey").add({
+            db.collection(surveyCollection).add({
                 choice: choiceValue
             });
 
@@ -57,7 +58,7 @@ const Survey = (props: any) => {
         React.useEffect(() => {
             firebase
                 .firestore()
-                .collection('survey')
+                .collection(surveyCollection)
                 .onSnapshot((snapshot) => {
                     const newDatas = snapshot.docs.map((doc) => ({
                         id: doc.id,

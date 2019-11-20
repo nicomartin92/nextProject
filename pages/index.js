@@ -97,7 +97,7 @@ const Home = (props) => {
 
         <Slider item={props.cars} view={1} />
 
-        <Survey item={props.survey[0]} />
+        <Survey item={props.survey[0]} survey={'survey'} />
 
         <ul>
           {/* getPosts().map(post => (
