@@ -40,7 +40,7 @@ export const initStore = (initialState = {}) => {
     }
 
     const persistConfig = {
-      key: 'root', // test when 'root' ou 'primary'
+      key: 'primary', // test when 'root' ou 'primary'
       version: 0,
       storage,
       debug: true,
