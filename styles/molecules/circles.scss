@@ -1,51 +1,73 @@
+$mobileDivider: 2;
+$size: 200px;
+$borderSize: -80px;
+
 .circles {
 	display: flex;
 	justify-content: center;
 
 	.circle {
-		margin-right: 0;
-
-		@include medium {
-			margin-right: rem(40px);
-		}
+		margin: rem(0 20px);
 
 		&__round {
 			display: block;
-			height: rem(200px);
-			width: rem(200px);
+			width: $size/$mobileDivider;
+			height: $size/$mobileDivider;
 			margin: 2em auto;
 			box-shadow: 0 0 1em black;
 			border-radius: 100%;
 			position: relative;
-			transform: scale(0.5);
+
+			@include medium {
+				height: $size;
+				width: $size;
+			}
 
 			&:after {
 				position: absolute;
 				display: block;
-				height: 160px;
-				width: 160px;
+				width: ($size/$mobileDivider)/1.25;
+				height: ($size/$mobileDivider)/1.25;
 				left: 50%;
 				top: 50%;
 				box-shadow: inset 0 0 1em black;
 				content: attr(data-pct)"%";
-				margin-top: -80px;
-				margin-left: -80px;
+				margin-top: $borderSize/$mobileDivider;
+				margin-left: $borderSize/$mobileDivider;
 				border-radius: 100%;
-				line-height: 160px;
+				line-height: ($size/1.25)/$mobileDivider;
 				font-size: 2em;
 				text-shadow: 0 0 0.5em black;
+
+				@include medium {
+					height: $size/1.25;
+					width: $size/1.25;
+					line-height: $size/1.25;
+					margin-top: $borderSize;
+					margin-left: $borderSize;
+				}
 			}
 		}
 
 		&__svg {
-			width: 100%;
-			height: 100%;
+			width: $size/$mobileDivider;
+			height: $size/$mobileDivider;
+
+			@include medium {
+				width: $size;
+				height: $size;
+			}
 
 			circle {
 				stroke-dashoffset: 0;
 				transition: stroke-dashoffset 1s linear;
 				stroke: #c5c5c5;
 				stroke-width: 1em;
+				transform: scale(1/$mobileDivider);
+
+				@include medium {
+					transform: none;
+				}
 			}
 
 			.circle__bar {

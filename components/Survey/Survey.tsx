@@ -89,7 +89,7 @@ const Survey = (props: any) => {
 
     return (
         <div className="survey">
-            <h3 className="survey__label">{props.item.label}</h3>
+            <h3 className="survey__label">{props.item.label} ({surveyDatas.length} votes)</h3>
 
             <p className={errorMessage ? "errorMessage" : "hidden"}>Veuillez sélectionner un champs avant !</p>
             <p className={successMessage ? "successMessage" : "hidden"}>Votre réponse a bien été envoyée !</p>
@@ -101,7 +101,7 @@ const Survey = (props: any) => {
                         <span>{Math.round(survey.percentage)} %</span>
 
                         <div className="circle__round" data-pct={Math.round(parseInt(survey.percentage))}>
-                            <svg className="circle__svg" width="200" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <svg className="circle__svg" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                 <circle r="90" cx="100" cy="100" fill="transparent" strokeDasharray="565.48" strokeDashoffset="0"></circle>
                                 <circle className="circle__bar" r="90" cx="100" cy="100" fill="transparent" strokeDasharray="565.48" strokeDashoffset="0" style={{ strokeDashoffset: parseInt(survey.line) }}></circle>
                             </svg>
