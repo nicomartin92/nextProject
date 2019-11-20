@@ -9,7 +9,6 @@ import firebase from '../../lib/db';
 const Survey = (props: any) => {
     const [errorMessage, setErrorMessage] = React.useState(false);
     const [successMessage, setSuccessMessage] = React.useState(false);
-    const [choice, setChoice] = React.useState("");
 
     const checkForm = (e: any) => {
         if (document.querySelector('.inputRadio:checked')) {
@@ -84,18 +83,20 @@ const Survey = (props: any) => {
         newArr.push({ model: props.item.questions[1].model, percentage: model2, line: ((100 - model2) / 100 * Math.PI * (90 * 2)) });
         return newArr;
     }
-
     const percentageValues = percentages();
 
     return (
         <div className="survey">
-            <h3 className="survey__label">{props.item.label} ({surveyDatas.length} votes)</h3>
+            <h3 className="survey__label">
+                {props.item.label}
+                <span className="survey__rates">({surveyDatas.length} votes)</span>
+            </h3>
 
             <p className={errorMessage ? "errorMessage" : "hidden"}>Veuillez sélectionner un champs avant !</p>
             <p className={successMessage ? "successMessage" : "hidden"}>Votre réponse a bien été envoyée !</p>
 
             <div className="circles">
-                {percentageValues.map((survey, index) =>
+                {percentageValues.map((survey) =>
                     <div className="circle" key={`circle-${Math.random()}`}>
                         <div>{survey.model}</div>
                         <span>{Math.round(survey.percentage)} %</span>

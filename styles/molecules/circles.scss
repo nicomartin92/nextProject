@@ -36,7 +36,7 @@ $borderSize: -80px;
 				margin-left: $borderSize/$mobileDivider;
 				border-radius: 100%;
 				line-height: ($size/1.25)/$mobileDivider;
-				font-size: 2em;
+				font-size: 2em/$mobileDivider;
 				text-shadow: 0 0 0.5em black;
 
 				@include medium {
@@ -45,6 +45,7 @@ $borderSize: -80px;
 					line-height: $size/1.25;
 					margin-top: $borderSize;
 					margin-left: $borderSize;
+					font-size: 2em/$mobileDivider;
 				}
 			}
 		}

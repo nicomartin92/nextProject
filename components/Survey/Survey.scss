@@ -9,4 +9,13 @@
     &__submit {
         margin: rem(15px) auto;
     }
+
+    &__rates {
+        font-size: rem(14px);
+        color: $colorBlue;
+
+        @include medium {
+            font-size: rem(18px);
+        }
+    }
 }

@@ -12,6 +12,7 @@
     overflow: hidden;
     white-space: nowrap;
     padding-bottom: rem(50px);
+    margin-bottom: rem(50px);
 
     @include aspect-ratio(800, 526);
 
