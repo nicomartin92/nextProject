@@ -104,12 +104,6 @@ li {
   transform: translate(-30px, 0);
 }
 
-
-.sticky {
-  position: sticky;
-  z-index: map-get($z-index, main);
-}
-
 .squareColor {
   display: inline-block;
   width: rem(30px);
