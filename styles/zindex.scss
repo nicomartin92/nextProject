@@ -1,9 +1,10 @@
 $z-index: (
+  header             : 202,
   toaster            : 201,
   burgerMenu         : 201,
+  stickyHeader       : 200,
   panelNav           : 200,
   autocomplete       : 200,
-  header             : 100,
   footer             : 100,
   nav                : 100,
   headerNav          : 98,
@@ -17,7 +18,6 @@ $z-index: (
   buttons            : 2,
   shapeShade         : 2,
   main               : 2,
-  stickyHeader       : 2,
   positifIndex       : 1,
   negatifIndex       : -1
 );

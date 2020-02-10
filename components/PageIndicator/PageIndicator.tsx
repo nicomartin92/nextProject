@@ -29,7 +29,7 @@ const PageIndicator = (props: any) => {
         top: "51px",
         left: 0,
         width: "100vw",
-        zIndex: 99
+        zIndex: 201
     };
 
     const pageBarStyle: CSS.Properties = {

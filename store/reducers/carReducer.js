@@ -105,7 +105,7 @@ const initialState = {
             "available": false,
             "sold": true,
             "keep": true,
-            "price": 90,
+            "price": 95,
             "size": "1/18",
             "description": "La Megane RS Trophy de 2018 est la plus puissante des Megane jamais construite. Pour passer la barre des 300 chevaux elle se dote du moteur de sa cousine Alpine dans une version retravaillée. La puissance augmente de 20 chevaux tandis que le couple progresse lui de 20 Nm. La transmission est confiée à une boîte EDC à double embrayage et 6 rapports. Avec une vitesse de pointe de 260 km/h, cette Megane n’a plus grand chose de commun avec une paisible compacte.",
             "category": "compact",
@@ -135,7 +135,7 @@ const initialState = {
             "available": false,
             "sold": true,
             "keep": true,
-            "price": 90,
+            "price": 95,
             "size": "1/18",
             "description": "Réinterprétation moderne de la Berlinette originale, la Première Edition est lancée au printemps 2017 et marque le retour tant espéré et attendu de la marque. Produite à 1955 exemplaires seulement, cette série limitée rend hommage à l’année de création d’Alpine par Jean Rédélé.",
             "category": "coupe",
@@ -165,7 +165,7 @@ const initialState = {
             "available": true,
             "sold": false,
             "keep": true,
-            "price": 110,
+            "price": 95,
             "size": "1/18",
             "description": "",
             "category": "berline",
@@ -282,8 +282,8 @@ const initialState = {
                     "image2": "/cars/audi/audi-rs4-b7-rear.jpg"
                 }
             ],
-            "available": true,
-            "sold": false,
+            "available": false,
+            "sold": true,
             "keep": false,
             "price": 90,
             "size": "1/18",
@@ -489,7 +489,7 @@ const initialState = {
                     "image2": "/cars/peugeot/peugeot-306-maxi-mk1-rear.jpg"
                 }
             ],
-            "available": true,
+            "available": false,
             "sold": true,
             "keep": false,
             "price": 115,
@@ -498,7 +498,7 @@ const initialState = {
             "category": "compacte",
             "segment": "segment C",
             "new": false,
-            "stock": 1
+            "stock": 0
         },
         {
             "id": 17,
@@ -636,7 +636,7 @@ const initialState = {
                     "image2": "/cars/alfa-romeo/alfa-romeo-stelvio-quadrifoglio-rear.jpg"
                 }
             ],
-            "available": false,
+            "available": true,
             "sold": false,
             "keep": true,
             "price": 95,
@@ -675,7 +675,7 @@ const initialState = {
             "category": "citadine",
             "segment": "segment B",
             "new": true,
-            "stock": 2,
+            "stock": 1,
             "preference": 11
         },
         {
@@ -796,7 +796,7 @@ const initialState = {
             "category": "berline",
             "segment": "segment D",
             "new": true,
-            "stock": 3,
+            "stock": 1,
             "preference": 13
         },
         {
@@ -826,7 +826,7 @@ const initialState = {
             "category": "coupe",
             "segment": "segment sportive",
             "new": true,
-            "stock": 1,
+            "stock": 2,
             "preference": 18
         },
         {
@@ -888,6 +888,66 @@ const initialState = {
             "new": true,
             "stock": 1,
             "preference": 25
+        },
+        {
+            "id": 30,
+            "country": "fr",
+            "brandshop": "Ottomobile",
+            "brand": "Renault",
+            "model": "Clio 3",
+            "version": "RS phase 2",
+            "year": "2009",
+            "reference": "OT350",
+            "color": "#EAAC01",
+            "colorname": "jaune sirius",
+            "image": "/cars/renault/renault-clio-3-rs-ph2.jpg",
+            "views": [
+                {
+                    "image1": "/cars/renault/renault-clio-3-rs-ph2-profil.jpg",
+                    "image2": "/cars/renault/renault-clio-3-rs-ph2-rear.jpg"
+                }
+            ],
+            "available": true,
+            "sold": false,
+            "keep": true,
+            "price": 120,
+            "size": "1/18",
+            "description": "Comme sa grande-sœur, la Clio 2, la troisième génération de la citadine de chez Renault a eu droit à sa version sport sous-titrée « R.S » en référence à Renault Sport.",
+            "category": "citadine",
+            "segment": "segment B",
+            "new": true,
+            "stock": 3,
+            "preference": 26
+        },
+        {
+            "id": 31,
+            "country": "de",
+            "brandshop": "Ottomobile",
+            "brand": "Bmw",
+            "model": "E46",
+            "version": "M3",
+            "year": "2000",
+            "reference": "OT790",
+            "color": "#00447B",
+            "colorname": "Laguna seca blue",
+            "image": "/cars/bmw/bmw-e46-m3.jpg",
+            "views": [
+                {
+                    "image1": "/cars/bmw/bmw-e46-m3-profil.jpg",
+                    "image2": "/cars/bmw/bmw-e46-m3-rear.jpg"
+                }
+            ],
+            "available": true,
+            "sold": false,
+            "keep": true,
+            "price": 110,
+            "size": "1/18",
+            "description": "La BMW M3 E46 a la lourde tâche de succéder aux icônes E30 et E36 ayant donné ses lettres de noblesse au blason Motorsport. Cette génération se présente comme un coupé Grand Tourisme avec une ligne très pure et équilibrée.",
+            "category": "coupe",
+            "segment": "segment D",
+            "new": true,
+            "stock": 2,
+            "preference": 27
         }
     ],
     favorites: [
