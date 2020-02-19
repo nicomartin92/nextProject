@@ -5,6 +5,7 @@ import Layout from '../../layout/MainLayout'
 import { withRouter } from 'next/router'
 import Markdown from 'react-markdown'
 
+// comments
 import { connect } from 'react-redux'
 
 class CarId extends React.Component {

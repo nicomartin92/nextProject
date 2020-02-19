@@ -11,7 +11,7 @@ import {
   addFavorite
 } from '../store/actions/actions';
 
-/* Styles */
+/* Styles comments */
 import '../styles/index.scss'
 
 const Whishlist = (props) => {
