@@ -28,7 +28,7 @@ export const initStore = (initialState = {}) => {
       0: (state) => {
         return {
           state,
-          cars: undefined 
+          cars: undefined
         }
       },
       1: (state) => {
