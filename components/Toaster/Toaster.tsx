@@ -36,10 +36,10 @@ const Toaster = (props: any) => {
         setTimeout(() => {
             setShowToaster(false);
         }, timer);
-    }
+    };
 
     return (
-        <div className={showToaster ? "toast -show" : "toast"}>
+        <div className={showToaster ? 'toast -show' : 'toast'}>
             <div className="toast__wrapper">
                 {/* <Link passHref href="/cars/[pUrl]"
                           as={`/cars/${srl}`}> */}
@@ -48,8 +48,8 @@ const Toaster = (props: any) => {
                 </div>
                 <div className="toast__content">
                     <div className="toast__text">
-                        {props.item[0] ? props.item[0].brand : ''} 
-                        {props.item[0] ? props.item[0].model: ''}
+                        {props.item[0] ? props.item[0].brand : ''}
+                        {props.item[0] ? props.item[0].model : ''}
                     </div>
                     <div className="toast__image">
                         <img src={`/static${props.item[0] ? props.item[0].image : ''}`} />
@@ -57,12 +57,12 @@ const Toaster = (props: any) => {
                 </div>
                 {/* </Link> */}
 
-                <button className="toast__close" onClick={() => { toastDisplay(false) }}>
+                <button className="toast__close" onClick={() => { toastDisplay(false); }}>
                     {/* <CrossIcon /> */}
                 </button>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Toaster;

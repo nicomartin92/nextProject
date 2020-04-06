@@ -162,16 +162,16 @@ const initialState = {
                     "image2": "/cars/bmw/bmw-e36-m3-4-doors-rear.jpg"
                 }
             ],
-            "available": true,
+            "available": false,
             "sold": false,
             "keep": true,
-            "price": 95,
+            "price": 120,
             "size": "1/18",
             "description": "",
             "category": "berline",
             "segment": "segment D",
             "new": false,
-            "stock": 3,
+            "stock": 0,
             "preference": 14
         },
         {
@@ -282,10 +282,10 @@ const initialState = {
                     "image2": "/cars/audi/audi-rs4-b7-rear.jpg"
                 }
             ],
-            "available": false,
+            "available": true,
             "sold": true,
             "keep": false,
-            "price": 90,
+            "price": 100,
             "size": "1/18",
             "description": "Soucieux de proposer une sportive à tout type de clientèle, Audi propose son fameux label RS et transforme le tranquille break des familles. Animé par le V8 420ch, vous ne rechignerez plus pour aller faire (la) les courses !",
             "category": "break",
@@ -492,7 +492,7 @@ const initialState = {
             "available": false,
             "sold": true,
             "keep": false,
-            "price": 115,
+            "price": 110,
             "size": "1/18",
             "description": "La 306 Maxi fut la reine des Kit-cars, notamment sur l’asphalte. Aux mains de Gilles et Hervé Panizzi, elle gagna plusieurs championnats de France des rallyes. Elle fit également plusieurs apparitions remarquées en championnat du monde.",
             "category": "compacte",
@@ -521,13 +521,13 @@ const initialState = {
             "available": true,
             "sold": true,
             "keep": true,
-            "price": 104,
+            "price": 100,
             "size": "1/18",
             "description": "Présentée à Francfort en 1993, l’Audi RS2 apparaît sous les traits d’un banal break Audi 80. Pourtant cette sportive va révolutionner le créneau des familiales.",
             "category": "break",
             "segment": "segment D",
             "new": false,
-            "stock": 2
+            "stock": 1
         },
         {
             "id": 18,
@@ -787,7 +787,7 @@ const initialState = {
                     "image2": "/cars/peugeot/peugeot-405-mi16-le-mans-rear.jpg"
                 }
             ],
-            "available": true,
+            "available": false,
             "sold": true,
             "keep": true,
             "price": 95,
@@ -796,7 +796,7 @@ const initialState = {
             "category": "berline",
             "segment": "segment D",
             "new": true,
-            "stock": 1,
+            "stock": 0,
             "preference": 13
         },
         {
@@ -940,14 +940,44 @@ const initialState = {
             "available": true,
             "sold": false,
             "keep": true,
-            "price": 110,
+            "price": 90,
             "size": "1/18",
             "description": "La BMW M3 E46 a la lourde tâche de succéder aux icônes E30 et E36 ayant donné ses lettres de noblesse au blason Motorsport. Cette génération se présente comme un coupé Grand Tourisme avec une ligne très pure et équilibrée.",
             "category": "coupe",
             "segment": "segment D",
             "new": true,
-            "stock": 2,
+            "stock": 1,
             "preference": 27
+        },
+        {
+            "id": 32,
+            "country": "fr",
+            "brandshop": "Ottomobile",
+            "brand": "Renault",
+            "model": "Megane 4",
+            "version": "Trophy-R",
+            "year": "2019",
+            "reference": "OT804",
+            "color": "#ffffff",
+            "colorname": "White Quartz",
+            "image": "/cars/renault/renault-megane-trophy-r.jpg",
+            "views": [
+                {
+                    "image1": "/cars/renault/renault-megane-trophy-r-profil.jpg",
+                    "image2": "/cars/renault/renault-megane-trophy-r-rear.jpg"
+                }
+            ],
+            "available": true,
+            "sold": false,
+            "keep": true,
+            "price": 120,
+            "size": "1/18",
+            "description": "Quand on pense Renault Megane on n’imagine pas forcément une sportive. Et pourtant, la Megane dans sa version Trophy-R a su affoler les compteurs sur le mythique circuit du Nürburgring.",
+            "category": "berline",
+            "segment": "segment C",
+            "new": true,
+            "stock": 3,
+            "preference": 28
         }
     ],
     favorites: [

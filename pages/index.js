@@ -80,14 +80,14 @@ const Home = (props) => {
 
         <CompareImage
           leftImage={props.cars[2].views[0].image1}
-          rightImage={props.cars[6].views[0].image1}
+          rightImage={props.cars[31].views[0].image1}
           hover />
 
         <section className="banner__text">
           <div className="content">
-              <h2>Pourquoi FRModelcars ?</h2>  
-              <p>Nous sommes avant tout un site de passionnés. Nous y présentons des modèles rares y mithyques.</p>
-              <p>Nous donnons une estimation du marché pour chaque modèle. Si vous recherchez un modèle en particulier où si vous voulez en connaître sa côte, veuillez nous en faire part.</p>
+            <h2>Pourquoi FRModelcars ?</h2>
+            <p>Nous sommes avant tout un site de passionnés. Nous y présentons des modèles rares y mithyques.</p>
+            <p>Nous donnons une estimation du marché pour chaque modèle. Si vous recherchez un modèle en particulier où si vous voulez en connaître sa côte, veuillez nous en faire part.</p>
           </div>
           <div className="image">
             <img lodaing="lazy" src={`/static${props.cars[28].image}`} />
