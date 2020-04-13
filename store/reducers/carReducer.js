@@ -35,6 +35,7 @@ const initialState = {
             "reference": "OT104",
             "color": "#868C8C",
             "colorname": "Winchester Grey",
+            "colorref": "gray",
             "image": "/cars/peugeot/peugeot-305-gtx.jpg",
             "views": [
                 {
@@ -65,6 +66,7 @@ const initialState = {
             "reference": "OT057",
             "color": "#373F52",
             "colorname": "Bleu Delft",
+            "colorref": "blue",
             "image": "/cars/peugeot/peugeot-505-v6.jpg",
             "views": [
                 {
@@ -95,6 +97,7 @@ const initialState = {
             "reference": "OT751",
             "color": "#B92B29",
             "colorname": "Rouge Flamme",
+            "colorref": "red",
             "image": "/cars/renault/renault-megane-rs-trophy.jpg",
             "views": [
                 {
@@ -125,6 +128,7 @@ const initialState = {
             "reference": "OT278",
             "color": "#0043B2",
             "colorname": "Bleu Alpine",
+            "colorref": "blue",
             "image": "/cars/alpine/alpine-a110-premiere-edition.jpg",
             "views": [
                 {
@@ -155,6 +159,7 @@ const initialState = {
             "reference": "OT307",
             "color": "#4B3F4D",
             "colorname": "Daytona Violet",
+            "colorref": "purple",
             "image": "/cars/bmw/bmw-e36-m3-4-doors.jpg",
             "views": [
                 {
@@ -185,6 +190,7 @@ const initialState = {
             "reference": "OT690",
             "color": "#101010",
             "colorname": "Black I 086",
+            "colorref": "black",
             "image": "/cars/bmw/bmw-e34-m5-phase-i.jpg",
             "views": [
                 {
@@ -215,6 +221,7 @@ const initialState = {
             "reference": "OT807",
             "color": "#000000",
             "colorname": "Noir étoilé",
+            "colorref": "black",
             "image": "/cars/renault/renault-megane-rs-trophy-n.jpg",
             "views": [
                 {
@@ -245,6 +252,7 @@ const initialState = {
             "reference": "OT284",
             "color": "#AF3432",
             "colorname": "Rosso Competizione",
+            "colorref": "red",
             "image": "/cars/alfa-romeo/alfa-romeo-giulia-quadrifoglio.jpg",
             "views": [
                 {
@@ -266,20 +274,21 @@ const initialState = {
         },
         {
             "id": 9,
-            "country": "de",
+            "country": "fr",
             "brandshop": "Ottomobile",
-            "brand": "Audi",
-            "model": "RS4",
-            "version": "B7",
-            "year": "2006",
-            "reference": "OT721",
-            "color": "#8F8F91",
-            "colorname": "Daytona Grey",
-            "image": "/cars/audi/audi-rs4-b7.jpg",
+            "brand": "peugeot",
+            "model": "205",
+            "version": "Dimma",
+            "year": "1989",
+            "reference": "OT817",
+            "color": "#FFFFFF",
+            "colorname": "Noir",
+            "colorref": "black",
+            "image": "/cars/peugeot/peugeot-205-dimma.jpg",
             "views": [
                 {
-                    "image1": "/cars/audi/audi-rs4-b7-profil.jpg",
-                    "image2": "/cars/audi/audi-rs4-b7-rear.jpg"
+                    "image1": "/cars/peugeot/peugeot-205-dimma-profil.jpg",
+                    "image2": "/cars/peugeot/peugeot-205-dimma-rear.jpg"
                 }
             ],
             "available": true,
@@ -287,9 +296,9 @@ const initialState = {
             "keep": false,
             "price": 100,
             "size": "1/18",
-            "description": "Soucieux de proposer une sportive à tout type de clientèle, Audi propose son fameux label RS et transforme le tranquille break des familles. Animé par le V8 420ch, vous ne rechignerez plus pour aller faire (la) les courses !",
-            "category": "break",
-            "segment": "segment D",
+            "description": "A la fin des années 80, une mode venue d’Allemagne consiste à personnaliser son véhicule. La société belge Distribution et d’Importation Michel Malherbe Associés (DIMMA) décide de se lancer dans le secteur en proposant des kits pour les Peugeot.",
+            "category": "citadine",
+            "segment": "segment C",
             "new": false,
             "stock": 1
         },
@@ -304,6 +313,7 @@ const initialState = {
             "reference": "G034",
             "color": "#000000",
             "colorname": "Black",
+            "colorref": "black",
             "image": "/cars/bmw/bmw-e46-m3-csl.jpg",
             "views": [
                 {
@@ -334,6 +344,7 @@ const initialState = {
             "reference": "OT629",
             "color": "#F0C80E",
             "colorname": "Jaune Sirius",
+            "colorref": "yellow",
             "image": "/cars/renault/concept-car-clio-rs-16.jpg",
             "views": [
                 {
@@ -364,6 +375,7 @@ const initialState = {
             "reference": "OT257",
             "color": "#E1E5E4",
             "colorname": "Blanc perle Mica",
+            "colorref": "white",
             "image": "/cars/renault/renault-clio-4-rs.jpg",
             "views": [
                 {
@@ -394,6 +406,7 @@ const initialState = {
             "reference": "OT552",
             "color": "#F6EC6D",
             "colorname": "Sirius Yellow",
+            "colorref": "yellow",
             "image": "/cars/renault/renault-clio-2-rs-ph-3.jpg",
             "views": [
                 {
@@ -424,6 +437,7 @@ const initialState = {
             "reference": "OT265",
             "color": "#2F2C46",
             "colorname": "Blue & Silver",
+            "colorref": "blue",
             "image": "/cars/nissan-patrol-gr.jpg",
             "views": [
                 {
@@ -453,6 +467,7 @@ const initialState = {
             "reference": "GT039",
             "color": "#700C0E",
             "colorname": "red",
+            "colorref": "red",
             "image": "/cars/bmw/bmw-m235i-01-3.jpg",
             "views": [
                 {
@@ -482,6 +497,7 @@ const initialState = {
             "reference": "OT664",
             "color": "#053CB1",
             "colorname": "#7 Panizzi - Tour de Corse",
+            "colorref": "white",
             "image": "/cars/peugeot/peugeot-306-maxi-mk1.jpg",
             "views": [
                 {
@@ -511,6 +527,7 @@ const initialState = {
             "reference": "OT831",
             "color": "#000000",
             "colorname": "Noir Brillant Vernis",
+            "colorref": "black",
             "image": "/cars/audi/audi-rs2.jpg",
             "views": [
                 {
@@ -540,6 +557,7 @@ const initialState = {
             "reference": "OT744",
             "color": "#141B40",
             "colorname": "Monaco Blue",
+            "colorref": "blue",
             "image": "/cars/renault/renault-clio-16v-ph2.jpg",
             "views": [
                 {
@@ -569,6 +587,7 @@ const initialState = {
             "reference": "G041",
             "color": "#184DAD",
             "colorname": "Blue Miami",
+            "colorref": "blue",
             "image": "/cars/peugeot/peugeot-205-gti-19.jpg",
             "views": [
                 {
@@ -599,6 +618,7 @@ const initialState = {
             "reference": "OT830",
             "color": "#D0CFCA",
             "colorname": "White",
+            "colorref": "white",
             "image": "/cars/alfa-romeo/alfa-romeo-stelvio-quadrifoglio-w.jpg",
             "views": [
                 {
@@ -629,6 +649,7 @@ const initialState = {
             "reference": "OT285",
             "color": "#710507",
             "colorname": "Rosso Competizione",
+            "colorref": "red",
             "image": "/cars/alfa-romeo/alfa-romeo-stelvio-quadrifoglio.jpg",
             "views": [
                 {
@@ -659,6 +680,7 @@ const initialState = {
             "reference": "OT796",
             "color": "#000000",
             "colorname": "Black",
+            "colorref": "black",
             "image": "/cars/peugeot/peugeot-205-gti-gutmann.jpg",
             "views": [
                 {
@@ -689,6 +711,7 @@ const initialState = {
             "reference": "PA01",
             "color": "#5C6063",
             "colorname": "sophisto gris métallique",
+            "colorref": "gray",
             "image": "/cars/bmw/x4.jpg",
             "views": [
                 {
@@ -720,6 +743,7 @@ const initialState = {
             "reference": "OT305",
             "color": "#CC3A32",
             "colorname": "rouge",
+            "colorref": "red",
             "image": "/cars/citroen/citroen-xsara-sport-ph1.jpg",
             "views": [
                 {
@@ -750,6 +774,7 @@ const initialState = {
             "reference": "OT764",
             "color": "#584848",
             "colorname": "Brun Arabica",
+            "colorref": "brown",
             "image": "/cars/renault/renault-super-5-baccara.jpg",
             "views": [
                 {
@@ -780,6 +805,7 @@ const initialState = {
             "reference": "OT756",
             "color": "#840000",
             "colorname": "Rouge Lucifer",
+            "colorref": "red",
             "image": "/cars/peugeot/peugeot-405-mi16-le-mans.jpg",
             "views": [
                 {
@@ -810,6 +836,7 @@ const initialState = {
             "reference": "OT318",
             "color": "#233E95",
             "colorname": "Estoril Blau",
+            "colorref": "blue",
             "image": "/cars/bmw/bmw-z3-m-coupe-32.jpg",
             "views": [
                 {
@@ -840,6 +867,7 @@ const initialState = {
             "reference": "OT798",
             "color": "#000000",
             "colorname": "Noir",
+            "colorref": "black",
             "image": "/cars/renault/renault-21-turbo-ph1.jpg",
             "views": [
                 {
@@ -870,6 +898,7 @@ const initialState = {
             "reference": "OT328",
             "color": "#FFFFFF",
             "colorname": "Blanc",
+            "colorref": "white",
             "image": "/cars/peugeot/pack-rallye-monte-carlo-1985.jpg",
             "views": [
                 {
@@ -900,6 +929,7 @@ const initialState = {
             "reference": "OT350",
             "color": "#EAAC01",
             "colorname": "jaune sirius",
+            "colorref": "yellow",
             "image": "/cars/renault/renault-clio-3-rs-ph2.jpg",
             "views": [
                 {
@@ -930,6 +960,7 @@ const initialState = {
             "reference": "OT790",
             "color": "#00447B",
             "colorname": "Laguna seca blue",
+            "colorref": "blue",
             "image": "/cars/bmw/bmw-e46-m3.jpg",
             "views": [
                 {
@@ -960,6 +991,7 @@ const initialState = {
             "reference": "OT804",
             "color": "#ffffff",
             "colorname": "White Quartz",
+            "colorref": "white",
             "image": "/cars/renault/renault-megane-trophy-r.jpg",
             "views": [
                 {
