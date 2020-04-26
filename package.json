@@ -71,6 +71,7 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "husky": "^4.2.3",
     "jest": "^25.3.0",
+    "jest-transform-stub": "^2.0.0",
     "prettier": "^2.0.2",
     "react-addons-test-utils": "^15.6.2",
     "react-redux": "^5.0.0",
