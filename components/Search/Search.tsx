@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 
 import List from '../List/List';
 import RangeSlider from '../RangeSlider/RangeSlider';
+import SearchInput from './SearchInput';
 
 import './Search.scss';
 
 const Search = (props: any) => {
     const [carsDataJsonFromState, setCarsDataJsonFromState] = React.useState(props.items);
     const [searchString, setSearchString] = React.useState('');
+    const [expandPanel, setExpandPanel] = React.useState(false);
 
     const countStock = (id: number) => {
         this.setState(prevState => {
@@ -37,13 +39,13 @@ const Search = (props: any) => {
         this.props.deleteStock(this.props.stock - 1);
     }
 
-    const filterByPriceLimit = (arg:any) => {
+    const filterByPriceLimit = (arg: any) => {
         console.warn(props.items, arg)
         let _cars = props.items.filter(car => car.price <= arg);
         setCarsDataJsonFromState(_cars);
     }
 
-    const filterByYearLimit = (arg:any) => {
+    const filterByYearLimit = (arg: any) => {
         let _cars = props.items.filter(car => car.year <= arg);
         setCarsDataJsonFromState(_cars);
     }
@@ -66,7 +68,7 @@ const Search = (props: any) => {
 
     const countryBrand = (country: string) => {
         let _countryBrand = props.items;
-        _countryBrand = _countryBrand.filter(function (car:any) {
+        _countryBrand = _countryBrand.filter(function (car: any) {
             switch (country) {
                 case 'fr':
                     return car.country === 'fr'
@@ -96,25 +98,22 @@ const Search = (props: any) => {
         setCarsDataJsonFromState(_clearAll);
     }
 
+    const ExpandFilter = (e: any) => {
+        setExpandPanel(!expandPanel);
+    }
+
     return (
         <div className="list">
-            <div className="sticky">
-                <div className="list__searchBar">
-                    <div className="list__search">
-                        <h3 className="center">
-                        </h3>
-                        <div className="list__searchMain">
+            <div className={expandPanel ? 'open sticky' : 'close sticky'}>
+                <button onClick={ExpandFilter}>Ouvrir</button>
 
-                            <input
-                                type="text"
-                                value={searchString}
-                                onChange={handleChange}
-                                placeholder="type name here" />
-
-                            <button className="button" onClick={clearAll}>Nettoyer les filtres</button>
-                        </div>
-                    </div>
-                </div>
+                <SearchInput
+                    labelExpand={'Ouvrir'}
+                    searchString={searchString}
+                    handleChange={handleChange}
+                    clearAll={clearAll}
+                    labelClearAll={'Nettoyer les filtres'}>
+                </SearchInput>
 
                 <RangeSlider
                     label={'price'}
