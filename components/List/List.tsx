@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
 import CSS from 'csstype'
+import LazyLoad from 'react-lazy-load';
 // import { NavLink } from 'react-router-dom';
 
 /* components */
@@ -57,7 +58,9 @@ const List = (props: any) => {
         return (
             <li className="list__item" key={car.id}>
                 <div className="list__itemContainer" style={car.available ? availableStyles : availableStyles}>
-                    <img src={`/static${car.image}`} loading="lazy" alt={car.model} />
+                    <LazyLoad offsetVertical={300}>
+                        <img src={`/static${car.image}`} loading="lazy" alt={car.model} />
+                    </LazyLoad>
 
                     <InViewPort as="span" distanceAnimation={150}>
                         <div>{car.title}</div>
