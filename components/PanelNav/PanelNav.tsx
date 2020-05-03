@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
 import PubSub from 'pubsub-js';
+import LazyLoad from 'react-lazy-load';
 
 import './PanelNav.scss';
 
@@ -43,7 +44,9 @@ const PanelNav = (props: any) => {
                         {car.brand} {car.model} {car.version}
                     </div>
                     <div className="panelNav__image">
-                        <img src={`/static${car.views[0].image1}`} loading="lazy" alt={car.model} />
+                        <LazyLoad offsetHorizontal={0}>
+                            <img src={`/static${car.views[0].image1}`} loading="lazy" alt={car.model} />
+                        </LazyLoad>
                     </div>
                 </a>
             </Link>

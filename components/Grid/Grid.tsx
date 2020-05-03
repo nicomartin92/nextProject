@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
 import CSS from 'csstype'
+import LazyLoad from 'react-lazy-load';
 // import { NavLink } from 'react-router-dom';
 
 // SVG
@@ -64,9 +65,11 @@ const Grid = (props: any) => {
                             passHref href="/cars/[reference]"
                             as={`/cars/${car.reference}`}>
                             <a>
-                                <img className="grid__image"
-                                    src={`/static${car.views[0].image1}`}
-                                    alt={`${car.brand} ${car.model} ${car.version}`} />
+                                <LazyLoad offsetVertical={300}>
+                                    <img className="grid__image"
+                                        src={`/static${car.views[0].image1}`}
+                                        alt={`${car.brand} ${car.model} ${car.version}`} />
+                                </LazyLoad>
                             </a>
                         </Link>
                         <div className="grid__info">
