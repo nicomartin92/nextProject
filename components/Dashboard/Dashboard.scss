@@ -20,4 +20,9 @@
             width: rem(120px);
         }
     }
+
+    &__label {
+        font-size: rem(12px);
+        margin-bottom: rem(20px);
+    }
 }

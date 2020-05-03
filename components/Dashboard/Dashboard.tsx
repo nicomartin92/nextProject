@@ -22,6 +22,7 @@ const Dashboard = (props: any) => {
             return (
                 <div>
                     <img width="120" src={`/static${car.views[0].image1}`} alt={`${car.brand} ${car.model} ${car.version}`} />
+                    <div className="gridTable__label">stock: ({car.stock}) disponible(s)</div>
                 </div>
             )
         }
@@ -47,9 +48,9 @@ const Dashboard = (props: any) => {
         }
     }
 
-    const totalAvailable = props.items.filter(car => car.available).length - 1;
-    const totalKeep = props.items.filter(car => car.keep).length - 1;
-    const totalSold = props.items.filter(car => car.sold).length - 1;
+    const totalAvailable = props.items.filter(car => car.available && car.stock > 0).length;
+    const totalKeep = props.items.filter(car => car.keep).length;
+    const totalSold = props.items.filter(car => !car.available && car.stock < 1 && car.sold).length;
 
     const deleteCar = (id: number) => {
         this.props.deleteCar(id);

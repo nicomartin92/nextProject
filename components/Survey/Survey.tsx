@@ -16,7 +16,7 @@ const Survey = (props: any) => {
             const choiceValue = document.querySelector('.inputRadio:checked').getAttribute('value');
             const db = firebase.firestore();
             db.collection(surveyCollection).add({
-                choice: choiceValue
+                choice: choiceValue,
             });
 
             setErrorMessage(false);
@@ -27,12 +27,12 @@ const Survey = (props: any) => {
         }
 
         e.preventDefault();
-    }
+    };
 
     const checkRadio = (e: any) => {
         document.querySelectorAll('.inputRadio').forEach((elem) => {
             elem.classList.remove('checked');
-        })
+        });
 
         e.target.classList.add('checked', 'checked');
         setErrorMessage(false);
@@ -50,7 +50,7 @@ const Survey = (props: any) => {
                 <label htmlFor={question.id}>{question.model}</label>
             </div>
         )
-    })
+    });
 
     const getData = () => {
         const [brand, setBrand] = React.useState([]);

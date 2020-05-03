@@ -361,7 +361,7 @@ const initialState = {
             "category": "sportive",
             "segment": "segment B",
             "new": false,
-            "stock": 0,
+            "stock": 1,
             "preference": 22
         },
         {
@@ -536,7 +536,7 @@ const initialState = {
                 }
             ],
             "available": false,
-            "sold": false,
+            "sold": true,
             "keep": true,
             "price": 100,
             "size": "1/18",
@@ -544,7 +544,7 @@ const initialState = {
             "category": "berline",
             "segment": "segment D",
             "new": false,
-            "stock": 1
+            "stock": 0
         },
         {
             "id": 18,
@@ -689,7 +689,7 @@ const initialState = {
                 }
             ],
             "available": true,
-            "sold": false,
+            "sold": true,
             "keep": true,
             "price": 110,
             "size": "1/18",
@@ -907,7 +907,7 @@ const initialState = {
                 }
             ],
             "available": true,
-            "sold": false,
+            "sold": true,
             "keep": false,
             "price": 209,
             "size": "1/18",
@@ -915,7 +915,7 @@ const initialState = {
             "category": "citadine & camion fourgon",
             "segment": "segment B",
             "new": true,
-            "stock": 1,
+            "stock": 0,
             "preference": 25
         },
         {
@@ -969,7 +969,7 @@ const initialState = {
                 }
             ],
             "available": true,
-            "sold": false,
+            "sold": true,
             "keep": true,
             "price": 90,
             "size": "1/18",
@@ -977,7 +977,7 @@ const initialState = {
             "category": "coupe",
             "segment": "segment D",
             "new": true,
-            "stock": 1,
+            "stock": 0,
             "preference": 27
         },
         {
@@ -1010,6 +1010,37 @@ const initialState = {
             "new": true,
             "stock": 3,
             "preference": 28
+        },
+        {
+            "id": 33,
+            "country": "de",
+            "brandshop": "Ottomobile",
+            "brand": "Volkswagen",
+            "model": "Golf",
+            "version": "R",
+            "year": "2014",
+            "reference": "OT333",
+            "color": "#203767",
+            "colorname": "Lapiz blue",
+            "colorref": "bleu",
+            "image": "/cars/volkswagen/volkswagen-golf-7r.jpg",
+            "views": [
+                {
+                    "image1": "/cars/volkswagen/volkswagen-golf-7r-profil.jpg",
+                    "image2": "/cars/volkswagen/volkswagen-golf-7r-rear.jpg"
+                }
+            ],
+            "available": true,
+            "sold": false,
+            "keep": true,
+            "price": 110,
+            "size": "1/18",
+            "description": "Promue à l’aide du programme Volkswagen en WRC, la gamme « R » de la marque propose les modèles les plus sportifs du catalogue.",
+            "category": "compact",
+            "segment": "segment C",
+            "new": true,
+            "stock": 1,
+            "preference": 29
         }
     ],
     favorites: [

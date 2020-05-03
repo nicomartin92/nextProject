@@ -26,8 +26,5 @@
     },
     "react-hooks-nesting": true
   },
-  "indent": [
-    2,
-    "tab"
-  ]
+  "indent": [true, "tabs", 2]
 }
