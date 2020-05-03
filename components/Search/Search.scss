@@ -1,0 +1,11 @@
+.sticky{
+    overflow: hidden;
+
+    &.close {
+        height: 40px;    
+    }
+
+    &.open {
+        height: auto;
+    }
+}

@@ -47,6 +47,10 @@ const Dashboard = (props: any) => {
         }
     }
 
+    const totalAvailable = props.items.filter(car => car.available).length - 1;
+    const totalKeep = props.items.filter(car => car.keep).length - 1;
+    const totalSold = props.items.filter(car => car.sold).length - 1;
+
     const deleteCar = (id: number) => {
         this.props.deleteCar(id);
     }
@@ -79,16 +83,16 @@ const Dashboard = (props: any) => {
                 </div>
             </div>
         )
-    })    
+    })
 
     return (
         <div>
             <div className="gridTable">
                 <div className="gridTable__row">
-                    <div className="gridTable__cell">{labels.status}:</div>
-                    <div className="gridTable__cell">{labels.keep}</div>
-                    <div className="gridTable__cell">{labels.sell}</div>
-                    <div className="gridTable__cell">{labels.sold}</div>
+                    <div className="gridTable__cell">{labels.status}</div>
+                    <div className="gridTable__cell">{labels.keep} ({totalKeep})</div>
+                    <div className="gridTable__cell">{labels.sell} ({totalAvailable})</div>
+                    <div className="gridTable__cell">{labels.sold} ({totalSold})</div>
                     <div className="gridTable__cell">{labels.delete}</div>
                 </div>
                 {carRows}
