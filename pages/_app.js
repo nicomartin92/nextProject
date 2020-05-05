@@ -2,7 +2,6 @@ import { Provider } from 'react-redux';
 import App, { Container } from 'next/app';
 import withRedux from 'next-redux-wrapper';
 import { initStore } from '../store/index';
-import * as V from 'victory';
 
 // REDUX PERSIST
 import { PersistGate } from 'redux-persist/integration/react';
