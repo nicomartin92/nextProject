@@ -2,7 +2,7 @@ import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
 
 // SCSS
-// import './Survey.scss';
+import './PieChart.scss';
 
 const PieChart = (props: any) => {
     const [surveyCollection] = React.useState(props.item);
@@ -28,12 +28,14 @@ const PieChart = (props: any) => {
         datasets: [{
             data: uniqueBrandsLength,
             backgroundColor: [
-                '#FF6384',
-                '#36A2EB',
-                '#FFCE56',
-                '#FF6384',
-                '#36A2EB',
-                '#FFCE56'
+                '#74d2e7',
+                '#48a9c5',
+                '#0085ad',
+                '#8db9ca',
+                '#4298b5',
+                '#005670',
+                '#00205b',
+                '#008eaa'
             ],
             hoverBackgroundColor: [
                 '#FF6384',
@@ -41,15 +43,16 @@ const PieChart = (props: any) => {
                 '#FFCE56',
                 '#FF6384',
                 '#36A2EB',
-                '#FFCE56'
+                '#FFCE56',
+                '#FF6384',
+                '#36A2EB'
             ]
         }]
     };
 
-    console.warn(peugeotLength, renaultLength, bmwLength, volkswagenLength)
     return (
         <div className="pieChart">
-            <Doughnut data={datas} />
+            <Doughnut data={datas} height={100} />
         </div>
     )
 }
