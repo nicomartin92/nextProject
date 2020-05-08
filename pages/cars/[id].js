@@ -6,6 +6,8 @@ import { withRouter } from 'next/router'
 import Markdown from 'react-markdown'
 
 import CompareImage from '../../components/CompareImage/CompareImage';
+import Slider from '../../components/Slider/Slider';
+import ReactCountryFlag from "react-country-flag";
 
 // comments
 import { connect } from 'react-redux'
@@ -25,10 +27,27 @@ const CarId = (props) => {
     if (similarModel.length > 1) {
       return (
         <div>
+          <h3 className="subTitle left">
+            Comparateur de modèles
+          </h3>
           <CompareImage
             leftImage={domain + '/static' + carCompare1}
             rightImage={domain + '/static' + carCompare2}
             hover />
+        </div>
+      );
+    }
+  }
+
+  const otherModelsLength = () => {
+    if (otherModels.length > 1) {
+      return (
+        <div>
+          <h3 className="subTitle left">
+            Autres modèles
+          </h3>
+
+          <Slider item={otherModelsExcluded} view={1} />
         </div>
       );
     }
@@ -61,6 +80,15 @@ const CarId = (props) => {
                 {selectedCar[0].version}
               </h3>
               <span className="textBlock__year">{selectedCar[0].year}</span>
+              <span className="textBlock__country">
+                <ReactCountryFlag
+                  countryCode={selectedCar[0].country}
+                  style={{
+                    width: '1.7em',
+                    height: '1.7em',
+                  }}
+                  svg />
+              </span>
             </div>
             <div className="textBlock__image">
               <img src={`/static${selectedCar[0].image}`} loading="lazy" alt="" />
@@ -131,6 +159,8 @@ const CarId = (props) => {
         </div>
 
         {renderCompare()}
+
+        {otherModelsLength()}
 
       </Layout>
     </div>
