@@ -2,7 +2,8 @@ import Head from 'next/head'
 
 import Layout from '../layout/MainLayout'
 import '../styles/index.scss';
-import Dashboard from '../components/Dashboard/Dashboard'
+import Dashboard from '../components/Dashboard/Dashboard';
+import PieChart from '../components/PieChart/PieChart';
 
 import { connect } from 'react-redux';
 
@@ -16,6 +17,9 @@ const Status = (props) => {
 
       <Layout carItems={props.carR.cars}>
         <p>This is the Status page</p>
+
+        <PieChart item={props.carR.cars} />
+
         <Dashboard items={props.carR.cars} />
       </Layout>
     </div>
