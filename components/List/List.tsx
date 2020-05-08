@@ -6,6 +6,7 @@ import LazyLoad from 'react-lazy-load';
 
 /* components */
 import InViewPort from '../InViewPort/InViewPort';
+import ReactCountryFlag from "react-country-flag";
 
 /* SVG */
 import Favorite from '../../static/assets/favorite';
@@ -66,6 +67,7 @@ const List = (props: any) => {
                         <div>{car.title}</div>
                         <div>{car.brandshop} - {car.brand} {car.model} {car.version}</div>
                         <div style={{ display: !car.year && "none" }}>{car.year}</div>
+                        <ReactCountryFlag countryCode={car.country} svg />
                         <div className="hidden">Stock:  {car.stock}</div>
                         <div>Estimation du prix:  {car.price} €</div>
                     </InViewPort>

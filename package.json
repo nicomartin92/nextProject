@@ -36,6 +36,7 @@
     "pubsub-js": "^1.7.0",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.9.0",
+    "react-country-flag": "^2.0.1",
     "react-dom": "^16.13.1",
     "react-lazy-load": "^3.0.13",
     "react-markdown": "^4.0.6",

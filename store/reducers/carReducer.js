@@ -428,7 +428,7 @@ const initialState = {
         },
         {
             "id": 14,
-            "country": "uk",
+            "country": "us",
             "brandshop": "Ottomobile",
             "brand": "Ford",
             "model": "Focus",
