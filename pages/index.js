@@ -66,6 +66,8 @@ const PostLink = ({ post }) => (
 )
 
 const Home = (props) => {
+  const domain = location.protocol + '//' + window.location.host + '/static';
+
   return (
     <div>
       <Head>
@@ -79,8 +81,8 @@ const Home = (props) => {
         <GetWhislist />
 
         <CompareImage
-          leftImage={props.cars[2].views[0].image1}
-          rightImage={props.cars[31].views[0].image1}
+          leftImage={domain + props.cars[2].views[0].image1}
+          rightImage={domain + props.cars[31].views[0].image1}
           hover />
 
         <section className="banner__text">

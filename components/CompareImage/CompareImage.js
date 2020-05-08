@@ -240,7 +240,7 @@ const CompareImage = (props) => {
             onLoad={() => setRightImgLoaded(true)}
             data-testid="right-image"
             ref={rightImageRef}
-            src={`static${rightImage}`}
+            src={rightImage}
           />
         </div>
 
@@ -249,7 +249,7 @@ const CompareImage = (props) => {
             onLoad={() => setLeftImgLoaded(true)}
             data-testid="left-image"
             ref={leftImageRef}
-            src={`static${leftImage}`}
+            src={leftImage}
           />
         </div>
 
