@@ -13,7 +13,6 @@ import GetWhislist from '../components/GetWhislist/GetWhislist';
 import Slider from '../components/Slider/Slider';
 import CompareImage from '../components/CompareImage/CompareImage';
 import Survey from '../components/Survey/Survey';
-import PieChart from '../components/PieChart/PieChart';
 
 import { connect } from 'react-redux';
 
@@ -95,8 +94,6 @@ const Home = (props) => {
             <p>Venez découvrir le {props.cars[28].version}.</p>
           </div>
         </section>
-
-        <PieChart item={props.cars} />
 
         <Slider item={props.cars} view={1} />
 
