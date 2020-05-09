@@ -1,5 +1,7 @@
 .sticky{
     overflow: hidden;
+    position: relative;
+    transition:height 0.8s ease-out;
 
     &.close {
         height: 40px;    

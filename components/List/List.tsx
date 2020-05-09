@@ -59,24 +59,30 @@ const List = (props: any) => {
         return (
             <li className="list__item" key={car.id}>
                 <div className="list__itemContainer" style={car.available ? availableStyles : availableStyles}>
-                    <LazyLoad offsetVertical={300}>
-                        <img src={`/static${car.image}`} loading="lazy" alt={car.model} />
-                    </LazyLoad>
+                    <Link href={`/cars/${car.reference}`}>
+                        <a title={`${car.brand} ${car.model} ${car.version}`}>
+                            <LazyLoad offsetVertical={300}>
+                                <img src={`/static${car.image}`} loading="lazy" alt={car.model} />
+                            </LazyLoad>
 
-                    <InViewPort as="span" distanceAnimation={150}>
-                        <div>{car.title}</div>
-                        <div>{car.brandshop} - {car.brand} {car.model} {car.version}</div>
-                        <div style={{ display: !car.year && "none" }}>{car.year}</div>
-                        <ReactCountryFlag countryCode={car.country} svg />
-                        <div className="hidden">Stock:  {car.stock}</div>
-                        <div>Estimation du prix:  {car.price} €</div>
-                    </InViewPort>
+                            <InViewPort as="span" distanceAnimation={150}>
+                                <div className="list__title left">{car.title}</div>
+                                <div className="list__model left">
+                                    <strong>{car.brandshop}</strong> - {car.brand} {car.model} {car.version}
+                                    <span className="list__year left" style={{ display: !car.year && "none" }}> ({car.year})</span>
+                                    <span> <ReactCountryFlag countryCode={car.country} svg /></span>
+                                </div>
+                                <div className="hidden">Stock:  {car.stock}</div>
+                                <div className="list__price left">Prix:  {car.price} €</div>
+                            </InViewPort>
+                        </a>
+                    </Link>
 
                     {/* <button className="button" onClick={() => this.props.countStock(car.id)}>
                     Acheter
                     <BuyIcon className="list__icon" />
                 </button> */}
-                    <button
+                    {/* <button
                         aria-label={`${car.brand} ${car.model} ${car.version}`}
                         className="button"
                         onClick={() => props.addFavorite(car.id)}>
@@ -85,7 +91,7 @@ const List = (props: any) => {
                     </button>
                     <Link href={`/cars/${car.reference}`}>
                         <a className="button" title={`${car.brand} ${car.model} ${car.version}`}>Voir modèle {car.model}</a>
-                    </Link>
+                    </Link> */}
                 </div>
             </li>
 
