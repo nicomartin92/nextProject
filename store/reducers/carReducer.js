@@ -36,6 +36,7 @@ const initialState = {
             "color": "#868C8C",
             "colorname": "Winchester Grey",
             "colorref": "gray",
+            "material": "resine",
             "image": "/cars/peugeot/peugeot-305-gtx.jpg",
             "views": [
                 {
@@ -67,6 +68,7 @@ const initialState = {
             "color": "#373F52",
             "colorname": "Bleu Delft",
             "colorref": "blue",
+            "material": "resine",
             "image": "/cars/peugeot/peugeot-505-v6.jpg",
             "views": [
                 {
@@ -98,6 +100,7 @@ const initialState = {
             "color": "#B92B29",
             "colorname": "Rouge Flamme",
             "colorref": "red",
+            "material": "resine",
             "image": "/cars/renault/renault-megane-rs-trophy.jpg",
             "views": [
                 {
@@ -129,6 +132,7 @@ const initialState = {
             "color": "#0043B2",
             "colorname": "Bleu Alpine",
             "colorref": "blue",
+            "material": "resine",
             "image": "/cars/alpine/alpine-a110-premiere-edition.jpg",
             "views": [
                 {
@@ -160,6 +164,7 @@ const initialState = {
             "color": "#4B3F4D",
             "colorname": "Daytona Violet",
             "colorref": "purple",
+            "material": "resine",
             "image": "/cars/bmw/bmw-e36-m3-4-doors.jpg",
             "views": [
                 {
@@ -191,6 +196,7 @@ const initialState = {
             "color": "#101010",
             "colorname": "Black I 086",
             "colorref": "black",
+            "material": "resine",
             "image": "/cars/bmw/bmw-e34-m5-phase-i.jpg",
             "views": [
                 {
@@ -222,6 +228,7 @@ const initialState = {
             "color": "#000000",
             "colorname": "Noir étoilé",
             "colorref": "black",
+            "material": "resine",
             "image": "/cars/renault/renault-megane-rs-trophy-n.jpg",
             "views": [
                 {
@@ -253,6 +260,7 @@ const initialState = {
             "color": "#AF3432",
             "colorname": "Rosso Competizione",
             "colorref": "red",
+            "material": "resine",
             "image": "/cars/alfa-romeo/alfa-romeo-giulia-quadrifoglio.jpg",
             "views": [
                 {
@@ -284,6 +292,7 @@ const initialState = {
             "color": "#FFFFFF",
             "colorname": "Noir",
             "colorref": "black",
+            "material": "resine",
             "image": "/cars/peugeot/peugeot-205-dimma.jpg",
             "views": [
                 {
@@ -314,6 +323,7 @@ const initialState = {
             "color": "#000000",
             "colorname": "Black",
             "colorref": "black",
+            "material": "resine",
             "image": "/cars/bmw/bmw-e46-m3-csl.jpg",
             "views": [
                 {
@@ -345,6 +355,7 @@ const initialState = {
             "color": "#FFFFFF",
             "colorname": "White pearl",
             "colorref": "white",
+            "material": "resine",
             "image": "/cars/alpine/alpine-a110-pure.jpg",
             "views": [
                 {
@@ -376,6 +387,7 @@ const initialState = {
             "color": "#E1E5E4",
             "colorname": "Blanc perle Mica",
             "colorref": "white",
+            "material": "resine",
             "image": "/cars/renault/renault-clio-4-rs.jpg",
             "views": [
                 {
@@ -407,6 +419,7 @@ const initialState = {
             "color": "#F6EC6D",
             "colorname": "Sirius Yellow",
             "colorref": "yellow",
+            "material": "resine",
             "image": "/cars/renault/renault-clio-2-rs-ph-3.jpg",
             "views": [
                 {
@@ -438,6 +451,7 @@ const initialState = {
             "color": "#DE2A1C",
             "colorname": "Race Red",
             "colorref": "red",
+            "material": "resine",
             "image": "/cars/ford/ford-focus-rs-2018.jpg",
             "views": [
                 {
@@ -468,6 +482,7 @@ const initialState = {
             "color": "#700C0E",
             "colorname": "red",
             "colorref": "red",
+            "material": "resine",
             "image": "/cars/bmw/bmw-m235i-01-3.jpg",
             "views": [
                 {
@@ -498,6 +513,7 @@ const initialState = {
             "color": "#053CB1",
             "colorname": "Rallye National de Haute-Provence",
             "colorref": "white",
+            "material": "resine",
             "image": "/cars/peugeot/peugeot-306-maxi-2017.jpg",
             "views": [
                 {
@@ -528,6 +544,7 @@ const initialState = {
             "color": "#AB0A02",
             "colorname": "Rouge",
             "colorref": "red",
+            "material": "resine",
             "image": "/cars/peugeot/peugeot-405-mi16-le-mans-rouge.jpg",
             "views": [
                 {
@@ -558,6 +575,7 @@ const initialState = {
             "color": "#141B40",
             "colorname": "Monaco Blue",
             "colorref": "blue",
+            "material": "resine",
             "image": "/cars/renault/renault-clio-16v-ph2.jpg",
             "views": [
                 {
@@ -588,6 +606,7 @@ const initialState = {
             "color": "#184DAD",
             "colorname": "Blue Miami",
             "colorref": "blue",
+            "material": "resine",
             "image": "/cars/peugeot/peugeot-205-gti-19.jpg",
             "views": [
                 {
@@ -618,7 +637,8 @@ const initialState = {
             "reference": "OT819",
             "color": "#4D4D4F",
             "colorname": "Dolphin Grey",
-            "colorref": "white",
+            "colorref": "gray",
+            "material": "resine",
             "image": "/cars/bmw/bmw-e30-325i.jpg",
             "views": [
                 {
@@ -650,6 +670,7 @@ const initialState = {
             "color": "#710507",
             "colorname": "Rosso Competizione",
             "colorref": "red",
+            "material": "resine",
             "image": "/cars/alfa-romeo/alfa-romeo-stelvio-quadrifoglio.jpg",
             "views": [
                 {
@@ -681,6 +702,7 @@ const initialState = {
             "color": "#000000",
             "colorname": "Black",
             "colorref": "black",
+            "material": "resine",
             "image": "/cars/peugeot/peugeot-205-gti-gutmann.jpg",
             "views": [
                 {
@@ -712,6 +734,7 @@ const initialState = {
             "color": "#5C6063",
             "colorname": "sophisto gris métallique",
             "colorref": "gray",
+            "material": "metal",
             "image": "/cars/bmw/x4.jpg",
             "views": [
                 {
@@ -744,6 +767,7 @@ const initialState = {
             "color": "#CC3A32",
             "colorname": "rouge",
             "colorref": "red",
+            "material": "resine",
             "image": "/cars/citroen/citroen-xsara-sport-ph1.jpg",
             "views": [
                 {
@@ -775,6 +799,7 @@ const initialState = {
             "color": "#584848",
             "colorname": "Brun Arabica",
             "colorref": "brown",
+            "material": "resine",
             "image": "/cars/renault/renault-super-5-baccara.jpg",
             "views": [
                 {
@@ -806,6 +831,7 @@ const initialState = {
             "color": "#840000",
             "colorname": "Rouge Lucifer",
             "colorref": "red",
+            "material": "resine",
             "image": "/cars/peugeot/peugeot-405-mi16-le-mans.jpg",
             "views": [
                 {
@@ -837,6 +863,7 @@ const initialState = {
             "color": "#233E95",
             "colorname": "Estoril Blau",
             "colorref": "blue",
+            "material": "resine",
             "image": "/cars/bmw/bmw-z3-m-coupe-32.jpg",
             "views": [
                 {
@@ -868,6 +895,7 @@ const initialState = {
             "color": "#000000",
             "colorname": "Noir",
             "colorref": "black",
+            "material": "resine",
             "image": "/cars/renault/renault-21-turbo-ph1.jpg",
             "views": [
                 {
@@ -899,6 +927,7 @@ const initialState = {
             "color": "#FFFFFF",
             "colorname": "Blanc",
             "colorref": "white",
+            "material": "resine",
             "image": "/cars/peugeot/pack-rallye-monte-carlo-1985.jpg",
             "views": [
                 {
@@ -930,6 +959,7 @@ const initialState = {
             "color": "#EAAC01",
             "colorname": "jaune sirius",
             "colorref": "yellow",
+            "material": "resine",
             "image": "/cars/renault/renault-clio-3-rs-ph2.jpg",
             "views": [
                 {
@@ -961,6 +991,7 @@ const initialState = {
             "color": "#00447B",
             "colorname": "Laguna seca blue",
             "colorref": "blue",
+            "material": "resine",
             "image": "/cars/bmw/bmw-e46-m3.jpg",
             "views": [
                 {
@@ -992,6 +1023,7 @@ const initialState = {
             "color": "#ffffff",
             "colorname": "White Quartz",
             "colorref": "white",
+            "material": "resine",
             "image": "/cars/renault/renault-megane-trophy-r.jpg",
             "views": [
                 {
@@ -1022,7 +1054,8 @@ const initialState = {
             "reference": "OT333",
             "color": "#203767",
             "colorname": "Lapiz blue",
-            "colorref": "bleu",
+            "colorref": "blue",
+            "material": "resine",
             "image": "/cars/volkswagen/volkswagen-golf-7r.jpg",
             "views": [
                 {
@@ -1041,6 +1074,39 @@ const initialState = {
             "new": true,
             "stock": 1,
             "preference": 29
+        },
+        {
+            "id": 34,
+            "country": "de",
+            "brandshop": "Paragon",
+            "brand": "Bmw",
+            "model": "X5",
+            "version": "X5 5.0i X DRIVE",
+            "year": "2015",
+            "reference": "PA0X5",
+            "color": "#D1D6D9",
+            "colorname": "Glacier Silver",
+            "colorref": "gray",
+            "material": "metal",
+            "image": "/cars/bmw/bmw-x5.jpg",
+            "views": [
+                {
+                    "image1": "/cars/bmw/bmw-x5-profil.jpg",
+                    "image2": "/cars/bmw/bmw-x5-rear.jpg",
+                    "image3": "/cars/bmw/bmw-x5-open.jpg"
+                }
+            ],
+            "available": true,
+            "sold": false,
+            "keep": false,
+            "price": 110,
+            "size": "1/18",
+            "description": "Promue à l’aide du programme Volkswagen en WRC, la gamme « R » de la marque propose les modèles les plus sportifs du catalogue.",
+            "category": "suv",
+            "segment": "segment D",
+            "new": true,
+            "stock": 1,
+            "preference": 30
         }
     ],
     favorites: [

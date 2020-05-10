@@ -53,6 +53,25 @@ const CarId = (props) => {
     }
   }
 
+  const openings = () => {
+    if (selectedCar[0].views[0].image3) {
+      return (
+        <div className="imageContent">
+          <div className="imageContent__item -medium">
+            <img src={`/static${selectedCar[0].views[0].image3}`} loading="lazy" alt="" />
+          </div>
+          <div className="imageContent__item -small">
+            <div className="textContent">
+              <h3 className="subTitle">
+                Ouvrants
+              </h3>
+            </div>
+          </div>
+        </div>
+      );
+    }
+  }
+
   return (
     <div>
       <Head>
@@ -123,7 +142,7 @@ const CarId = (props) => {
                     <span>{selectedCar[0].reference}</span>
                   </li>
                   <li className="specs__item">
-                    <span>Producteur:</span>
+                    <span>Fabricant:</span>
                     <span>{selectedCar[0].brandshop}</span>
                   </li>
                   <li className="specs__item">
@@ -149,6 +168,10 @@ const CarId = (props) => {
                       {selectedCar[0].colorname}
                     </span>
                   </li>
+                  <li className="specs__item">
+                    <span>Matériaux:</span>
+                    <span>{selectedCar[0].material}</span>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -156,6 +179,8 @@ const CarId = (props) => {
               <img src={`/static${selectedCar[0].views[0].image2}`} loading="lazy" alt="carsData[0].model" />
             </div>
           </div>
+
+          {openings()}
         </div>
 
         {renderCompare()}

@@ -47,7 +47,8 @@ const Autocomplete = (props: any) => {
                 car.price === parseInt(userInput) ||
                 car.country.toLowerCase().match(userInput.toLowerCase()) ||
                 car.category.toLowerCase().match(userInput.toLowerCase()) ||
-                car.segment.toLowerCase().match(userInput.toLowerCase());
+                car.segment.toLowerCase().match(userInput.toLowerCase()) ||
+                car.colorref.toLowerCase().match(userInput.toLowerCase());
         });
 
         setfilteredOptions(filteredOptions);
@@ -59,34 +60,34 @@ const Autocomplete = (props: any) => {
     const handleKeydown = (e: any) => {
         let target = null;
         let allLinks = document.querySelectorAll('.search__listLink');
-        
+
         if (e.keyCode === 40 && e.target.value.length > 1) {
-            target = document.querySelectorAll('.search__listLink')[position+1];
-            
+            target = document.querySelectorAll('.search__listLink')[position + 1];
+
             allLinks.forEach(element => {
                 element.classList.remove('selected');
             });
-            
-            if(target) {
+
+            if (target) {
                 target.classList.add('selected');
-                setPosition(position+1);
+                setPosition(position + 1);
                 setTargetElem(target);
             }
         } else if (e.keyCode === 38 && e.target.value.length > 1) {
-            target = document.querySelectorAll('.search__listLink')[position-1];
+            target = document.querySelectorAll('.search__listLink')[position - 1];
 
             allLinks.forEach(element => {
                 element.classList.remove('selected');
             });
 
-            if(target) {
+            if (target) {
                 target.classList.add('selected');
-                setPosition(position-1);
+                setPosition(position - 1);
                 setTargetElem(target);
             }
         }
 
-        if(e.keyCode === 13) {
+        if (e.keyCode === 13) {
             location.href = targetElem.href;
         }
     }
@@ -102,9 +103,9 @@ const Autocomplete = (props: any) => {
     const displaySearch = (isExpanded: boolean) => {
         setIsExpanded(isExpanded);
 
-        if(isExpanded) {
+        if (isExpanded) {
             search.current.focus();
-        } 
+        }
         search.current.focus();
     }
 
@@ -142,9 +143,9 @@ const Autocomplete = (props: any) => {
                             <Link
                                 passHref href="/cars/[reference]"
                                 as={`/cars/${car.reference}`}>
-                                <a className="search__listLink" 
-                                   onClick={() => displaySearch(false)}
-                                   data-position={index}>
+                                <a className="search__listLink"
+                                    onClick={() => displaySearch(false)}
+                                    data-position={index}>
                                     <img className="search__listImage"
                                         src={`/static${car.views[0].image1}`}
                                         alt={`${car.brand} ${car.model} ${car.version}`} />
