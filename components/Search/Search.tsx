@@ -10,6 +10,7 @@ const Search = (props: any) => {
     const [carsDataJsonFromState, setCarsDataJsonFromState] = React.useState(props.items);
     const [searchString, setSearchString] = React.useState('');
     const [expandPanel, setExpandPanel] = React.useState(false);
+    const [loading, setLoading] = React.useState(false);
 
     const countStock = (id: number) => {
         this.setState(prevState => {
@@ -56,6 +57,7 @@ const Search = (props: any) => {
 
     const year = (year: string) => {
         let _cars1 = props.items;
+        setLoading(true);
         _cars1 = _cars1.slice().sort((a: any, b: any) => {
             if (year === 'asc') {
                 return a.year - b.year
@@ -64,10 +66,15 @@ const Search = (props: any) => {
             }
         });
         setCarsDataJsonFromState(_cars1);
+
+        setTimeout(() => {
+            setLoading(false);
+        }, 300);
     }
 
     const countryBrand = (country: string) => {
         let _countryBrand = props.items;
+        setLoading(true);
         _countryBrand = _countryBrand.filter(function (car: any) {
             switch (country) {
                 case 'fr':
@@ -89,6 +96,10 @@ const Search = (props: any) => {
             }
         });
         setCarsDataJsonFromState(_countryBrand);
+
+        setTimeout(() => {
+            setLoading(false);
+        }, 300);
     }
 
     const clearAll = () => {
@@ -141,7 +152,7 @@ const Search = (props: any) => {
             </div>
 
             <List items={carsDataJsonFromState}
-                isLoading={false}
+                isLoading={loading}
                 countStock={13} />
         </div>
     )

@@ -970,13 +970,13 @@ const initialState = {
             "available": true,
             "sold": false,
             "keep": true,
-            "price": 120,
+            "price": 90,
             "size": "1/18",
             "description": "Comme sa grande-sœur, la Clio 2, la troisième génération de la citadine de chez Renault a eu droit à sa version sport sous-titrée « R.S » en référence à Renault Sport.",
             "category": "citadine",
             "segment": "segment B",
             "new": true,
-            "stock": 3,
+            "stock": 2,
             "preference": 26
         },
         {
@@ -1106,6 +1106,39 @@ const initialState = {
             "segment": "segment D",
             "new": true,
             "stock": 1,
+            "preference": 30
+        },
+        {
+            "id": 35,
+            "country": "fr",
+            "brandshop": "Ottomobile",
+            "brand": "Peugeot",
+            "model": "e-Legend",
+            "version": "Concept",
+            "year": "2018",
+            "reference": "OT323",
+            "color": "#FEFEFE",
+            "colorname": "Gris métal",
+            "colorref": "gray",
+            "material": "resine",
+            "image": "/cars/peugeot/peugeot-e-legend-concept.jpg",
+            "views": [
+                {
+                    "image1": "/cars/peugeot/peugeot-e-legend-concept-profil.jpg",
+                    "image2": "/cars/peugeot/peugeot-e-legend-concept-rear.jpg",
+                    "image3": "/cars/peugeot/peugeot-e-legend-concept-open.jpg"
+                }
+            ],
+            "available": true,
+            "sold": false,
+            "keep": true,
+            "price": 110,
+            "size": "1/18",
+            "description": "Promue à l’aide du programme Volkswagen en WRC, la gamme « R » de la marque propose les modèles les plus sportifs du catalogue.",
+            "category": "coupe",
+            "segment": "segment D",
+            "new": true,
+            "stock": 3,
             "preference": 30
         }
     ],
