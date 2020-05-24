@@ -6,6 +6,10 @@ import Grid from '../components/Grid/Grid'
 
 import { connect } from 'react-redux';
 
+import Prismic from 'prismic-javascript'
+import { RichText, Date } from 'prismic-reactjs'
+import { client } from '../prismic-configuration'
+
 // ACTIONS
 import {
   addFavorite
@@ -15,6 +19,7 @@ import {
 import '../styles/index.scss'
 
 const Whishlist = (props) => {
+
   return (
     <div>
       <Head>
@@ -25,10 +30,19 @@ const Whishlist = (props) => {
       <Layout carItems={props.cars}>
         <h1>Votre sélection</h1>
 
-        <Grid item={props.favorites} isLoading={false}/>
+        <h1>{RichText.asText(props.home.data.headline)}</h1>
+        <p>{RichText.asText(props.home.data.description)}</p>
+
+        <Grid item={props.favorites} isLoading={false} />
       </Layout>
     </div>
   )
+}
+
+Whishlist.getInitialProps = async context => {
+  const home = await client.getSingle('blog_home')
+
+  return { home }
 }
 
 /* export default connect(
